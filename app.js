@@ -24,6 +24,7 @@ class AudioPlayer {
         this.searchInput = document.getElementById('searchInput');
         this.clearSearch = document.getElementById('clearSearch');
         this.themeToggle = document.getElementById('themeToggle');
+        this.themeToggleDesktop = document.getElementById('themeToggleDesktop');
         this.errorMessage = document.getElementById('errorMessage');
         this.errorText = document.getElementById('errorText');
         this.favoriteBtn = document.getElementById('favoriteBtn');
@@ -39,6 +40,9 @@ class AudioPlayer {
         this.copyLink = document.getElementById('copyLink');
         this.totalTracks = document.getElementById('totalTracks');
         this.totalFavorites = document.getElementById('totalFavorites');
+        this.menuToggle = document.getElementById('menuToggle');
+        this.sidebar = document.getElementById('sidebar');
+        this.sidebarOverlay = document.getElementById('sidebarOverlay');
 
         // State
         this.lectures = [];
@@ -456,15 +460,47 @@ class AudioPlayer {
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
         
+        const iconClass = newTheme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
         const icon = this.themeToggle.querySelector('i');
-        icon.className = newTheme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
+        if (icon) icon.className = iconClass;
+        if (this.themeToggleDesktop) {
+            const desktopIcon = this.themeToggleDesktop.querySelector('i');
+            if (desktopIcon) desktopIcon.className = iconClass;
+        }
     }
 
     applyTheme() {
         const savedTheme = localStorage.getItem('theme') || 'dark';
         document.documentElement.setAttribute('data-theme', savedTheme);
+        const iconClass = savedTheme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
         const icon = this.themeToggle.querySelector('i');
-        icon.className = savedTheme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
+        if (icon) icon.className = iconClass;
+        if (this.themeToggleDesktop) {
+            const desktopIcon = this.themeToggleDesktop.querySelector('i');
+            if (desktopIcon) desktopIcon.className = iconClass;
+        }
+    }
+
+    // ===== Mobile Sidebar Toggle =====
+    toggleSidebar() {
+        this.sidebar.classList.toggle('show');
+        if (this.sidebarOverlay) {
+            this.sidebarOverlay.classList.toggle('show');
+        }
+        // Prevent body scroll when sidebar is open
+        if (this.sidebar.classList.contains('show')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    }
+
+    closeSidebar() {
+        this.sidebar.classList.remove('show');
+        if (this.sidebarOverlay) {
+            this.sidebarOverlay.classList.remove('show');
+        }
+        document.body.style.overflow = '';
     }
 
     // ===== Search =====
@@ -623,6 +659,26 @@ class AudioPlayer {
 
         // Theme
         this.themeToggle.addEventListener('click', () => this.toggleTheme());
+        if (this.themeToggleDesktop) {
+            this.themeToggleDesktop.addEventListener('click', () => this.toggleTheme());
+        }
+
+        // Mobile Menu Toggle
+        if (this.menuToggle) {
+            this.menuToggle.addEventListener('click', () => this.toggleSidebar());
+        }
+
+        // Close sidebar when clicking overlay
+        if (this.sidebarOverlay) {
+            this.sidebarOverlay.addEventListener('click', () => this.closeSidebar());
+        }
+
+        // Close sidebar when clicking on a track (mobile)
+        this.playlist.addEventListener('click', (e) => {
+            if (e.target.closest('.track-item') && window.innerWidth <= 968) {
+                this.closeSidebar();
+            }
+        });
 
         // Shuffle & Repeat
         this.shuffleBtn.addEventListener('click', () => this.toggleShuffle());

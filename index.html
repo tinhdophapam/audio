@@ -13,6 +13,22 @@
 </head>
 <body>
     <div class="app-container">
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="mobile-logo">
+                <img src="Title Logo.webp" alt="Tịnh Độ Pháp Âm">
+            </div>
+            <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+
+        <!-- Sidebar Overlay -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
         <!-- Sidebar -->
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
@@ -21,7 +37,7 @@
                         <img src="Title Logo.webp" alt="Tịnh Độ Pháp Âm">
                     </div>
                 </div>
-                <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
+                <button class="theme-toggle desktop-only" id="themeToggleDesktop" title="Toggle Dark/Light Mode">
                     <i class="fas fa-moon"></i>
                 </button>
             </div>
