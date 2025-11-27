@@ -66,13 +66,13 @@
             <!-- Filter Tabs -->
             <div class="filter-tabs">
                 <button class="filter-tab active" data-filter="all">
-                    <i class="fas fa-list"></i> Tất cả
+                    <i class="fas fa-book"></i> Thư viện
                 </button>
                 <button class="filter-tab" data-filter="favorites">
-                    <i class="fas fa-heart"></i> Yêu thích
+                    <i class="fas fa-list"></i> Playlist
                 </button>
                 <button class="filter-tab" data-filter="recent">
-                    <i class="fas fa-history"></i> Gần đây
+                    <i class="fas fa-history"></i> Lịch sử
                 </button>
             </div>
 
@@ -93,7 +93,7 @@
             <!-- Animated Background -->
             <div class="animated-bg"></div>
 
-            <!-- Player View (Default) -->
+            <!-- Player View (Default on Desktop) -->
             <div class="content-view active" id="playerView">
                 <!-- Buddha Name Section -->
                 <div class="buddha-name-section">
@@ -113,8 +113,8 @@
                             <i class="fas fa-dharmachakra"></i>
                             <div class="vinyl-effect"></div>
                         </div>
-                        <button class="favorite-btn" id="favoriteBtn" title="Thêm vào yêu thích">
-                            <i class="far fa-heart"></i>
+                        <button class="favorite-btn" id="favoriteBtn" title="Thêm vào playlist">
+                            <i class="far fa-star"></i>
                         </button>
                     </div>
                     <div class="track-info">
@@ -227,6 +227,19 @@
                 </div>
             </div>
 
+            <!-- Playlist View -->
+            <div class="content-view" id="playlistView">
+                <div class="library-header">
+                    <h2><i class="fas fa-list"></i> Playlist</h2>
+                    <p class="library-subtitle">Danh sách bài tự chọn</p>
+                </div>
+                <div class="library-content" id="playlistContent">
+                    <div class="loading">
+                        <p>Chưa có bài nào trong playlist</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- History View -->
             <div class="content-view" id="historyView">
                 <div class="library-header">
@@ -292,9 +305,9 @@
             </div>
             <div class="mini-player-content" id="miniPlayerContent">
                 <div class="mini-player-info">
-                    <div class="mini-album-art">
-                        <i class="fas fa-dharmachakra"></i>
-                    </div>
+                    <button class="mini-album-art" id="miniRepeatBtn" title="Repeat">
+                        <i class="fas fa-redo"></i>
+                    </button>
                     <div class="mini-track-info">
                         <div class="mini-track-title" id="miniTrackTitle">Chọn bài giảng</div>
                         <div class="mini-track-time">
@@ -321,7 +334,7 @@
 
         <!-- Bottom Navigation Bar (Mobile) -->
         <div class="bottom-nav" id="bottomNav">
-            <button class="nav-item active" data-nav="playlist">
+            <button class="nav-item" data-nav="playlist">
                 <i class="fas fa-list"></i>
                 <span>Playlist</span>
             </button>
