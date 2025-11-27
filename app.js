@@ -873,12 +873,21 @@ class AudioPlayer {
                 console.log('✅ Opening full player, adding fullscreen class');
                 playerSection.classList.add('fullscreen');
 
+                // Reset touch state to prevent accidental close
+                this.touchStartY = 0;
+                this.touchEndY = 0;
+                this.canSwipeClose = false;
+
                 // Add close button for fullscreen
                 if (!playerSection.querySelector('.close-fullscreen')) {
                     const closeBtn = document.createElement('button');
                     closeBtn.className = 'close-fullscreen';
                     closeBtn.innerHTML = '<i class="fas fa-chevron-down"></i>';
-                    closeBtn.addEventListener('click', () => this.closeFullPlayer());
+                    closeBtn.addEventListener('click', (e) => {
+                        console.log('🔴 Close button clicked');
+                        e.stopPropagation();
+                        this.closeFullPlayer();
+                    });
                     playerSection.insertBefore(closeBtn, playerSection.firstChild);
                 }
 
@@ -957,7 +966,7 @@ class AudioPlayer {
 
                 // If swipe down more than 100px, close full player
                 if (swipeDistance > 100) {
-                    console.log('⬇️ Swipe down detected, closing full player');
+                    console.log('⬇️ Swipe down detected (' + swipeDistance + 'px), closing full player');
                     this.closeFullPlayer();
                 } else {
                     // Reset position if swipe was too short
@@ -1534,53 +1543,16 @@ class AudioPlayer {
                 this.closeMiniPlayer();
             });
         }
-        // Click/Touch on mini player info (icon, tên bài, thời gian) to open full player
-        // Buttons và progress bar sẽ KHÔNG mở full player
-        // Use event delegation on mini player container for better reliability
-        if (this.miniPlayer) {
-            console.log('✅ Setting up mini player click handlers via delegation');
-
-            let touchHandled = false;
-
-            this.miniPlayer.addEventListener('touchstart', (e) => {
-                console.log('🔵 TOUCHSTART on mini player, target:', e.target.className, 'closest .mini-player-info:', !!e.target.closest('.mini-player-info'));
-
-                // Check if touch is on mini-player-info and NOT on controls or progress bar
-                if (e.target.closest('.mini-player-info') &&
-                    !e.target.closest('.mini-player-controls') &&
-                    !e.target.closest('.mini-progress-bar')) {
-                    console.log('✅ Valid touch on info area - opening full player');
-                    this.openFullPlayer();
-                    touchHandled = true;
-                    e.preventDefault(); // Prevent click event from firing
-                    e.stopPropagation();
-                } else {
-                    console.log('❌ Touch on excluded area - ignoring');
-                }
-            }, { passive: false });
-
-            // Fallback for desktop/mouse users
-            this.miniPlayer.addEventListener('click', (e) => {
-                console.log('🔵 CLICK on mini player, target:', e.target.className, 'closest .mini-player-info:', !!e.target.closest('.mini-player-info'));
-
-                if (touchHandled) {
-                    console.log('⚠️ Already handled by touch - skipping');
-                    touchHandled = false;
-                    return; // Skip if already handled by touch
-                }
-
-                // Check if click is on mini-player-info and NOT on controls or progress bar
-                if (e.target.closest('.mini-player-info') &&
-                    !e.target.closest('.mini-player-controls') &&
-                    !e.target.closest('.mini-progress-bar')) {
-                    console.log('✅ Valid click on info area - opening full player');
-                    this.openFullPlayer();
-                } else {
-                    console.log('❌ Click on excluded area - ignoring');
-                }
+        // Click on mini player info (icon, tên bài, thời gian) to open full player
+        // SIMPLE approach like app-ref.js - just click on .mini-player-info
+        if (this.miniPlayerInfo) {
+            console.log('✅ Setting up mini player info click handler');
+            this.miniPlayerInfo.addEventListener('click', () => {
+                console.log('🔵 Mini player info clicked - opening full player');
+                this.openFullPlayer();
             });
         } else {
-            console.error('❌ Mini player element NOT FOUND!');
+            console.error('❌ Mini player info element NOT FOUND!');
         }
         
         // Progress bar seek (separate handler)
