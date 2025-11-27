@@ -30,7 +30,7 @@ class AudioPlayer {
         this.favoriteBtn = document.getElementById('favoriteBtn');
         this.shareBtn = document.getElementById('shareBtn');
         this.downloadBtn = document.getElementById('downloadBtn');
-        this.queueBtn = document.getElementById('queueBtn');
+        // Queue button removed - now using filter tab instead
         this.queuePanel = document.getElementById('queuePanel');
         this.closeQueue = document.getElementById('closeQueue');
         this.queueContent = document.getElementById('queueContent');
@@ -201,6 +201,9 @@ class AudioPlayer {
             return;
         } else if (this.currentFilter === 'recent') {
             this.renderRecents(searchTerm);
+            return;
+        } else if (this.currentFilter === 'queue') {
+            this.renderQueue();
             return;
         }
 
@@ -1561,9 +1564,10 @@ class AudioPlayer {
         // Download
         this.downloadBtn.addEventListener('click', () => this.downloadTrack());
 
-        // Queue
-        this.queueBtn.addEventListener('click', () => this.toggleQueue());
-        this.closeQueue.addEventListener('click', () => this.queuePanel.classList.remove('show'));
+        // Queue panel (keep for backward compatibility, but now mainly use tab)
+        if (this.closeQueue) {
+            this.closeQueue.addEventListener('click', () => this.queuePanel.classList.remove('show'));
+        }
 
         // Filter tabs
         this.setupFilterTabs();
@@ -1724,6 +1728,48 @@ class AudioPlayer {
         this.queueContent.innerHTML = html;
 
         document.querySelectorAll('.queue-item').forEach(el => {
+            el.addEventListener('click', () => {
+                const index = parseInt(el.dataset.index);
+                this.playTrack(index);
+            });
+        });
+    }
+
+    // ===== Render Queue in Sidebar =====
+    renderQueue() {
+        if (this.flatPlaylist.length === 0 || this.currentIndex < 0) {
+            this.playlist.innerHTML = '<div class="empty-message"><p>Chưa có bài nào trong hàng đợi</p></div>';
+            return;
+        }
+
+        let html = '<div class="queue-list">';
+        const startIndex = this.currentIndex;
+        const queueItems = this.flatPlaylist.slice(startIndex);
+
+        queueItems.forEach((track, idx) => {
+            const actualIndex = startIndex + idx;
+            const isPlaying = actualIndex === this.currentIndex;
+            html += `
+                <div class="track-item ${isPlaying ? 'active' : ''}" data-index="${actualIndex}">
+                    <div class="track-icon">
+                        ${isPlaying ? '<i class="fas fa-volume-up"></i>' : '<i class="fas fa-music"></i>'}
+                    </div>
+                    <div class="track-content">
+                        <div class="track-title">${track.title}</div>
+                        <div class="track-meta">
+                            <span>${track.folder}</span>
+                            ${track.duration ? `<span>${track.duration}</span>` : ''}
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        html += '</div>';
+        this.playlist.innerHTML = html;
+
+        // Add click listeners
+        document.querySelectorAll('.track-item').forEach(el => {
             el.addEventListener('click', () => {
                 const index = parseInt(el.dataset.index);
                 this.playTrack(index);
