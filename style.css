@@ -52,69 +52,7 @@ body {
     height: 100vh;
 }
 
-/* ===== Sidebar ===== */
-.sidebar {
-    width: 380px;
-    background: linear-gradient(180deg, 
-        var(--bg-secondary) 0%, 
-        var(--bg-primary) 100%);
-    border-right: 1px solid var(--border);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.sidebar-header {
-    padding: 1.5rem;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(135deg, 
-        rgba(255, 149, 0, 0.05) 0%, 
-        transparent 100%);
-}
-
-.logo-section {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    flex: 1;
-}
-
-.logo-icon {
-    width: auto;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.logo-icon img {
-    height: 100%;
-    width: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 2px 8px rgba(255, 149, 0, 0.3));
-}
-
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.logo-text h1 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 0;
-}
-
-.logo-text .subtitle {
-    font-size: 0.75rem;
-    color: var(--text-secondary);
-    margin: 0;
-}
-
+/* ===== Theme Toggle ===== */
 .theme-toggle {
     background: var(--bg-tertiary);
     border: 1px solid var(--border);
@@ -133,68 +71,6 @@ body {
     background: var(--accent);
     border-color: var(--accent);
     transform: scale(1.05);
-}
-
-/* ===== Search ===== */
-.search-container {
-    padding: 1rem 1.5rem;
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.search-container i {
-    position: absolute;
-    left: 2rem;
-    color: var(--text-secondary);
-}
-
-#searchInput {
-    width: 100%;
-    padding: 0.75rem 2.5rem;
-    background: var(--bg-tertiary);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    color: var(--text-primary);
-    font-size: 0.95rem;
-    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-#searchInput:focus {
-    outline: none;
-    border-color: var(--accent);
-    background: var(--bg-primary);
-    box-shadow: 0 0 0 3px rgba(255, 149, 0, 0.15),
-                0 4px 12px rgba(255, 149, 0, 0.1);
-    transform: translateY(-1px);
-}
-
-#searchInput::placeholder {
-    color: var(--text-secondary);
-    opacity: 0.7;
-}
-
-.clear-search {
-    position: absolute;
-    right: 2rem;
-    background: none;
-    border: none;
-    color: var(--text-secondary);
-    cursor: pointer;
-    padding: 0.5rem;
-    transition: color var(--transition);
-}
-
-.clear-search:hover {
-    color: var(--text-primary);
-}
-
-/* ===== Playlist ===== */
-.playlist {
-    flex: 1;
-    overflow-y: auto;
-    padding: 0.5rem;
 }
 
 .loading {
@@ -1514,27 +1390,7 @@ kbd {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.menu-toggle {
-    background: var(--bg-tertiary);
-    border: 1px solid var(--border);
-    color: var(--text-primary);
-    width: 45px;
-    height: 45px;
-    border-radius: 10px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    transition: all var(--transition);
-}
 
-.menu-toggle:hover,
-.menu-toggle:active {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: white;
-}
 
 .mobile-logo {
     height: 40px;
@@ -1546,24 +1402,7 @@ kbd {
     object-fit: contain;
 }
 
-/* Sidebar Overlay for Mobile */
-.sidebar-overlay {
-    display: none;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    opacity: 0;
-    transition: opacity 300ms ease;
-}
 
-.sidebar-overlay.show {
-    display: block;
-    opacity: 1;
-}
 
 /* ===== Responsive ===== */
 @media (max-width: 968px) {
@@ -1576,27 +1415,7 @@ kbd {
         padding-top: 60px;
     }
 
-    .sidebar {
-        position: fixed;
-        left: -100%;
-        top: 60px;
-        width: 85%;
-        max-width: 380px;
-        height: calc(100vh - 120px);
-        border-right: 1px solid var(--border);
-        border-bottom: none;
-        z-index: 1000;
-        transition: left 300ms ease;
-        box-shadow: 5px 0 20px var(--shadow);
-    }
 
-    .sidebar.show {
-        left: 0;
-    }
-
-    .sidebar-header .theme-toggle.desktop-only {
-        display: none;
-    }
 
     .main-content {
         padding: 1rem;
@@ -1761,24 +1580,12 @@ kbd {
         padding: 0 0.75rem;
     }
 
-    .menu-toggle {
-        width: 42px;
-        height: 42px;
-        font-size: 1.1rem;
-    }
-
     .mobile-logo {
         height: 35px;
     }
 
     .app-container {
         padding-top: 55px;
-    }
-
-    .sidebar {
-        top: 55px;
-        width: 90%;
-        height: calc(100vh - 110px);
     }
 
     .main-content {
@@ -1907,7 +1714,6 @@ kbd {
         max-height: 50px;
     }
 
-    .sidebar-header {
         padding: 1rem;
     }
 
@@ -2265,9 +2071,7 @@ kbd {
         padding-bottom: 140px; /* Space for mini player + bottom nav */
     }
 
-    .sidebar {
-        height: calc(100vh - 120px); /* Adjust for header + bottom nav */
-    }
+
 
     .queue-panel {
         height: calc(100vh - 120px);
@@ -3114,7 +2918,6 @@ kbd {
         max-height: 50px;
     }
 
-    .sidebar-header {
         padding: 1rem;
     }
 
@@ -3126,4 +2929,175 @@ kbd {
     .lotus-decoration img {
         width: 70px;
     }
+}
+
+/* ===== Playlist View Sections ===== */
+.playlist-section {
+    margin-bottom: 2rem;
+}
+
+.playlist-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.playlist-section-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.playlist-section-header h3 i {
+    color: var(--accent);
+}
+
+.playlist-section-count {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+}
+
+.playlist-section-action {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.playlist-section-action:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 149, 0, 0.3);
+}
+
+.playlist-section-action i {
+    font-size: 0.85rem;
+}
+
+/* ===== Empty State Small ===== */
+.empty-state-small {
+    padding: 1.5rem;
+    text-align: center;
+    background: var(--bg-secondary);
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.empty-state-small p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.empty-state-small i {
+    color: var(--accent);
+}
+
+/* ===== Folder Card Actions (for remove button) ===== */
+.folder-card-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.folder-remove-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 59, 48, 0.1);
+    border: none;
+    border-radius: 8px;
+    color: #ff3b30;
+    cursor: pointer;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.9rem;
+}
+
+.folder-remove-btn:hover {
+    background: #ff3b30;
+    color: white;
+    transform: scale(1.1);
+}
+
+.folder-card:hover .folder-remove-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.folder-card:hover .folder-remove-btn:hover {
+    background: rgba(255, 59, 48, 0.9);
+}
+
+/* ===== Folder Favorite Button (Star) ===== */
+.folder-favorite-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 149, 0, 0.1);
+    border: none;
+    border-radius: 8px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.9rem;
+}
+
+.folder-favorite-btn:hover {
+    background: rgba(255, 149, 0, 0.2);
+    color: var(--accent);
+    transform: scale(1.1);
+}
+
+.folder-favorite-btn.active {
+    background: var(--accent);
+    color: white;
+}
+
+.folder-favorite-btn.active:hover {
+    background: var(--accent-hover);
+    transform: scale(1.15);
+}
+
+.folder-card:hover .folder-favorite-btn {
+    background: rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.folder-card:hover .folder-favorite-btn.active {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--accent);
+}
+
+.folder-card:hover .folder-favorite-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+}
+
+.folder-card:hover .folder-favorite-btn.active:hover {
+    background: white;
+    color: var(--accent);
 }

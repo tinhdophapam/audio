@@ -15,9 +15,6 @@
     <div class="app-container">
         <!-- Mobile Header -->
         <div class="mobile-header">
-            <button class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
             <div class="mobile-logo">
                 <img src="Title Logo.webp" alt="Tịnh Độ Pháp Âm">
             </div>
@@ -25,68 +22,6 @@
                 <i class="fas fa-moon"></i>
             </button>
         </div>
-
-        <!-- Sidebar Overlay -->
-        <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-        <!-- Sidebar -->
-        <aside class="sidebar" id="sidebar">
-            <div class="sidebar-header">
-                <div class="logo-section">
-                    <div class="logo-icon">
-                        <img src="Title Logo.webp" alt="Tịnh Độ Pháp Âm">
-                    </div>
-                </div>
-                <button class="theme-toggle desktop-only" id="themeToggleDesktop" title="Toggle Dark/Light Mode">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </div>
-
-            <!-- Stats Bar -->
-            <div class="stats-bar">
-                <div class="stat-item">
-                    <i class="fas fa-music"></i>
-                    <span id="totalTracks">0</span> bài
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-heart"></i>
-                    <span id="totalFavorites">0</span> yêu thích
-                </div>
-            </div>
-            
-            <!-- Search Bar -->
-            <div class="search-container">
-                <i class="fas fa-search"></i>
-                <input type="text" id="searchInput" placeholder="Tìm kiếm bài giảng..." autocomplete="off">
-                <button id="clearSearch" class="clear-search" style="display: none;">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-
-            <!-- Filter Tabs -->
-            <div class="filter-tabs">
-                <button class="filter-tab active" data-filter="all">
-                    <i class="fas fa-list"></i> Tất cả
-                </button>
-                <button class="filter-tab" data-filter="favorites">
-                    <i class="fas fa-heart"></i> Yêu thích
-                </button>
-                <button class="filter-tab" data-filter="recent">
-                    <i class="fas fa-history"></i> Gần đây
-                </button>
-            </div>
-
-            <!-- Playlist -->
-            <div class="playlist" id="playlist">
-                <div class="loading">
-                    <div class="skeleton-loader">
-                        <div class="skeleton-item"></div>
-                        <div class="skeleton-item"></div>
-                        <div class="skeleton-item"></div>
-                    </div>
-                </div>
-            </div>
-        </aside>
 
         <!-- Main Content -->
         <main class="main-content" id="mainContent">
@@ -114,7 +49,7 @@
                             <div class="vinyl-effect"></div>
                         </div>
                         <button class="favorite-btn" id="favoriteBtn" title="Thêm vào yêu thích">
-                            <i class="far fa-heart"></i>
+                            <i class="far fa-star"></i>
                         </button>
                     </div>
                     <div class="track-info">
@@ -182,9 +117,6 @@
                         </div>
                     </div>
 
-                    <button class="control-btn secondary" id="queueBtn" title="Queue">
-                        <i class="fas fa-list-ul"></i>
-                    </button>
                 </div>
 
                 <!-- Error Message -->
@@ -210,6 +142,20 @@
                 <!-- Lotus Decoration -->
                 <div class="lotus-decoration">
                     <img src="hoasen.png" alt="Hoa Sen">
+                </div>
+            </div>
+
+            <!-- Playlist View (Mobile) -->
+            <div class="content-view" id="playlistView">
+                <div class="library-header">
+                    <h2><i class="fas fa-list"></i> Playlist</h2>
+                    <p class="library-subtitle">Danh sách bài giảng</p>
+                </div>
+                <div class="library-content" id="playlistViewContent">
+                    <div class="loading">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>Đang tải playlist...</p>
+                    </div>
                 </div>
             </div>
 
@@ -239,6 +185,7 @@
                     </div>
                 </div>
             </div>
+
         </main>
 
         <!-- Queue Panel -->
@@ -321,11 +268,11 @@
 
         <!-- Bottom Navigation Bar (Mobile) -->
         <div class="bottom-nav" id="bottomNav">
-            <button class="nav-item active" data-nav="playlist">
+            <button class="nav-item" data-nav="playlist">
                 <i class="fas fa-list"></i>
                 <span>Playlist</span>
             </button>
-            <button class="nav-item" data-nav="library">
+            <button class="nav-item active" data-nav="library">
                 <i class="fas fa-book"></i>
                 <span>Thư viện</span>
             </button>
