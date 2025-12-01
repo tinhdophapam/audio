@@ -1,732 +1,5 @@
 [
   {
-    "folder": "Cs. Hạnh Ngọc",
-    "subfolders": [
-      {
-        "name": "Khai thị Hộ Niệm",
-        "items": [
-          {
-            "title": "01. Phương pháp hộ niệm, nhà nhà cần có, người người cần biết",
-            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/01_PP%20h%E1%BB%99%20ni%E1%BB%87m%2C%20nh%C3%A0%20nh%C3%A0%20c%E1%BA%A7n%20c%C3%B3%2C%20ng%C6%B0%E1%BB%9Di%20ng%C6%B0%E1%BB%9Di%20c%E1%BA%A7n%20bi%E1%BA%BFt_01.mp3",
-            "duration": "12:19",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1CyOgfxePv8tg7aLeDH6hMXmq3nRkrzuA"
-          },
-          {
-            "title": "02. Khai thị cho người bệnh",
-            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/02_Khai%20th%E1%BB%8B%20cho%20ng%C6%B0%E1%BB%9Di%20b%E1%BB%87nh_02.mp3",
-            "duration": "17:44",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=10L-Tcwz-JOwr3pKGE185cpUMX2ekarmn"
-          },
-          {
-            "title": "03. Khai thị oan gia của người bệnh",
-            "url": "https://ia601006.us.archive.org/18/items/khaithi_honiem_20251028/03_KT%20oan%20gia%20cua%20ng%C6%B0%E1%BB%9Di%20b%E1%BB%87nh.mp3",
-            "duration": "25:25",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=197WoYMgH5cAsuBUTuJE-pKrs8ztDRKyq"
-          },
-          {
-            "title": "04. Khai thị bệnh nhân lúc hấp hối",
-            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/04_KT%20b%E1%BB%87nh%20nh%C3%A2n%20l%C3%BAc%20h%E1%BA%A5p%20h%E1%BB%91i.mp3",
-            "duration": "05:13",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1KnLu-KZjqb2hRS3YlVJNY6uSGfz3r373"
-          },
-          {
-            "title": "05. Khai thị hộ niệm (Phần 1)",
-            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/05_KHAI%20THI%20H%E1%BB%98%20NI%E1%BB%86M%201.mp3",
-            "duration": "10:47",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1fqqxr6MtYrKjmi0GCuH62uD6VlipDfS1"
-          },
-          {
-            "title": "06. Khai thị hộ niệm (Phần 2)",
-            "url": "https://ia601006.us.archive.org/18/items/khaithi_honiem_20251028/06_KHAI%20THI%20H%E1%BB%98%20NI%E1%BB%86M%202.mp3",
-            "duration": "08:54",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1NcJ6-QfoH2BEMH7Ebo3hXjbPbFrfe5GE"
-          },
-          {
-            "title": "07. Khai thị hộ niệm (Phần 3)",
-            "url": "https://ia601006.us.archive.org/18/items/khaithi_honiem_20251028/07_KHAI%20THI%20H%E1%BB%98%20NI%E1%BB%86M%203.mp3",
-            "duration": "04:21",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1ht1_MZHUXfXsXxGRSjvi5LqTrf_YTeJh"
-          },
-          {
-            "title": "08. Khai thị hộ niệm (Phần 4)",
-            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/08_KHAI%20THI%20H%E1%BB%98%20NI%E1%BB%86M%204.mp3",
-            "duration": "06:28",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1khUfy6rUcgL4FUGIzQyPPITRCxGi0kOO"
-          },
-          {
-            "title": "09. Khai thị hộ niệm (Phần 5)",
-            "url": "https://ia601006.us.archive.org/18/items/khaithi_honiem_20251028/09_KHAI%20THI%20H%E1%BB%98%20NI%E1%BB%86M%205.mp3",
-            "duration": "05:13",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1lJjmh8nRkaBqAsxvtjZOsoTlwn0IeLzt"
-          },
-          {
-            "title": "10. Khai thị hộ niệm (Phần 6)",
-            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/10_KHAI%20TH%E1%BB%8A%20H%E1%BB%98%20NI%E1%BB%86M%206.mp3",
-            "duration": "04:22",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1BjRAaEInWG01nFXOpBAU6TdU5aOptuaz"
-          },
-          {
-            "title": "11. Khai thị hộ niệm (Phần 7)",
-            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/11_KHAI%20THI%20H%E1%BB%98%20NI%E1%BB%86M%207.mp3",
-            "duration": "05:38",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1vJFZn_E4Dbn0WbumXP64VGxQ52dRfgjL"
-          },
-          {
-            "title": "12. Khai thị hộ niệm (Phần 8)",
-            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/12_KHAI%20THI%20H%E1%BB%98%20NI%E1%BB%86M%208.mp3",
-            "duration": "05:14",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1Y-YVwePUghCj5W24uB1-MAK1bGeSvqVx"
-          },
-          {
-            "title": "13. Khai thị hộ niệm (Phần 9)",
-            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/13_KHAI%20TH%E1%BB%8A%20H%E1%BB%98%20NI%E1%BB%86M%209.mp3",
-            "duration": "07:32",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1wxhc1vEEMDD-qNQeneP67y-UpVR50_sz"
-          },
-          {
-            "title": "14. Khai thị hộ niệm (Phần 10)",
-            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/14_KHAI%20TH%E1%BB%8A%20H%E1%BB%98%20NI%E1%BB%86M%2010.mp3",
-            "duration": "06:18",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1gi2bOdX4inKYD9zdYtmwASdMkpKwKUHi"
-          },
-          {
-            "title": "15. Khai thị hộ niệm (Phần 11)",
-            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/15_KHAI%20THI%20H%E1%BB%98%20NI%E1%BB%86M%2011.mp3",
-            "duration": "03:14",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1nd4Cvjd8dzOg9Qe-VycRJAN3x1tA_PDU"
-          },
-          {
-            "title": "16. Khai thị hộ niệm (Phần 12)",
-            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/16_KHAI%20TH%E1%BB%8A%20H%E1%BB%98%20NI%E1%BB%86M%2012.mp3",
-            "duration": "08:33",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1RdYI61F2RkxKczK3HrvWZcorMVl6l6lO"
-          },
-          {
-            "title": "17. Suy nghiệm về thân xác",
-            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/17_Suy%20nghi%E1%BB%87m%20v%E1%BB%81%20s%E1%BB%B1%20th%C4%83m%20th%C3%A2n%20x%C3%A1c.mp3",
-            "duration": "06:31",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=10LKJzncC0HfBtY_In7ftDvYlq8TwvJI4"
-          },
-          {
-            "title": "18. Khai thị cho oan gia trong và ngoài thân",
-            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/18_KT%20cho%20oan%20gia%20trong%20va%20ngoai%20th%C3%A2n.mp3",
-            "duration": "04:20",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1TF-Pfyx7lBP7Hg22z_z0t3hp4WY8fMEY"
-          },
-          {
-            "title": "19. Khai thị khuyên Cửu Huyền niệm Phật",
-            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/19_KT%20khuy%C3%AAn%20C%E1%BB%ADu%20huy%E1%BB%81n%20ni%E1%BB%87m%20ph%E1%BA%ADt.mp3",
-            "duration": "14:30",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1hjsj4mYkCNpuwde5mAynuvUI6zIQqOCg"
-          },
-          {
-            "title": "20. Khai thị cho hương linh niệm Phật sám hối",
-            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/20_KHAI%20THI%20CHO%20HL%20NI%E1%BB%86M%20PH%E1%BA%ACT%20S%C3%81M%20H%E1%BB%90I.mp3",
-            "duration": "17:22",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1unxgMRylDsmHZI9ibo0jIrhV1YBXtqIm"
-          },
-          {
-            "title": "21. Sám hối thai nhi",
-            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/21_S%C3%A1m%20H%E1%BB%91i%20Thai%20Nhi.mp3",
-            "duration": "03:49",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1J_eWHeyWcdztq4vEPDvywNG86-a2f6ED"
-          },
-          {
-            "title": "22. Hộ niệm (12 giờ)",
-            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/01%20-%2012h%20H%E1%BB%99%20Ni%E1%BB%87m%20-%20719m21s-L2.mp3",
-            "duration": "11:59:22",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1dWiGkP12AJAVFtT9Y9vMtIVz_wOSeUbH"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "folder": "HT Quảng Khâm",
-    "subfolders": [
-      {
-        "name": "Cẩm Nang Tu Đạo(Giọng Nam)",
-        "items": [
-          {
-            "title": "01. Tiểu sử Hòa Thượng Quảng Khâm",
-            "url": "https://drive.google.com/uc?export=download&id=1hWFqI5WIZ75StGuEjqRANonsHlH288qa",
-            "duration": "03:05",
-            "backupUrl": "https://ia800501.us.archive.org/3/items/cam_nang_tu_dao1/01.%20Ti%E1%BB%83u%20S%E1%BB%AD%20H%C3%B2a%20Th%C6%B0%E1%BB%A3ng%20Qu%E1%BA%A3ng%20Kh%C3%A2m.mp3"
-          },
-          {
-            "title": "02. Chương I TU HÀNH",
-            "url": "https://drive.google.com/uc?export=download&id=1KrQPH5iQgwkK9_L-nd52ca1kJFpAj6UW",
-            "duration": "30:06",
-            "backupUrl": "https://ia800501.us.archive.org/3/items/cam_nang_tu_dao/02.%20Ch%C6%B0%C6%A1ng%20I%20Tu%20H%C3%A0nh.mp3"
-          },
-          {
-            "title": "03. Chương II KHỔ HẠNH",
-            "url": "https://drive.google.com/uc?export=download&id=1r2WUHfEW0QNnUUhroOhz5hJy4cQeJH3w",
-            "duration": "09:49",
-            "backupUrl": "https://ia600501.us.archive.org/3/items/cam_nang_tu_dao/03.%20Ch%C6%B0%C6%A1ng%20II%20Kh%E1%BB%95%20H%E1%BA%A1nh.mp3"
-          },
-          {
-            "title": "04. Chương III RÕ NGHĨA",
-            "url": "https://drive.google.com/uc?export=download&id=12yNXwbs9cevnI7Uk9H-4E9vBdT9p_aAi",
-            "duration": "05:57",
-            "backupUrl": "https://ia800501.us.archive.org/3/items/cam_nang_tu_dao/04.%20Ch%C6%B0%C6%A1ng%20III%20R%C3%B5%20Ngh%C4%A9a.mp3"
-          },
-          {
-            "title": "05. Chương IV PHÁP MÔN TỊNH ĐỘ",
-            "url": "https://drive.google.com/uc?export=download&id=1ddfLchVc5V0vdlbzMe1dmmAdgknyZqz-",
-            "duration": "14:24",
-            "backupUrl": "https://ia800501.us.archive.org/3/items/cam_nang_tu_dao/05.%20Ch%C6%B0%C6%A1ng%20IV%20Ph%C3%A1p%20M%C3%B4n%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99.mp3"
-          },
-          {
-            "title": "06. Chương V VIỆC LÀM BA LA MẬT",
-            "url": "https://drive.google.com/uc?export=download&id=1HmoFtuoW7MhPpflyyclgOASjRc2FbPvz",
-            "duration": "11:03",
-            "backupUrl": "https://ia600501.us.archive.org/3/items/cam_nang_tu_dao/06.%20Ch%C6%B0%C6%A1ng%20V%20Vi%E1%BB%87c%20L%C3%A0m%20Ba%20La%20M%E1%BA%ADt.mp3"
-          },
-          {
-            "title": "07. Chương VI HẠNH XUẤT GIA",
-            "url": "https://drive.google.com/uc?export=download&id=1CThoKMxbKide7gwZm4CKhKYsgrt8N3YA",
-            "duration": "49:07",
-            "backupUrl": "https://ia800501.us.archive.org/3/items/cam_nang_tu_dao/07.%20Ch%C6%B0%C6%A1ng%20VI%20H%E1%BA%A1nh%20Xu%E1%BA%A5t%20Gia.mp3"
-          },
-          {
-            "title": "08. Chương VII XUẤT GIA và TẠI GIA",
-            "url": "https://drive.google.com/uc?export=download&id=1sHyr3OwhBgOgT6CzyETnKmm6kj4rX806",
-            "duration": "05:25",
-            "backupUrl": "https://ia600501.us.archive.org/3/items/cam_nang_tu_dao/08.%20Ch%C6%B0%C6%A1ng%20VII%20Xu%E1%BA%A5t%20Gia%20V%C3%A0%20T%E1%BA%A1i%20Gia.mp3"
-          },
-          {
-            "title": "09. Chương VIII CẢNH GIỚI CHÚNG SANH",
-            "url": "https://drive.google.com/uc?export=download&id=1tO8Xif1khk3_CFKPwg4QrlXS5zSjRbOx",
-            "duration": "04:50",
-            "backupUrl": "https://ia600501.us.archive.org/3/items/cam_nang_tu_dao/09.%20Ch%C6%B0%C6%A1ng%20VIII%20C%E1%BA%A3nh%20Gi%E1%BB%9Bi%20Ch%C3%BAng%20Sanh.mp3"
-          },
-          {
-            "title": "10. Chương IX NHÂN QUẢ và SÁM HỐI",
-            "url": "https://drive.google.com/uc?export=download&id=1mEuKMXQhPCf-KOxoaxxJ1TQw1W208AwN",
-            "duration": "04:48",
-            "backupUrl": "https://ia800501.us.archive.org/3/items/cam_nang_tu_dao/10.%20Ch%C6%B0%C6%A1ng%20IX%20Nh%C3%A2n%20Qu%E1%BA%A3%20V%C3%A0%20S%C3%A1m%20H%E1%BB%91i.mp3"
-          },
-          {
-            "title": "11. Chương X LỜI CUỐI",
-            "url": "https://drive.google.com/uc?export=download&id=1qiEUdk4chgr_mhNJqHi5mxy-j-3j2v8n",
-            "duration": "12:13",
-            "backupUrl": "https://ia600501.us.archive.org/3/items/cam_nang_tu_dao/11.%20Ch%C6%B0%C6%A1ng%20X%20L%E1%BB%9Di%20Cu%E1%BB%91i.mp3"
-          }
-        ]
-      },
-      {
-        "name": "Cẩm Nang Tu Đạo(Giọng Nữ)",
-        "items": [
-          {
-            "title": "00. Dẫn Nhập Và Tiểu Sử - Cẩm Nang Tu Đạo",
-            "url": "https://dn710205.ca.archive.org/0/items/cam-nang-tu-dao-2/00.%20D%E1%BA%ABn%20Nh%E1%BA%ADp%20V%C3%A0%20Ti%E1%BB%83u%20S%E1%BB%AD%20-%20C%E1%BA%A9m%20Nang%20Tu%20%C4%90%E1%BA%A1o.mp3",
-            "duration": "16:39"
-          },
-          {
-            "title": "01. Tu Hành - Cẩm Nang Tu Đạo Của",
-            "url": "https://dn710205.ca.archive.org/0/items/cam-nang-tu-dao-2/01.%20Tu%20H%C3%A0nh%20-%20C%E1%BA%A9m%20Nang%20Tu%20%C4%90%E1%BA%A1o%20C%E1%BB%A7a.mp3",
-            "duration": "33:19"
-          },
-          {
-            "title": "02. Khổ Hạnh, 3. Rõ Nghĩa - Cẩm Nang Tu Đạo Của",
-            "url": "https://dn710205.ca.archive.org/0/items/cam-nang-tu-dao-2/02.%20Kh%E1%BB%95%20H%E1%BA%A1nh%2C%203.%20R%C3%B5%20Ngh%C4%A9a%20-%20C%E1%BA%A9m%20Nang%20Tu%20%C4%90%E1%BA%A1o%20C%E1%BB%A7a.mp3",
-            "duration": "20:21"
-          },
-          {
-            "title": "04. Pháp Môn Tịnh Độ - Cẩm Nang Tu Đạo Của",
-            "url": "https://dn710205.ca.archive.org/0/items/cam-nang-tu-dao-2/04.%20Ph%C3%A1p%20M%C3%B4n%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20-%20C%E1%BA%A9m%20Nang%20Tu%20%C4%90%E1%BA%A1o%20C%E1%BB%A7a.mp3",
-            "duration": "18:38"
-          },
-          {
-            "title": "05. Việc Làm Ba La Mật Đa - Cẩm Nang Tu Đạo Của",
-            "url": "https://dn710205.ca.archive.org/0/items/cam-nang-tu-dao-2/05.%20Vi%E1%BB%87c%20L%C3%A0m%20Ba%20La%20M%E1%BA%ADt%20%C4%90a%20-%20C%E1%BA%A9m%20Nang%20Tu%20%C4%90%E1%BA%A1o%20C%E1%BB%A7a.mp3",
-            "duration": "13:12"
-          },
-          {
-            "title": "06. Hạnh Xuất Gia - Cẩm Nang Tu Đạo Của",
-            "url": "https://dn710205.ca.archive.org/0/items/cam-nang-tu-dao-2/06.%20H%E1%BA%A1nh%20Xu%E1%BA%A5t%20Gia%20-%20C%E1%BA%A9m%20Nang%20Tu%20%C4%90%E1%BA%A1o%20C%E1%BB%A7a.mp3",
-            "duration": "49:53"
-          },
-          {
-            "title": "07. Xuất Gia Và Tại Gia - Cẩm Nang Tu Đạo Của",
-            "url": "https://dn710205.ca.archive.org/0/items/cam-nang-tu-dao-2/07.%20Xu%E1%BA%A5t%20Gia%20V%C3%A0%20T%E1%BA%A1i%20Gia%20-%20C%E1%BA%A9m%20Nang%20Tu%20%C4%90%E1%BA%A1o%20C%E1%BB%A7a.mp3",
-            "duration": "15:38"
-          },
-          {
-            "title": "08. Cảnh Giới Của Chúng Sinh, 9. Nhân Quả Và Sám Hối - Cẩm Nang Tu Đạo Của",
-            "url": "https://dn710205.ca.archive.org/0/items/cam-nang-tu-dao-2/08.%20C%E1%BA%A3nh%20Gi%E1%BB%9Bi%20C%E1%BB%A7a%20Ch%C3%BAng%20Sinh%2C%209.%20Nh%C3%A2n%20Qu%E1%BA%A3%20V%C3%A0%20S%C3%A1m%20H%E1%BB%91i%20-%20C%E1%BA%A9m%20Nang%20Tu%20%C4%90%E1%BA%A1o%20C%E1%BB%A7a.mp3",
-            "duration": "16:58"
-          },
-          {
-            "title": "10. Lời Cuối - Cẩm Nang Tu Đạo Của",
-            "url": "https://dn710205.ca.archive.org/0/items/cam-nang-tu-dao-2/10.%20L%E1%BB%9Di%20Cu%E1%BB%91i%20-%20C%E1%BA%A9m%20Nang%20Tu%20%C4%90%E1%BA%A1o%20C%E1%BB%A7a.mp3",
-            "duration": "16:58"
-          }
-        ]
-      },
-      {
-        "name": "Những Bài Khai Thị",
-        "items": [
-          {
-            "title": "Giới Luật Là Tự Mình Giữ Giới",
-            "url": "https://dn721902.ca.archive.org/0/items/khai_thi_ht_quang_kham/Gi%E1%BB%9Bi%20Lu%E1%BA%ADt%20L%C3%A0%20T%E1%BB%B1%20M%C3%ACnh%20Gi%E1%BB%AF%20Gi%E1%BB%9Bi.mp3",
-            "duration": "29:27"
-          },
-          {
-            "title": "Hãy Tụng Đại Tạng Kinh Cho Ta",
-            "url": "https://dn721902.ca.archive.org/0/items/khai_thi_ht_quang_kham/H%C3%A3y%20T%E1%BB%A5ng%20%C4%90%E1%BA%A1i%20T%E1%BA%A1ng%20Kinh%20Cho%20Ta.mp3",
-            "duration": "03:39"
-          },
-          {
-            "title": "Kiếp Trước Bạn Là Con Cá Tôi Thả",
-            "url": "https://dn721902.ca.archive.org/0/items/khai_thi_ht_quang_kham/Ki%E1%BA%BFp%20Tr%C6%B0%E1%BB%9Bc%20B%E1%BA%A1n%20L%C3%A0%20Con%20C%C3%A1%20T%C3%B4i%20Th%E1%BA%A3.mp3",
-            "duration": "01:40"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "folder": "HT Thích Thiền Tâm",
-    "subfolders": [
-      {
-        "name": "Tịnh Độ Quyết Nghi Luận - Trí Giả Đại Sư & Thiên Như Thiền Sư",
-        "items": [
-          {
-            "title": "Tịnh Độ Thập Nghi Luận 1",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/Tinh%20Do%20Thap%20Nghi%20Luan%20-%20Tri%20Gia%20DS/T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20Th%E1%BA%ADp%20Nghi%20Lu%E1%BA%ADn%201.mp3",
-            "duration": "20:01"
-          },
-          {
-            "title": "Tịnh Độ Thập Nghi Luận 2",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/Tinh%20Do%20Thap%20Nghi%20Luan%20-%20Tri%20Gia%20DS/T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20Th%E1%BA%ADp%20Nghi%20Lu%E1%BA%ADn%202.mp3",
-            "duration": "19:44"
-          },
-          {
-            "title": "Tịnh Độ Thập Nghi Luận 3",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/Tinh%20Do%20Thap%20Nghi%20Luan%20-%20Tri%20Gia%20DS/T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20Th%E1%BA%ADp%20Nghi%20Lu%E1%BA%ADn%203.mp3",
-            "duration": "21:41"
-          },
-          {
-            "title": "Tịnh Độ Thập Nghi Luận 4",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/Tinh%20Do%20Thap%20Nghi%20Luan%20-%20Tri%20Gia%20DS/T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20Th%E1%BA%ADp%20Nghi%20Lu%E1%BA%ADn%204.mp3",
-            "duration": "16:56"
-          },
-          {
-            "title": "Tịnh Độ Thập Nghi Luận 5",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/Tinh%20Do%20Thap%20Nghi%20Luan%20-%20Tri%20Gia%20DS/T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20Th%E1%BA%ADp%20Nghi%20Lu%E1%BA%ADn%205.mp3",
-            "duration": "28:07"
-          },
-          {
-            "title": "Tịnh Độ Thập Nghi Luận 6",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/Tinh%20Do%20Thap%20Nghi%20Luan%20-%20Tri%20Gia%20DS/T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20Th%E1%BA%ADp%20Nghi%20Lu%E1%BA%ADn%206.mp3",
-            "duration": "22:56"
-          },
-          {
-            "title": "Tịnh Độ Thập Nghi Luận 7",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/Tinh%20Do%20Thap%20Nghi%20Luan%20-%20Tri%20Gia%20DS/T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20Th%E1%BA%ADp%20Nghi%20Lu%E1%BA%ADn%207.mp3",
-            "duration": "35:43"
-          }
-        ]
-      },
-      {
-        "name": "Niệm Phật Sám Pháp",
-        "items": [
-          {
-            "title": "01 Niệm Phật Phải Vì Thoát Sinh Tử Luân Hồi",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Sam%20Phap/01%20Ni%E1%BB%87m%20Ph%E1%BA%ADt%20Ph%E1%BA%A3i%20V%C3%AC%20Tho%C3%A1t%20Sinh%20T%E1%BB%AD%20Lu%C3%A2n%20H%E1%BB%93i.mp3",
-            "duration": "16:32"
-          },
-          {
-            "title": "02 Niệm Phật Phải Vì Phát Vô Thượng Bồ Đề Tâm",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Sam%20Phap/02%20Ni%E1%BB%87m%20Ph%E1%BA%ADt%20Ph%E1%BA%A3i%20V%C3%AC%20Ph%C3%A1t%20V%C3%B4%20Th%C6%B0%E1%BB%A3ng%20B%E1%BB%93%20%C4%90%E1%BB%81%20T%C3%A2m.mp3",
-            "duration": "26:19"
-          },
-          {
-            "title": "03 Niệm Phật Phải Phát Nguyện Vãng Sanh",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Sam%20Phap/03%20Ni%E1%BB%87m%20Ph%E1%BA%ADt%20Ph%E1%BA%A3i%20Ph%C3%A1t%20Nguy%E1%BB%87n%20V%C3%A3ng%20Sanh.mp3",
-            "duration": "32:06"
-          },
-          {
-            "title": "04 Niệm Phật Sám Pháp",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Sam%20Phap/04%20Ni%E1%BB%87m%20Ph%E1%BA%ADt%20S%C3%A1m%20Ph%C3%A1p.mp3",
-            "duration": "53:41"
-          }
-        ]
-      },
-      {
-        "name": "Niệm Phật Thập Yếu",
-        "items": [
-          {
-            "title": "01 Lời Nói Đầu",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/01%20L%E1%BB%9Di%20N%C3%B3i%20%C4%90%E1%BA%A7u.mp3",
-            "duration": "10:25"
-          },
-          {
-            "title": "02 Niệm Phật Phải Vì Thoát Sinh Tử – tiết 1–6",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/02%20Ni%E1%BB%87m%20Ph%E1%BA%ADt%20Ph%E1%BA%A3i%20V%C3%AC%20Tho%C3%A1t%20Sinh%20T%E1%BB%AD%20%E2%80%93%20ti%E1%BA%BFt%201%E2%80%936.mp3",
-            "duration": "30:06"
-          },
-          {
-            "title": "03 Muốn Thoát Khổ Nên Tu Tịnh Độ – tiết 7–9",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/03%20Mu%E1%BB%91n%20Tho%C3%A1t%20Kh%E1%BB%95%20N%C3%AAn%20Tu%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20%E2%80%93%20ti%E1%BA%BFt%207%E2%80%939.mp3",
-            "duration": "21:16"
-          },
-          {
-            "title": "04 Làm Thế Nào Để Phát Tâm Bồ Đề – tiết 10",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/04%20L%C3%A0m%20Th%E1%BA%BF%20N%C3%A0o%20%C4%90%E1%BB%83%20Ph%C3%A1t%20T%C3%A2m%20B%E1%BB%93%20%C4%90%E1%BB%81%20%E2%80%93%20ti%E1%BA%BFt%2010.mp3",
-            "duration": "16:46"
-          },
-          {
-            "title": "05 Những Huấn Thị Về Bồ Đề Tâm – tiết 11–14",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/05%20Nh%E1%BB%AFng%20Hu%E1%BA%A5n%20Th%E1%BB%8B%20V%E1%BB%81%20B%E1%BB%93%20%C4%90%E1%BB%81%20T%C3%A2m%20%E2%80%93%20ti%E1%BA%BFt%2011%E2%80%9314.mp3",
-            "duration": "26:23"
-          },
-          {
-            "title": "06 Niệm Phật Phải Dứt Trừ Lòng Nghi – tiết 15–16",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/06%20Ni%E1%BB%87m%20Ph%E1%BA%ADt%20Ph%E1%BA%A3i%20D%E1%BB%A9t%20Tr%E1%BB%AB%20L%C3%B2ng%20Nghi%20%E2%80%93%20ti%E1%BA%BFt%2015%E2%80%9316.mp3",
-            "duration": "15:39"
-          },
-          {
-            "title": "07 Những Mối Nghi Thông Thường Về Tịnh Độ – tiết 17–18",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/07%20Nh%E1%BB%AFng%20M%E1%BB%91i%20Nghi%20Th%C3%B4ng%20Th%C6%B0%E1%BB%9Dng%20V%E1%BB%81%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20%E2%80%93%20ti%E1%BA%BFt%2017%E2%80%9318.mp3",
-            "duration": "28:08"
-          },
-          {
-            "title": "08 Niệm Phật Phải Quyết Định Vãng Sanh – tiết 19–22",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/08%20Ni%E1%BB%87m%20Ph%E1%BA%ADt%20Ph%E1%BA%A3i%20Quy%E1%BA%BFt%20%C4%90%E1%BB%8Bnh%20V%C3%A3ng%20Sanh%20%E2%80%93%20ti%E1%BA%BFt%2019%E2%80%9322.mp3",
-            "duration": "26:32"
-          },
-          {
-            "title": "09 Xét Qua Những Tâm Nguyện Cầu Vãng Sanh – tiết 23",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/09%20X%C3%A9t%20Qua%20Nh%E1%BB%AFng%20T%C3%A2m%20Nguy%E1%BB%87n%20C%E1%BA%A7u%20V%C3%A3ng%20Sanh%20%E2%80%93%20ti%E1%BA%BFt%2023.mp3",
-            "duration": "10:25"
-          },
-          {
-            "title": "10 Văn Phát Nguyện Của Ngài Liên Trì Và Từ Vân – tiết 24",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/10%20V%C4%83n%20Ph%C3%A1t%20Nguy%E1%BB%87n%20C%E1%BB%A7a%20Ng%C3%A0i%20Li%C3%AAn%20Tr%C3%AC%20V%C3%A0%20T%E1%BB%AB%20V%C3%A2n%20%E2%80%93%20ti%E1%BA%BFt%2024.mp3",
-            "duration": "16:07"
-          },
-          {
-            "title": "11 Niệm Phật Với Tứ Đoạt – tiết 27–29",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/11%20Ni%E1%BB%87m%20Ph%E1%BA%ADt%20V%E1%BB%9Bi%20T%E1%BB%A9%20%C4%90o%E1%BA%A1t%20%E2%80%93%20ti%E1%BA%BFt%2027%E2%80%9329.mp3",
-            "duration": "16:39"
-          },
-          {
-            "title": "12 Mười Phương Thức Trì Danh – tiết 30–31",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/12%20M%C6%B0%E1%BB%9Di%20Ph%C6%B0%C6%A1ng%20Th%E1%BB%A9c%20Tr%C3%AC%20Danh%20%E2%80%93%20ti%E1%BA%BFt%2030%E2%80%9331.mp3",
-            "duration": "18:12"
-          },
-          {
-            "title": "13 Ba Phần Hành Trì – tiết 32–34",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/13%20Ba%20Ph%E1%BA%A7n%20H%C3%A0nh%20Tr%C3%AC%20%E2%80%93%20ti%E1%BA%BFt%2032%E2%80%9334.mp3",
-            "duration": "21:50"
-          },
-          {
-            "title": "14 Đối Trị Dục Nhiễm – tiết 35–40",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/14%20%C4%90%E1%BB%91i%20Tr%E1%BB%8B%20D%E1%BB%A5c%20Nhi%E1%BB%85m%20%E2%80%93%20ti%E1%BA%BFt%2035%E2%80%9340.mp3",
-            "duration": "34:28"
-          },
-          {
-            "title": "15 Phải Diệt Niệm Buồn Chán – tiết 41–42",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/15%20Ph%E1%BA%A3i%20Di%E1%BB%87t%20Ni%E1%BB%87m%20Bu%E1%BB%93n%20Ch%C3%A1n%20%E2%80%93%20ti%E1%BA%BFt%2041%E2%80%9342.mp3",
-            "duration": "12:23"
-          },
-          {
-            "title": "16 Niệm Phật Phải Khắc Kỳ Cầu Chứng Nghiệm – tiết 43–47",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/16%20Ni%E1%BB%87m%20Ph%E1%BA%ADt%20Ph%E1%BA%A3i%20Kh%E1%BA%AFc%20K%E1%BB%B3%20C%E1%BA%A7u%20Ch%E1%BB%A9ng%20Nghi%E1%BB%87m%20%E2%80%93%20ti%E1%BA%BFt%2043%E2%80%9347.mp3",
-            "duration": "35:40"
-          },
-          {
-            "title": "17 Sự Nhiếp Tâm – Lý Nhiếp Tâm – tiết 48–51",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/17%20S%E1%BB%B1%20Nhi%E1%BA%BFp%20T%C3%A2m%20%E2%80%93%20L%C3%BD%20Nhi%E1%BA%BFp%20T%C3%A2m%20%E2%80%93%20ti%E1%BA%BFt%2048%E2%80%9351.mp3",
-            "duration": "30:59"
-          },
-          {
-            "title": "18 Các Loại Ma – tiết 52–54",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/18%20C%C3%A1c%20Lo%E1%BA%A1i%20Ma%20%E2%80%93%20ti%E1%BA%BFt%2052%E2%80%9354.mp3",
-            "duration": "29:11"
-          },
-          {
-            "title": "19 Niệm Phật Chớ Sợ Cười Đừng Chờ Hẹn – tiết 55–60",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/19%20Ni%E1%BB%87m%20Ph%E1%BA%ADt%20Ch%E1%BB%9B%20S%E1%BB%A3%20C%C6%B0%E1%BB%9Di%20%C4%90%E1%BB%ABng%20Ch%E1%BB%9D%20H%E1%BA%B9n%20%E2%80%93%20ti%E1%BA%BFt%2055%E2%80%9360.mp3",
-            "duration": "28:50"
-          },
-          {
-            "title": "20 Mười Phương Tịnh Độ Và Đâu Suất Tịnh Độ – tiết 61–62",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/20%20M%C6%B0%E1%BB%9Di%20Ph%C6%B0%C6%A1ng%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20V%C3%A0%20%C4%90%C3%A2u%20Su%E1%BA%A5t%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20%E2%80%93%20ti%E1%BA%BFt%2061%E2%80%9362.mp3",
-            "duration": "15:01"
-          },
-          {
-            "title": "21 Các Duyên Ba Khảo – tiết 63–66",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/21%20C%C3%A1c%20Duy%C3%AAn%20Ba%20Kh%E1%BA%A3o%20%E2%80%93%20ti%E1%BA%BFt%2063%E2%80%9366.mp3",
-            "duration": "53:31"
-          },
-          {
-            "title": "22 Niệm Phật Phải Dự Bị Lúc Lâm Chung",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/22%20Ni%E1%BB%87m%20Ph%E1%BA%ADt%20Ph%E1%BA%A3i%20D%E1%BB%B1%20B%E1%BB%8B%20L%C3%BAc%20L%C3%A2m%20Chung.mp3",
-            "duration": "19:37"
-          },
-          {
-            "title": "23 Cách Thức Trợ Niệm – tiết 70–hết",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/23%20C%C3%A1ch%20Th%E1%BB%A9c%20Tr%E1%BB%A3%20Ni%E1%BB%87m%20%E2%80%93%20ti%E1%BA%BFt%2070%E2%80%93h%E1%BA%BFt.mp3",
-            "duration": "36:09"
-          }
-        ]
-      },
-      {
-        "name": "Lá Thư Tịnh Độ",
-        "items": [
-          {
-            "title": "Lá Thư Tịnh Độ_001",
-            "url": "https://ia600806.us.archive.org/15/items/la-thu-tinh-do/L%C3%A1%20Th%C6%B0%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99_001.mp3",
-            "duration": "1:09:20"
-          },
-          {
-            "title": "Lá Thư Tịnh Độ_002",
-            "url": "https://ia600806.us.archive.org/15/items/la-thu-tinh-do/L%C3%A1%20Th%C6%B0%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99_002.mp3",
-            "duration": "1:11:43",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1GFQakOwyrenCNEZk8ZU_CnykPWFqBVX3"
-          },
-          {
-            "title": "Lá Thư Tịnh Độ_003",
-            "url": "https://ia600806.us.archive.org/15/items/la-thu-tinh-do/L%C3%A1%20Th%C6%B0%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99_003.mp3",
-            "duration": "1:10:40",
-            "backupUrl": "https://drive.google.com/uc?ex"
-          },
-          {
-            "title": "Lá Thư Tịnh Độ_004",
-            "url": "https://ia600806.us.archive.org/15/items/la-thu-tinh-do/L%C3%A1%20Th%C6%B0%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99_004.mp3",
-            "duration": "1:09:56",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1ViwWx6NasY5yjYnImC1twHhyZJpC6uLT"
-          },
-          {
-            "title": "Lá Thư Tịnh Độ_005",
-            "url": "https://ia800806.us.archive.org/15/items/la-thu-tinh-do/L%C3%A1%20Th%C6%B0%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99_005.mp3",
-            "duration": "1:28:59",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=13mRAM56hCBqf32J9g9M-4Kzps2RDflmA"
-          },
-          {
-            "title": "Lá Thư Tịnh Độ_006(Thư Khuyên Người Mới Phát Tâm Học Phật)",
-            "url": "https://ia600806.us.archive.org/15/items/la-thu-tinh-do/L%C3%A1%20Th%C6%B0%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99_006%28Th%C6%B0%20Khuy%C3%AAn%20Ng%C6%B0%E1%BB%9Di%20M%E1%BB%9Bi%20Ph%C3%A1t%20T%C3%A2m%20H%E1%BB%8Dc%20Ph%E1%BA%ADt%29.mp3",
-            "duration": "18:31",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1TCS92DyM2ZfuSgJV4ZmTSEMbYspVi0lv"
-          },
-          {
-            "title": "Lá Thư Tịnh Độ_007(Thư Phúc Đáp Khắp Nơi)",
-            "url": "https://ia800806.us.archive.org/15/items/la-thu-tinh-do/L%C3%A1%20Th%C6%B0%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99_007%28Th%C6%B0%20Ph%C3%BAc%20%C4%90%C3%A1p%20Kh%E1%BA%AFp%20N%C6%A1i%29.mp3",
-            "duration": "36:28",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1WYGb4uKcQLV7zDaaJf8JhDFTdHXHCdiV"
-          }
-        ]
-      },
-      {
-        "name": "Tịnh Độ Thánh Hiền Lục",
-        "items": [
-          {
-            "title": "Tịnh Độ Thánh Hiền Lục 1",
-            "url": "https://ia601401.us.archive.org/16/items/tinh-do-thanh-hien-luc/T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20Th%C3%A1nh%20Hi%E1%BB%81n%20L%E1%BB%A5c%201.mp3",
-            "duration": "52:57",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1AhH3YkII32zCzTWN7949Aczb9-vMIYev"
-          },
-          {
-            "title": "Tịnh Độ Thánh Hiền Lục 2",
-            "url": "https://ia601401.us.archive.org/16/items/tinh-do-thanh-hien-luc/T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20Th%C3%A1nh%20Hi%E1%BB%81n%20L%E1%BB%A5c%202.mp3",
-            "duration": "1:01:29",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1ARxpR9S-bSK-sRTJ_ZdFyiRpB8IWaFen"
-          },
-          {
-            "title": "Tịnh Độ Thánh Hiền Lục 3",
-            "url": "https://ia601401.us.archive.org/16/items/tinh-do-thanh-hien-luc/T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20Th%C3%A1nh%20Hi%E1%BB%81n%20L%E1%BB%A5c%203.mp3",
-            "duration": "1:15:07",
-            "backupUrl": "https://drive.google.com/uc?export=download&id=1A-5udsnvSgDIvx1QlLZ6-GtaOcg_PmMJ"
-          }
-        ]
-      },
-      {
-        "name": "Hương Quê Cực Lạc",
-        "items": [
-          {
-            "title": "01 - Hương Quê Cực Lạc",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/Huong%20Que%20Cuc%20Lac%20-%20HT%20Thich%20Thien%20Tam%20128kbps/01%20-%20Huong%20Que%20Cuc%20Lac.mp3",
-            "duration": "05:20"
-          },
-          {
-            "title": "02 - Hương Quê Cực Lạc",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/Huong%20Que%20Cuc%20Lac%20-%20HT%20Thich%20Thien%20Tam%20128kbps/02%20-%20Huong%20Que%20Cuc%20Lac.mp3",
-            "duration": "37:43"
-          },
-          {
-            "title": "03 - Hương Quê Lạc Cư (Huệ Viên - Tuấn Thức)",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/Huong%20Que%20Cuc%20Lac%20-%20HT%20Thich%20Thien%20Tam%20128kbps/03%20-%20HuongQue%20LC_%20(hue%20vien-tuan%20thuc).mp3",
-            "duration": "26:05"
-          },
-          {
-            "title": "04 - Hương Quê Cực Lạc (Tử Giác - Tông Bổn Đại Sư)",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/Huong%20Que%20Cuc%20Lac%20-%20HT%20Thich%20Thien%20Tam%20128kbps/04%20-%20HuongQueCucLac%20(Tu%20giac-tong%20bon%20dai%20su).mp3",
-            "duration": "38:17"
-          },
-          {
-            "title": "05 - Hương Quê Cực Lạc (Tự Bá - Đạo Phái Đại Sư)",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/Huong%20Que%20Cuc%20Lac%20-%20HT%20Thich%20Thien%20Tam%20128kbps/05%20-%20HuongQueCucLac%20(Tu%20ba-dao%20phai%20dai%20su).mp3",
-            "duration": "23:04"
-          },
-          {
-            "title": "06 - Hương Quê Cực Lạc",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/Huong%20Que%20Cuc%20Lac%20-%20HT%20Thich%20Thien%20Tam%20128kbps/06%20-%20Huong%20Que%20Cuc%20Lac.mp3",
-            "duration": "42:56"
-          }
-        ]
-      },
-      {
-        "name": "Phật Học Tinh Yếu",
-        "items": [
-          {
-            "title": "01 Phật Học Tinh Yếu - Thiên 1 Chương 1",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/01%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%201%20Ch%C6%B0%C6%A1ng%201.mp3",
-            "duration": "30:34"
-          },
-          {
-            "title": "02 Phật Học Tinh Yếu - Thiên 1 Chương 2",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/02%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%201%20Ch%C6%B0%C6%A1ng%202.mp3",
-            "duration": "36:21"
-          },
-          {
-            "title": "03 Phật Học Tinh Yếu - Thiên 1 Chương 3",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/03%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%201%20Ch%C6%B0%C6%A1ng%203.mp3",
-            "duration": "23:27"
-          },
-          {
-            "title": "04 Phật Học Tinh Yếu - Thiên 1 Chương 4",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/04%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%201%20Ch%C6%B0%C6%A1ng%204.mp3",
-            "duration": "37:51"
-          },
-          {
-            "title": "05 Phật Học Tinh Yếu - Thiên 1 Chương 5",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/05%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%201%20Ch%C6%B0%C6%A1ng%205.mp3",
-            "duration": "49:23"
-          },
-          {
-            "title": "06 Phật Học Tinh Yếu - Thiên 1 Chương 6",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/06%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%201%20Ch%C6%B0%C6%A1ng%206.mp3",
-            "duration": "1:06:51"
-          },
-          {
-            "title": "07 Phật Học Tinh Yếu - Thiên 1 Chương 7",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/07%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%201%20Ch%C6%B0%C6%A1ng%207.mp3",
-            "duration": "29:59"
-          },
-          {
-            "title": "08 Phật Học Tinh Yếu - Thiên 1 Chương 8",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/08%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%201%20Ch%C6%B0%C6%A1ng%208.mp3",
-            "duration": "38:59"
-          },
-          {
-            "title": "09 Phật Học Tinh Yếu - Thiên 1 Chương 9",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/09%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%201%20Ch%C6%B0%C6%A1ng%209.mp3",
-            "duration": "33:59"
-          },
-          {
-            "title": "10 Phật Học Tinh Yếu - Thiên 1 Chương 10",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/10%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%201%20Ch%C6%B0%C6%A1ng%2010.mp3",
-            "duration": "26:38"
-          },
-          {
-            "title": "11 Phật Học Tinh Yếu - Thiên 1 Chương 11",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/11%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%201%20Ch%C6%B0%C6%A1ng%2011.mp3",
-            "duration": "21:25"
-          },
-          {
-            "title": "12 Phật Học Tinh Yếu - Thiên 1 Chương 12",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/12%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%201%20Ch%C6%B0%C6%A1ng%2012.mp3",
-            "duration": "36:00"
-          },
-          {
-            "title": "13 Phật Học Tinh Yếu - Thiên 2 Chương 1",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/13%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%202%20Ch%C6%B0%C6%A1ng%201.mp3",
-            "duration": "49:20"
-          },
-          {
-            "title": "14 Phật Học Tinh Yếu - Thiên 2 Chương 2",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/14%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%202%20Ch%C6%B0%C6%A1ng%202.mp3",
-            "duration": "52:08"
-          },
-          {
-            "title": "15 Phật Học Tinh Yếu - Thiên 2 Chương 3",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/15%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%202%20Ch%C6%B0%C6%A1ng%203.mp3",
-            "duration": "41:44"
-          },
-          {
-            "title": "16 Phật Học Tinh Yếu - Thiên 2 Chương 4",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/16%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%202%20Ch%C6%B0%C6%A1ng%204.mp3",
-            "duration": "50:07"
-          },
-          {
-            "title": "17 Phật Học Tinh Yếu - Thiên 2 Chương 5",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/17%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%202%20Ch%C6%B0%C6%A1ng%205.mp3",
-            "duration": "38:36"
-          },
-          {
-            "title": "18 Phật Học Tinh Yếu - Thiên 2 Chương 6",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/18%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%202%20Ch%C6%B0%C6%A1ng%206.mp3",
-            "duration": "40:25"
-          },
-          {
-            "title": "19 Phật Học Tinh Yếu - Thiên 2 Chương 7",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/19%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%202%20Ch%C6%B0%C6%A1ng%207.mp3",
-            "duration": "35:39"
-          },
-          {
-            "title": "20 Phật Học Tinh Yếu - Thiên 2 Chương 8",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/20%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%202%20Ch%C6%B0%C6%A1ng%208.mp3",
-            "duration": "35:28"
-          },
-          {
-            "title": "21 Phật Học Tinh Yếu - Thiên 3 Chương 1",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/21%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%203%20Ch%C6%B0%C6%A1ng%201.mp3",
-            "duration": "34:36"
-          },
-          {
-            "title": "22 Phật Học Tinh Yếu - Thiên 3 Chương 2",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/22%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%203%20Ch%C6%B0%C6%A1ng%202.mp3",
-            "duration": "34:55"
-          },
-          {
-            "title": "23 Phật Học Tinh Yếu - Thiên 3 Chương 3",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/23%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%203%20Ch%C6%B0%C6%A1ng%203.mp3",
-            "duration": "37:46"
-          },
-          {
-            "title": "24 Phật Học Tinh Yếu - Thiên 3 Chương 4",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/24%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%203%20Ch%C6%B0%C6%A1ng%204.mp3",
-            "duration": "35:52"
-          },
-          {
-            "title": "25 Phật Học Tinh Yếu - Thiên 3 Chương 5",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/25%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%203%20Ch%C6%B0%C6%A1ng%205.mp3",
-            "duration": "49:26"
-          },
-          {
-            "title": "26 Phật Học Tinh Yếu - Thiên 3 Chương 6",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/26%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%203%20Ch%C6%B0%C6%A1ng%206.mp3",
-            "duration": "41:01"
-          },
-          {
-            "title": "27 Phật Học Tinh Yếu - Thiên 3 Chương 7",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/27%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%203%20Ch%C6%B0%C6%A1ng%207.mp3",
-            "duration": "1:00:40"
-          },
-          {
-            "title": "28 Phật Học Tinh Yếu - Thiên 3 Chương 8",
-            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/28%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%203%20Ch%C6%B0%C6%A1ng%208.mp3",
-            "duration": "1:12:10"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "folder": "Thầy Thích Chân Hiếu",
     "subfolders": [
       {
@@ -2886,6 +2159,722 @@
             "title": "TiengKhanhChu1va3_2Tieng",
             "url": "https://ia801309.us.archive.org/0/items/thay-thich-chan-hieu-thinh-khanh-va-mo-3-tieng-23-thang-12-2023/TiengKhanhChu1va3_2Tieng.mp3",
             "duration": "N/A"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "folder": "HT Thích Thiền Tâm",
+    "subfolders": [
+      {
+        "name": "Tịnh Độ Quyết Nghi Luận - Trí Giả Đại Sư & Thiên Như Thiền Sư",
+        "items": [
+          {
+            "title": "Tịnh Độ Thập Nghi Luận 1",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/Tinh%20Do%20Thap%20Nghi%20Luan%20-%20Tri%20Gia%20DS/T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20Th%E1%BA%ADp%20Nghi%20Lu%E1%BA%ADn%201.mp3",
+            "duration": "20:01"
+          },
+          {
+            "title": "Tịnh Độ Thập Nghi Luận 2",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/Tinh%20Do%20Thap%20Nghi%20Luan%20-%20Tri%20Gia%20DS/T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20Th%E1%BA%ADp%20Nghi%20Lu%E1%BA%ADn%202.mp3",
+            "duration": "19:44"
+          },
+          {
+            "title": "Tịnh Độ Thập Nghi Luận 3",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/Tinh%20Do%20Thap%20Nghi%20Luan%20-%20Tri%20Gia%20DS/T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20Th%E1%BA%ADp%20Nghi%20Lu%E1%BA%ADn%203.mp3",
+            "duration": "21:41"
+          },
+          {
+            "title": "Tịnh Độ Thập Nghi Luận 4",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/Tinh%20Do%20Thap%20Nghi%20Luan%20-%20Tri%20Gia%20DS/T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20Th%E1%BA%ADp%20Nghi%20Lu%E1%BA%ADn%204.mp3",
+            "duration": "16:56"
+          },
+          {
+            "title": "Tịnh Độ Thập Nghi Luận 5",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/Tinh%20Do%20Thap%20Nghi%20Luan%20-%20Tri%20Gia%20DS/T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20Th%E1%BA%ADp%20Nghi%20Lu%E1%BA%ADn%205.mp3",
+            "duration": "28:07"
+          },
+          {
+            "title": "Tịnh Độ Thập Nghi Luận 6",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/Tinh%20Do%20Thap%20Nghi%20Luan%20-%20Tri%20Gia%20DS/T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20Th%E1%BA%ADp%20Nghi%20Lu%E1%BA%ADn%206.mp3",
+            "duration": "22:56"
+          },
+          {
+            "title": "Tịnh Độ Thập Nghi Luận 7",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/Tinh%20Do%20Thap%20Nghi%20Luan%20-%20Tri%20Gia%20DS/T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20Th%E1%BA%ADp%20Nghi%20Lu%E1%BA%ADn%207.mp3",
+            "duration": "35:43"
+          }
+        ]
+      },
+      {
+        "name": "Niệm Phật Sám Pháp",
+        "items": [
+          {
+            "title": "01 Niệm Phật Phải Vì Thoát Sinh Tử Luân Hồi",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Sam%20Phap/01%20Ni%E1%BB%87m%20Ph%E1%BA%ADt%20Ph%E1%BA%A3i%20V%C3%AC%20Tho%C3%A1t%20Sinh%20T%E1%BB%AD%20Lu%C3%A2n%20H%E1%BB%93i.mp3",
+            "duration": "16:32"
+          },
+          {
+            "title": "02 Niệm Phật Phải Vì Phát Vô Thượng Bồ Đề Tâm",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Sam%20Phap/02%20Ni%E1%BB%87m%20Ph%E1%BA%ADt%20Ph%E1%BA%A3i%20V%C3%AC%20Ph%C3%A1t%20V%C3%B4%20Th%C6%B0%E1%BB%A3ng%20B%E1%BB%93%20%C4%90%E1%BB%81%20T%C3%A2m.mp3",
+            "duration": "26:19"
+          },
+          {
+            "title": "03 Niệm Phật Phải Phát Nguyện Vãng Sanh",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Sam%20Phap/03%20Ni%E1%BB%87m%20Ph%E1%BA%ADt%20Ph%E1%BA%A3i%20Ph%C3%A1t%20Nguy%E1%BB%87n%20V%C3%A3ng%20Sanh.mp3",
+            "duration": "32:06"
+          },
+          {
+            "title": "04 Niệm Phật Sám Pháp",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Sam%20Phap/04%20Ni%E1%BB%87m%20Ph%E1%BA%ADt%20S%C3%A1m%20Ph%C3%A1p.mp3",
+            "duration": "53:41"
+          }
+        ]
+      },
+      {
+        "name": "Niệm Phật Thập Yếu",
+        "items": [
+          {
+            "title": "01 Lời Nói Đầu",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/01%20L%E1%BB%9Di%20N%C3%B3i%20%C4%90%E1%BA%A7u.mp3",
+            "duration": "10:25"
+          },
+          {
+            "title": "02 Niệm Phật Phải Vì Thoát Sinh Tử – tiết 1–6",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/02%20Ni%E1%BB%87m%20Ph%E1%BA%ADt%20Ph%E1%BA%A3i%20V%C3%AC%20Tho%C3%A1t%20Sinh%20T%E1%BB%AD%20%E2%80%93%20ti%E1%BA%BFt%201%E2%80%936.mp3",
+            "duration": "30:06"
+          },
+          {
+            "title": "03 Muốn Thoát Khổ Nên Tu Tịnh Độ – tiết 7–9",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/03%20Mu%E1%BB%91n%20Tho%C3%A1t%20Kh%E1%BB%95%20N%C3%AAn%20Tu%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20%E2%80%93%20ti%E1%BA%BFt%207%E2%80%939.mp3",
+            "duration": "21:16"
+          },
+          {
+            "title": "04 Làm Thế Nào Để Phát Tâm Bồ Đề – tiết 10",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/04%20L%C3%A0m%20Th%E1%BA%BF%20N%C3%A0o%20%C4%90%E1%BB%83%20Ph%C3%A1t%20T%C3%A2m%20B%E1%BB%93%20%C4%90%E1%BB%81%20%E2%80%93%20ti%E1%BA%BFt%2010.mp3",
+            "duration": "16:46"
+          },
+          {
+            "title": "05 Những Huấn Thị Về Bồ Đề Tâm – tiết 11–14",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/05%20Nh%E1%BB%AFng%20Hu%E1%BA%A5n%20Th%E1%BB%8B%20V%E1%BB%81%20B%E1%BB%93%20%C4%90%E1%BB%81%20T%C3%A2m%20%E2%80%93%20ti%E1%BA%BFt%2011%E2%80%9314.mp3",
+            "duration": "26:23"
+          },
+          {
+            "title": "06 Niệm Phật Phải Dứt Trừ Lòng Nghi – tiết 15–16",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/06%20Ni%E1%BB%87m%20Ph%E1%BA%ADt%20Ph%E1%BA%A3i%20D%E1%BB%A9t%20Tr%E1%BB%AB%20L%C3%B2ng%20Nghi%20%E2%80%93%20ti%E1%BA%BFt%2015%E2%80%9316.mp3",
+            "duration": "15:39"
+          },
+          {
+            "title": "07 Những Mối Nghi Thông Thường Về Tịnh Độ – tiết 17–18",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/07%20Nh%E1%BB%AFng%20M%E1%BB%91i%20Nghi%20Th%C3%B4ng%20Th%C6%B0%E1%BB%9Dng%20V%E1%BB%81%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20%E2%80%93%20ti%E1%BA%BFt%2017%E2%80%9318.mp3",
+            "duration": "28:08"
+          },
+          {
+            "title": "08 Niệm Phật Phải Quyết Định Vãng Sanh – tiết 19–22",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/08%20Ni%E1%BB%87m%20Ph%E1%BA%ADt%20Ph%E1%BA%A3i%20Quy%E1%BA%BFt%20%C4%90%E1%BB%8Bnh%20V%C3%A3ng%20Sanh%20%E2%80%93%20ti%E1%BA%BFt%2019%E2%80%9322.mp3",
+            "duration": "26:32"
+          },
+          {
+            "title": "09 Xét Qua Những Tâm Nguyện Cầu Vãng Sanh – tiết 23",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/09%20X%C3%A9t%20Qua%20Nh%E1%BB%AFng%20T%C3%A2m%20Nguy%E1%BB%87n%20C%E1%BA%A7u%20V%C3%A3ng%20Sanh%20%E2%80%93%20ti%E1%BA%BFt%2023.mp3",
+            "duration": "10:25"
+          },
+          {
+            "title": "10 Văn Phát Nguyện Của Ngài Liên Trì Và Từ Vân – tiết 24",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/10%20V%C4%83n%20Ph%C3%A1t%20Nguy%E1%BB%87n%20C%E1%BB%A7a%20Ng%C3%A0i%20Li%C3%AAn%20Tr%C3%AC%20V%C3%A0%20T%E1%BB%AB%20V%C3%A2n%20%E2%80%93%20ti%E1%BA%BFt%2024.mp3",
+            "duration": "16:07"
+          },
+          {
+            "title": "11 Niệm Phật Với Tứ Đoạt – tiết 27–29",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/11%20Ni%E1%BB%87m%20Ph%E1%BA%ADt%20V%E1%BB%9Bi%20T%E1%BB%A9%20%C4%90o%E1%BA%A1t%20%E2%80%93%20ti%E1%BA%BFt%2027%E2%80%9329.mp3",
+            "duration": "16:39"
+          },
+          {
+            "title": "12 Mười Phương Thức Trì Danh – tiết 30–31",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/12%20M%C6%B0%E1%BB%9Di%20Ph%C6%B0%C6%A1ng%20Th%E1%BB%A9c%20Tr%C3%AC%20Danh%20%E2%80%93%20ti%E1%BA%BFt%2030%E2%80%9331.mp3",
+            "duration": "18:12"
+          },
+          {
+            "title": "13 Ba Phần Hành Trì – tiết 32–34",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/13%20Ba%20Ph%E1%BA%A7n%20H%C3%A0nh%20Tr%C3%AC%20%E2%80%93%20ti%E1%BA%BFt%2032%E2%80%9334.mp3",
+            "duration": "21:50"
+          },
+          {
+            "title": "14 Đối Trị Dục Nhiễm – tiết 35–40",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/14%20%C4%90%E1%BB%91i%20Tr%E1%BB%8B%20D%E1%BB%A5c%20Nhi%E1%BB%85m%20%E2%80%93%20ti%E1%BA%BFt%2035%E2%80%9340.mp3",
+            "duration": "34:28"
+          },
+          {
+            "title": "15 Phải Diệt Niệm Buồn Chán – tiết 41–42",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/15%20Ph%E1%BA%A3i%20Di%E1%BB%87t%20Ni%E1%BB%87m%20Bu%E1%BB%93n%20Ch%C3%A1n%20%E2%80%93%20ti%E1%BA%BFt%2041%E2%80%9342.mp3",
+            "duration": "12:23"
+          },
+          {
+            "title": "16 Niệm Phật Phải Khắc Kỳ Cầu Chứng Nghiệm – tiết 43–47",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/16%20Ni%E1%BB%87m%20Ph%E1%BA%ADt%20Ph%E1%BA%A3i%20Kh%E1%BA%AFc%20K%E1%BB%B3%20C%E1%BA%A7u%20Ch%E1%BB%A9ng%20Nghi%E1%BB%87m%20%E2%80%93%20ti%E1%BA%BFt%2043%E2%80%9347.mp3",
+            "duration": "35:40"
+          },
+          {
+            "title": "17 Sự Nhiếp Tâm – Lý Nhiếp Tâm – tiết 48–51",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/17%20S%E1%BB%B1%20Nhi%E1%BA%BFp%20T%C3%A2m%20%E2%80%93%20L%C3%BD%20Nhi%E1%BA%BFp%20T%C3%A2m%20%E2%80%93%20ti%E1%BA%BFt%2048%E2%80%9351.mp3",
+            "duration": "30:59"
+          },
+          {
+            "title": "18 Các Loại Ma – tiết 52–54",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/18%20C%C3%A1c%20Lo%E1%BA%A1i%20Ma%20%E2%80%93%20ti%E1%BA%BFt%2052%E2%80%9354.mp3",
+            "duration": "29:11"
+          },
+          {
+            "title": "19 Niệm Phật Chớ Sợ Cười Đừng Chờ Hẹn – tiết 55–60",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/19%20Ni%E1%BB%87m%20Ph%E1%BA%ADt%20Ch%E1%BB%9B%20S%E1%BB%A3%20C%C6%B0%E1%BB%9Di%20%C4%90%E1%BB%ABng%20Ch%E1%BB%9D%20H%E1%BA%B9n%20%E2%80%93%20ti%E1%BA%BFt%2055%E2%80%9360.mp3",
+            "duration": "28:50"
+          },
+          {
+            "title": "20 Mười Phương Tịnh Độ Và Đâu Suất Tịnh Độ – tiết 61–62",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/20%20M%C6%B0%E1%BB%9Di%20Ph%C6%B0%C6%A1ng%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20V%C3%A0%20%C4%90%C3%A2u%20Su%E1%BA%A5t%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20%E2%80%93%20ti%E1%BA%BFt%2061%E2%80%9362.mp3",
+            "duration": "15:01"
+          },
+          {
+            "title": "21 Các Duyên Ba Khảo – tiết 63–66",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/21%20C%C3%A1c%20Duy%C3%AAn%20Ba%20Kh%E1%BA%A3o%20%E2%80%93%20ti%E1%BA%BFt%2063%E2%80%9366.mp3",
+            "duration": "53:31"
+          },
+          {
+            "title": "22 Niệm Phật Phải Dự Bị Lúc Lâm Chung",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/22%20Ni%E1%BB%87m%20Ph%E1%BA%ADt%20Ph%E1%BA%A3i%20D%E1%BB%B1%20B%E1%BB%8B%20L%C3%BAc%20L%C3%A2m%20Chung.mp3",
+            "duration": "19:37"
+          },
+          {
+            "title": "23 Cách Thức Trợ Niệm – tiết 70–hết",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Niem%20Phat%20Thap%20Yeu/23%20C%C3%A1ch%20Th%E1%BB%A9c%20Tr%E1%BB%A3%20Ni%E1%BB%87m%20%E2%80%93%20ti%E1%BA%BFt%2070%E2%80%93h%E1%BA%BFt.mp3",
+            "duration": "36:09"
+          }
+        ]
+      },
+      {
+        "name": "Lá Thư Tịnh Độ",
+        "items": [
+          {
+            "title": "Lá Thư Tịnh Độ_001",
+            "url": "https://ia600806.us.archive.org/15/items/la-thu-tinh-do/L%C3%A1%20Th%C6%B0%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99_001.mp3",
+            "duration": "1:09:20"
+          },
+          {
+            "title": "Lá Thư Tịnh Độ_002",
+            "url": "https://ia600806.us.archive.org/15/items/la-thu-tinh-do/L%C3%A1%20Th%C6%B0%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99_002.mp3",
+            "duration": "1:11:43",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1GFQakOwyrenCNEZk8ZU_CnykPWFqBVX3"
+          },
+          {
+            "title": "Lá Thư Tịnh Độ_003",
+            "url": "https://ia600806.us.archive.org/15/items/la-thu-tinh-do/L%C3%A1%20Th%C6%B0%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99_003.mp3",
+            "duration": "1:10:40",
+            "backupUrl": "https://drive.google.com/uc?ex"
+          },
+          {
+            "title": "Lá Thư Tịnh Độ_004",
+            "url": "https://ia600806.us.archive.org/15/items/la-thu-tinh-do/L%C3%A1%20Th%C6%B0%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99_004.mp3",
+            "duration": "1:09:56",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1ViwWx6NasY5yjYnImC1twHhyZJpC6uLT"
+          },
+          {
+            "title": "Lá Thư Tịnh Độ_005",
+            "url": "https://ia800806.us.archive.org/15/items/la-thu-tinh-do/L%C3%A1%20Th%C6%B0%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99_005.mp3",
+            "duration": "1:28:59",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=13mRAM56hCBqf32J9g9M-4Kzps2RDflmA"
+          },
+          {
+            "title": "Lá Thư Tịnh Độ_006(Thư Khuyên Người Mới Phát Tâm Học Phật)",
+            "url": "https://ia600806.us.archive.org/15/items/la-thu-tinh-do/L%C3%A1%20Th%C6%B0%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99_006%28Th%C6%B0%20Khuy%C3%AAn%20Ng%C6%B0%E1%BB%9Di%20M%E1%BB%9Bi%20Ph%C3%A1t%20T%C3%A2m%20H%E1%BB%8Dc%20Ph%E1%BA%ADt%29.mp3",
+            "duration": "18:31",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1TCS92DyM2ZfuSgJV4ZmTSEMbYspVi0lv"
+          },
+          {
+            "title": "Lá Thư Tịnh Độ_007(Thư Phúc Đáp Khắp Nơi)",
+            "url": "https://ia800806.us.archive.org/15/items/la-thu-tinh-do/L%C3%A1%20Th%C6%B0%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99_007%28Th%C6%B0%20Ph%C3%BAc%20%C4%90%C3%A1p%20Kh%E1%BA%AFp%20N%C6%A1i%29.mp3",
+            "duration": "36:28",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1WYGb4uKcQLV7zDaaJf8JhDFTdHXHCdiV"
+          }
+        ]
+      },
+      {
+        "name": "Tịnh Độ Thánh Hiền Lục",
+        "items": [
+          {
+            "title": "Tịnh Độ Thánh Hiền Lục 1",
+            "url": "https://ia601401.us.archive.org/16/items/tinh-do-thanh-hien-luc/T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20Th%C3%A1nh%20Hi%E1%BB%81n%20L%E1%BB%A5c%201.mp3",
+            "duration": "52:57",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1AhH3YkII32zCzTWN7949Aczb9-vMIYev"
+          },
+          {
+            "title": "Tịnh Độ Thánh Hiền Lục 2",
+            "url": "https://ia601401.us.archive.org/16/items/tinh-do-thanh-hien-luc/T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20Th%C3%A1nh%20Hi%E1%BB%81n%20L%E1%BB%A5c%202.mp3",
+            "duration": "1:01:29",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1ARxpR9S-bSK-sRTJ_ZdFyiRpB8IWaFen"
+          },
+          {
+            "title": "Tịnh Độ Thánh Hiền Lục 3",
+            "url": "https://ia601401.us.archive.org/16/items/tinh-do-thanh-hien-luc/T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20Th%C3%A1nh%20Hi%E1%BB%81n%20L%E1%BB%A5c%203.mp3",
+            "duration": "1:15:07",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1A-5udsnvSgDIvx1QlLZ6-GtaOcg_PmMJ"
+          }
+        ]
+      },
+      {
+        "name": "Hương Quê Cực Lạc",
+        "items": [
+          {
+            "title": "01 - Hương Quê Cực Lạc",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/Huong%20Que%20Cuc%20Lac%20-%20HT%20Thich%20Thien%20Tam%20128kbps/01%20-%20Huong%20Que%20Cuc%20Lac.mp3",
+            "duration": "05:20"
+          },
+          {
+            "title": "02 - Hương Quê Cực Lạc",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/Huong%20Que%20Cuc%20Lac%20-%20HT%20Thich%20Thien%20Tam%20128kbps/02%20-%20Huong%20Que%20Cuc%20Lac.mp3",
+            "duration": "37:43"
+          },
+          {
+            "title": "03 - Hương Quê Lạc Cư (Huệ Viên - Tuấn Thức)",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/Huong%20Que%20Cuc%20Lac%20-%20HT%20Thich%20Thien%20Tam%20128kbps/03%20-%20HuongQue%20LC_%20(hue%20vien-tuan%20thuc).mp3",
+            "duration": "26:05"
+          },
+          {
+            "title": "04 - Hương Quê Cực Lạc (Tử Giác - Tông Bổn Đại Sư)",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/Huong%20Que%20Cuc%20Lac%20-%20HT%20Thich%20Thien%20Tam%20128kbps/04%20-%20HuongQueCucLac%20(Tu%20giac-tong%20bon%20dai%20su).mp3",
+            "duration": "38:17"
+          },
+          {
+            "title": "05 - Hương Quê Cực Lạc (Tự Bá - Đạo Phái Đại Sư)",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/Huong%20Que%20Cuc%20Lac%20-%20HT%20Thich%20Thien%20Tam%20128kbps/05%20-%20HuongQueCucLac%20(Tu%20ba-dao%20phai%20dai%20su).mp3",
+            "duration": "23:04"
+          },
+          {
+            "title": "06 - Hương Quê Cực Lạc",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/Huong%20Que%20Cuc%20Lac%20-%20HT%20Thich%20Thien%20Tam%20128kbps/06%20-%20Huong%20Que%20Cuc%20Lac.mp3",
+            "duration": "42:56"
+          }
+        ]
+      },
+      {
+        "name": "Phật Học Tinh Yếu",
+        "items": [
+          {
+            "title": "01 Phật Học Tinh Yếu - Thiên 1 Chương 1",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/01%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%201%20Ch%C6%B0%C6%A1ng%201.mp3",
+            "duration": "30:34"
+          },
+          {
+            "title": "02 Phật Học Tinh Yếu - Thiên 1 Chương 2",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/02%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%201%20Ch%C6%B0%C6%A1ng%202.mp3",
+            "duration": "36:21"
+          },
+          {
+            "title": "03 Phật Học Tinh Yếu - Thiên 1 Chương 3",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/03%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%201%20Ch%C6%B0%C6%A1ng%203.mp3",
+            "duration": "23:27"
+          },
+          {
+            "title": "04 Phật Học Tinh Yếu - Thiên 1 Chương 4",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/04%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%201%20Ch%C6%B0%C6%A1ng%204.mp3",
+            "duration": "37:51"
+          },
+          {
+            "title": "05 Phật Học Tinh Yếu - Thiên 1 Chương 5",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/05%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%201%20Ch%C6%B0%C6%A1ng%205.mp3",
+            "duration": "49:23"
+          },
+          {
+            "title": "06 Phật Học Tinh Yếu - Thiên 1 Chương 6",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/06%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%201%20Ch%C6%B0%C6%A1ng%206.mp3",
+            "duration": "1:06:51"
+          },
+          {
+            "title": "07 Phật Học Tinh Yếu - Thiên 1 Chương 7",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/07%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%201%20Ch%C6%B0%C6%A1ng%207.mp3",
+            "duration": "29:59"
+          },
+          {
+            "title": "08 Phật Học Tinh Yếu - Thiên 1 Chương 8",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/08%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%201%20Ch%C6%B0%C6%A1ng%208.mp3",
+            "duration": "38:59"
+          },
+          {
+            "title": "09 Phật Học Tinh Yếu - Thiên 1 Chương 9",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/09%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%201%20Ch%C6%B0%C6%A1ng%209.mp3",
+            "duration": "33:59"
+          },
+          {
+            "title": "10 Phật Học Tinh Yếu - Thiên 1 Chương 10",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/10%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%201%20Ch%C6%B0%C6%A1ng%2010.mp3",
+            "duration": "26:38"
+          },
+          {
+            "title": "11 Phật Học Tinh Yếu - Thiên 1 Chương 11",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/11%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%201%20Ch%C6%B0%C6%A1ng%2011.mp3",
+            "duration": "21:25"
+          },
+          {
+            "title": "12 Phật Học Tinh Yếu - Thiên 1 Chương 12",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/12%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%201%20Ch%C6%B0%C6%A1ng%2012.mp3",
+            "duration": "36:00"
+          },
+          {
+            "title": "13 Phật Học Tinh Yếu - Thiên 2 Chương 1",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/13%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%202%20Ch%C6%B0%C6%A1ng%201.mp3",
+            "duration": "49:20"
+          },
+          {
+            "title": "14 Phật Học Tinh Yếu - Thiên 2 Chương 2",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/14%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%202%20Ch%C6%B0%C6%A1ng%202.mp3",
+            "duration": "52:08"
+          },
+          {
+            "title": "15 Phật Học Tinh Yếu - Thiên 2 Chương 3",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/15%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%202%20Ch%C6%B0%C6%A1ng%203.mp3",
+            "duration": "41:44"
+          },
+          {
+            "title": "16 Phật Học Tinh Yếu - Thiên 2 Chương 4",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/16%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%202%20Ch%C6%B0%C6%A1ng%204.mp3",
+            "duration": "50:07"
+          },
+          {
+            "title": "17 Phật Học Tinh Yếu - Thiên 2 Chương 5",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/17%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%202%20Ch%C6%B0%C6%A1ng%205.mp3",
+            "duration": "38:36"
+          },
+          {
+            "title": "18 Phật Học Tinh Yếu - Thiên 2 Chương 6",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/18%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%202%20Ch%C6%B0%C6%A1ng%206.mp3",
+            "duration": "40:25"
+          },
+          {
+            "title": "19 Phật Học Tinh Yếu - Thiên 2 Chương 7",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/19%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%202%20Ch%C6%B0%C6%A1ng%207.mp3",
+            "duration": "35:39"
+          },
+          {
+            "title": "20 Phật Học Tinh Yếu - Thiên 2 Chương 8",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/20%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%202%20Ch%C6%B0%C6%A1ng%208.mp3",
+            "duration": "35:28"
+          },
+          {
+            "title": "21 Phật Học Tinh Yếu - Thiên 3 Chương 1",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/21%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%203%20Ch%C6%B0%C6%A1ng%201.mp3",
+            "duration": "34:36"
+          },
+          {
+            "title": "22 Phật Học Tinh Yếu - Thiên 3 Chương 2",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/22%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%203%20Ch%C6%B0%C6%A1ng%202.mp3",
+            "duration": "34:55"
+          },
+          {
+            "title": "23 Phật Học Tinh Yếu - Thiên 3 Chương 3",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/23%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%203%20Ch%C6%B0%C6%A1ng%203.mp3",
+            "duration": "37:46"
+          },
+          {
+            "title": "24 Phật Học Tinh Yếu - Thiên 3 Chương 4",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/24%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%203%20Ch%C6%B0%C6%A1ng%204.mp3",
+            "duration": "35:52"
+          },
+          {
+            "title": "25 Phật Học Tinh Yếu - Thiên 3 Chương 5",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/25%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%203%20Ch%C6%B0%C6%A1ng%205.mp3",
+            "duration": "49:26"
+          },
+          {
+            "title": "26 Phật Học Tinh Yếu - Thiên 3 Chương 6",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/26%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%203%20Ch%C6%B0%C6%A1ng%206.mp3",
+            "duration": "41:01"
+          },
+          {
+            "title": "27 Phật Học Tinh Yếu - Thiên 3 Chương 7",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/27%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%203%20Ch%C6%B0%C6%A1ng%207.mp3",
+            "duration": "1:00:40"
+          },
+          {
+            "title": "28 Phật Học Tinh Yếu - Thiên 3 Chương 8",
+            "url": "https://ph.tinhtong.vn/ftp/MP3/-%20T%20Thien%20Tam/Phat%20Hoc%20Tinh%20Yeu/28%20Ph%E1%BA%ADt%20H%E1%BB%8Dc%20Tinh%20Y%E1%BA%BFu%20-%20Thi%C3%AAn%203%20Ch%C6%B0%C6%A1ng%208.mp3",
+            "duration": "1:12:10"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "folder": "HT Quảng Khâm",
+    "subfolders": [
+      {
+        "name": "Cẩm Nang Tu Đạo(Giọng Nam)",
+        "items": [
+          {
+            "title": "01. Tiểu sử Hòa Thượng Quảng Khâm",
+            "url": "https://drive.google.com/uc?export=download&id=1hWFqI5WIZ75StGuEjqRANonsHlH288qa",
+            "duration": "03:05"
+          },
+          {
+            "title": "02. Chương I TU HÀNH",
+            "url": "https://drive.google.com/uc?export=download&id=1KrQPH5iQgwkK9_L-nd52ca1kJFpAj6UW",
+            "duration": "30:06"
+          },
+          {
+            "title": "03. Chương II KHỔ HẠNH",
+            "url": "https://drive.google.com/uc?export=download&id=1r2WUHfEW0QNnUUhroOhz5hJy4cQeJH3w",
+            "duration": "09:49"
+          },
+          {
+            "title": "04. Chương III RÕ NGHĨA",
+            "url": "https://drive.google.com/uc?export=download&id=12yNXwbs9cevnI7Uk9H-4E9vBdT9p_aAi",
+            "duration": "05:57"
+          },
+          {
+            "title": "05. Chương IV PHÁP MÔN TỊNH ĐỘ",
+            "url": "https://drive.google.com/uc?export=download&id=1ddfLchVc5V0vdlbzMe1dmmAdgknyZqz-",
+            "duration": "14:24"
+          },
+          {
+            "title": "06. Chương V VIỆC LÀM BA LA MẬT",
+            "url": "https://drive.google.com/uc?export=download&id=1HmoFtuoW7MhPpflyyclgOASjRc2FbPvz",
+            "duration": "11:03"
+          },
+          {
+            "title": "07. Chương VI HẠNH XUẤT GIA",
+            "url": "https://drive.google.com/uc?export=download&id=1CThoKMxbKide7gwZm4CKhKYsgrt8N3YA",
+            "duration": "49:07"
+          },
+          {
+            "title": "08. Chương VII XUẤT GIA và TẠI GIA",
+            "url": "https://drive.google.com/uc?export=download&id=1sHyr3OwhBgOgT6CzyETnKmm6kj4rX806",
+            "duration": "05:25"
+          },
+          {
+            "title": "09. Chương VIII CẢNH GIỚI CHÚNG SANH",
+            "url": "https://drive.google.com/uc?export=download&id=1tO8Xif1khk3_CFKPwg4QrlXS5zSjRbOx",
+            "duration": "04:50"
+          },
+          {
+            "title": "10. Chương IX NHÂN QUẢ và SÁM HỐI",
+            "url": "https://drive.google.com/uc?export=download&id=1mEuKMXQhPCf-KOxoaxxJ1TQw1W208AwN",
+            "duration": "04:48"
+          },
+          {
+            "title": "11. Chương X LỜI CUỐI",
+            "url": "https://drive.google.com/uc?export=download&id=1qiEUdk4chgr_mhNJqHi5mxy-j-3j2v8n",
+            "duration": "12:13"
+          }
+        ]
+      },
+      {
+        "name": "Cẩm Nang Tu Đạo(Giọng Nữ)",
+        "items": [
+          {
+            "title": "00. Dẫn Nhập Và Tiểu Sử - Cẩm Nang Tu Đạo",
+            "url": "https://dn710205.ca.archive.org/0/items/cam-nang-tu-dao-2/00.%20D%E1%BA%ABn%20Nh%E1%BA%ADp%20V%C3%A0%20Ti%E1%BB%83u%20S%E1%BB%AD%20-%20C%E1%BA%A9m%20Nang%20Tu%20%C4%90%E1%BA%A1o.mp3",
+            "duration": "16:39"
+          },
+          {
+            "title": "01. Tu Hành - Cẩm Nang Tu Đạo Của",
+            "url": "https://dn710205.ca.archive.org/0/items/cam-nang-tu-dao-2/01.%20Tu%20H%C3%A0nh%20-%20C%E1%BA%A9m%20Nang%20Tu%20%C4%90%E1%BA%A1o%20C%E1%BB%A7a.mp3",
+            "duration": "33:19"
+          },
+          {
+            "title": "02. Khổ Hạnh, 3. Rõ Nghĩa - Cẩm Nang Tu Đạo Của",
+            "url": "https://dn710205.ca.archive.org/0/items/cam-nang-tu-dao-2/02.%20Kh%E1%BB%95%20H%E1%BA%A1nh%2C%203.%20R%C3%B5%20Ngh%C4%A9a%20-%20C%E1%BA%A9m%20Nang%20Tu%20%C4%90%E1%BA%A1o%20C%E1%BB%A7a.mp3",
+            "duration": "20:21"
+          },
+          {
+            "title": "04. Pháp Môn Tịnh Độ - Cẩm Nang Tu Đạo Của",
+            "url": "https://dn710205.ca.archive.org/0/items/cam-nang-tu-dao-2/04.%20Ph%C3%A1p%20M%C3%B4n%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99%20-%20C%E1%BA%A9m%20Nang%20Tu%20%C4%90%E1%BA%A1o%20C%E1%BB%A7a.mp3",
+            "duration": "18:38"
+          },
+          {
+            "title": "05. Việc Làm Ba La Mật Đa - Cẩm Nang Tu Đạo Của",
+            "url": "https://dn710205.ca.archive.org/0/items/cam-nang-tu-dao-2/05.%20Vi%E1%BB%87c%20L%C3%A0m%20Ba%20La%20M%E1%BA%ADt%20%C4%90a%20-%20C%E1%BA%A9m%20Nang%20Tu%20%C4%90%E1%BA%A1o%20C%E1%BB%A7a.mp3",
+            "duration": "13:12"
+          },
+          {
+            "title": "06. Hạnh Xuất Gia - Cẩm Nang Tu Đạo Của",
+            "url": "https://dn710205.ca.archive.org/0/items/cam-nang-tu-dao-2/06.%20H%E1%BA%A1nh%20Xu%E1%BA%A5t%20Gia%20-%20C%E1%BA%A9m%20Nang%20Tu%20%C4%90%E1%BA%A1o%20C%E1%BB%A7a.mp3",
+            "duration": "49:53"
+          },
+          {
+            "title": "07. Xuất Gia Và Tại Gia - Cẩm Nang Tu Đạo Của",
+            "url": "https://dn710205.ca.archive.org/0/items/cam-nang-tu-dao-2/07.%20Xu%E1%BA%A5t%20Gia%20V%C3%A0%20T%E1%BA%A1i%20Gia%20-%20C%E1%BA%A9m%20Nang%20Tu%20%C4%90%E1%BA%A1o%20C%E1%BB%A7a.mp3",
+            "duration": "15:38"
+          },
+          {
+            "title": "08. Cảnh Giới Của Chúng Sinh, 9. Nhân Quả Và Sám Hối - Cẩm Nang Tu Đạo Của",
+            "url": "https://dn710205.ca.archive.org/0/items/cam-nang-tu-dao-2/08.%20C%E1%BA%A3nh%20Gi%E1%BB%9Bi%20C%E1%BB%A7a%20Ch%C3%BAng%20Sinh%2C%209.%20Nh%C3%A2n%20Qu%E1%BA%A3%20V%C3%A0%20S%C3%A1m%20H%E1%BB%91i%20-%20C%E1%BA%A9m%20Nang%20Tu%20%C4%90%E1%BA%A1o%20C%E1%BB%A7a.mp3",
+            "duration": "16:58"
+          },
+          {
+            "title": "10. Lời Cuối - Cẩm Nang Tu Đạo Của",
+            "url": "https://dn710205.ca.archive.org/0/items/cam-nang-tu-dao-2/10.%20L%E1%BB%9Di%20Cu%E1%BB%91i%20-%20C%E1%BA%A9m%20Nang%20Tu%20%C4%90%E1%BA%A1o%20C%E1%BB%A7a.mp3",
+            "duration": "16:58"
+          }
+        ]
+      },
+      {
+        "name": "Những Bài Khai Thị",
+        "items": [
+          {
+            "title": "Giới Luật Là Tự Mình Giữ Giới",
+            "url": "https://dn721902.ca.archive.org/0/items/khai_thi_ht_quang_kham/Gi%E1%BB%9Bi%20Lu%E1%BA%ADt%20L%C3%A0%20T%E1%BB%B1%20M%C3%ACnh%20Gi%E1%BB%AF%20Gi%E1%BB%9Bi.mp3",
+            "duration": "29:27"
+          },
+          {
+            "title": "Hãy Tụng Đại Tạng Kinh Cho Ta",
+            "url": "https://dn721902.ca.archive.org/0/items/khai_thi_ht_quang_kham/H%C3%A3y%20T%E1%BB%A5ng%20%C4%90%E1%BA%A1i%20T%E1%BA%A1ng%20Kinh%20Cho%20Ta.mp3",
+            "duration": "03:39"
+          },
+          {
+            "title": "Kiếp Trước Bạn Là Con Cá Tôi Thả",
+            "url": "https://dn721902.ca.archive.org/0/items/khai_thi_ht_quang_kham/Ki%E1%BA%BFp%20Tr%C6%B0%E1%BB%9Bc%20B%E1%BA%A1n%20L%C3%A0%20Con%20C%C3%A1%20T%C3%B4i%20Th%E1%BA%A3.mp3",
+            "duration": "01:40"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "folder": "Cs. Hạnh Ngọc",
+    "subfolders": [
+      {
+        "name": "Khai thị Hộ Niệm",
+        "items": [
+          {
+            "title": "01. Phương pháp hộ niệm, nhà nhà cần có, người người cần biết",
+            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/01_PP%20h%E1%BB%99%20ni%E1%BB%87m%2C%20nh%C3%A0%20nh%C3%A0%20c%E1%BA%A7n%20c%C3%B3%2C%20ng%C6%B0%E1%BB%9Di%20ng%C6%B0%E1%BB%9Di%20c%E1%BA%A7n%20bi%E1%BA%BFt_01.mp3",
+            "duration": "12:19",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1CyOgfxePv8tg7aLeDH6hMXmq3nRkrzuA"
+          },
+          {
+            "title": "02. Khai thị cho người bệnh",
+            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/02_Khai%20th%E1%BB%8B%20cho%20ng%C6%B0%E1%BB%9Di%20b%E1%BB%87nh_02.mp3",
+            "duration": "17:44",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=10L-Tcwz-JOwr3pKGE185cpUMX2ekarmn"
+          },
+          {
+            "title": "03. Khai thị oan gia của người bệnh",
+            "url": "https://ia601006.us.archive.org/18/items/khaithi_honiem_20251028/03_KT%20oan%20gia%20cua%20ng%C6%B0%E1%BB%9Di%20b%E1%BB%87nh.mp3",
+            "duration": "25:25",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=197WoYMgH5cAsuBUTuJE-pKrs8ztDRKyq"
+          },
+          {
+            "title": "04. Khai thị bệnh nhân lúc hấp hối",
+            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/04_KT%20b%E1%BB%87nh%20nh%C3%A2n%20l%C3%BAc%20h%E1%BA%A5p%20h%E1%BB%91i.mp3",
+            "duration": "05:13",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1KnLu-KZjqb2hRS3YlVJNY6uSGfz3r373"
+          },
+          {
+            "title": "05. Khai thị hộ niệm (Phần 1)",
+            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/05_KHAI%20THI%20H%E1%BB%98%20NI%E1%BB%86M%201.mp3",
+            "duration": "10:47",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1fqqxr6MtYrKjmi0GCuH62uD6VlipDfS1"
+          },
+          {
+            "title": "06. Khai thị hộ niệm (Phần 2)",
+            "url": "https://ia601006.us.archive.org/18/items/khaithi_honiem_20251028/06_KHAI%20THI%20H%E1%BB%98%20NI%E1%BB%86M%202.mp3",
+            "duration": "08:54",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1NcJ6-QfoH2BEMH7Ebo3hXjbPbFrfe5GE"
+          },
+          {
+            "title": "07. Khai thị hộ niệm (Phần 3)",
+            "url": "https://ia601006.us.archive.org/18/items/khaithi_honiem_20251028/07_KHAI%20THI%20H%E1%BB%98%20NI%E1%BB%86M%203.mp3",
+            "duration": "04:21",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1ht1_MZHUXfXsXxGRSjvi5LqTrf_YTeJh"
+          },
+          {
+            "title": "08. Khai thị hộ niệm (Phần 4)",
+            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/08_KHAI%20THI%20H%E1%BB%98%20NI%E1%BB%86M%204.mp3",
+            "duration": "06:28",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1khUfy6rUcgL4FUGIzQyPPITRCxGi0kOO"
+          },
+          {
+            "title": "09. Khai thị hộ niệm (Phần 5)",
+            "url": "https://ia601006.us.archive.org/18/items/khaithi_honiem_20251028/09_KHAI%20THI%20H%E1%BB%98%20NI%E1%BB%86M%205.mp3",
+            "duration": "05:13",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1lJjmh8nRkaBqAsxvtjZOsoTlwn0IeLzt"
+          },
+          {
+            "title": "10. Khai thị hộ niệm (Phần 6)",
+            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/10_KHAI%20TH%E1%BB%8A%20H%E1%BB%98%20NI%E1%BB%86M%206.mp3",
+            "duration": "04:22",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1BjRAaEInWG01nFXOpBAU6TdU5aOptuaz"
+          },
+          {
+            "title": "11. Khai thị hộ niệm (Phần 7)",
+            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/11_KHAI%20THI%20H%E1%BB%98%20NI%E1%BB%86M%207.mp3",
+            "duration": "05:38",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1vJFZn_E4Dbn0WbumXP64VGxQ52dRfgjL"
+          },
+          {
+            "title": "12. Khai thị hộ niệm (Phần 8)",
+            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/12_KHAI%20THI%20H%E1%BB%98%20NI%E1%BB%86M%208.mp3",
+            "duration": "05:14",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1Y-YVwePUghCj5W24uB1-MAK1bGeSvqVx"
+          },
+          {
+            "title": "13. Khai thị hộ niệm (Phần 9)",
+            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/13_KHAI%20TH%E1%BB%8A%20H%E1%BB%98%20NI%E1%BB%86M%209.mp3",
+            "duration": "07:32",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1wxhc1vEEMDD-qNQeneP67y-UpVR50_sz"
+          },
+          {
+            "title": "14. Khai thị hộ niệm (Phần 10)",
+            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/14_KHAI%20TH%E1%BB%8A%20H%E1%BB%98%20NI%E1%BB%86M%2010.mp3",
+            "duration": "06:18",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1gi2bOdX4inKYD9zdYtmwASdMkpKwKUHi"
+          },
+          {
+            "title": "15. Khai thị hộ niệm (Phần 11)",
+            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/15_KHAI%20THI%20H%E1%BB%98%20NI%E1%BB%86M%2011.mp3",
+            "duration": "03:14",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1nd4Cvjd8dzOg9Qe-VycRJAN3x1tA_PDU"
+          },
+          {
+            "title": "16. Khai thị hộ niệm (Phần 12)",
+            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/16_KHAI%20TH%E1%BB%8A%20H%E1%BB%98%20NI%E1%BB%86M%2012.mp3",
+            "duration": "08:33",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1RdYI61F2RkxKczK3HrvWZcorMVl6l6lO"
+          },
+          {
+            "title": "17. Suy nghiệm về thân xác",
+            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/17_Suy%20nghi%E1%BB%87m%20v%E1%BB%81%20s%E1%BB%B1%20th%C4%83m%20th%C3%A2n%20x%C3%A1c.mp3",
+            "duration": "06:31",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=10LKJzncC0HfBtY_In7ftDvYlq8TwvJI4"
+          },
+          {
+            "title": "18. Khai thị cho oan gia trong và ngoài thân",
+            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/18_KT%20cho%20oan%20gia%20trong%20va%20ngoai%20th%C3%A2n.mp3",
+            "duration": "04:20",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1TF-Pfyx7lBP7Hg22z_z0t3hp4WY8fMEY"
+          },
+          {
+            "title": "19. Khai thị khuyên Cửu Huyền niệm Phật",
+            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/19_KT%20khuy%C3%AAn%20C%E1%BB%ADu%20huy%E1%BB%81n%20ni%E1%BB%87m%20ph%E1%BA%ADt.mp3",
+            "duration": "14:30",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1hjsj4mYkCNpuwde5mAynuvUI6zIQqOCg"
+          },
+          {
+            "title": "20. Khai thị cho hương linh niệm Phật sám hối",
+            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/20_KHAI%20THI%20CHO%20HL%20NI%E1%BB%86M%20PH%E1%BA%ACT%20S%C3%81M%20H%E1%BB%90I.mp3",
+            "duration": "17:22",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1unxgMRylDsmHZI9ibo0jIrhV1YBXtqIm"
+          },
+          {
+            "title": "21. Sám hối thai nhi",
+            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/21_S%C3%A1m%20H%E1%BB%91i%20Thai%20Nhi.mp3",
+            "duration": "03:49",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1J_eWHeyWcdztq4vEPDvywNG86-a2f6ED"
+          },
+          {
+            "title": "22. Hộ niệm (12 giờ)",
+            "url": "https://ia801006.us.archive.org/18/items/khaithi_honiem_20251028/01%20-%2012h%20H%E1%BB%99%20Ni%E1%BB%87m%20-%20719m21s-L2.mp3",
+            "duration": "11:59:22",
+            "backupUrl": "https://drive.google.com/uc?export=download&id=1dWiGkP12AJAVFtT9Y9vMtIVz_wOSeUbH"
           }
         ]
       }
