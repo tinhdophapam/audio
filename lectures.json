@@ -2609,61 +2609,61 @@
       {
         "name": "Cẩm Nang Tu Đạo(Giọng Nam)",
         "items": [
-  {
-    "title": "01. Tiểu Sử Hòa Thượng Quảng Khâm",
-    "url": "https://ia800501.us.archive.org/3/items/cam_nang_tu_dao/01.%20Ti%E1%BB%83u%20S%E1%BB%AD%20H%C3%B2a%20Th%C6%B0%E1%BB%A3ng%20Qu%E1%BA%A3ng%20Kh%C3%A2m.mp3",
-    "duration": "18:35"
-  },
-  {
-    "title": "02. Chương I Tu Hành",
-    "url": "https://ia800501.us.archive.org/3/items/cam_nang_tu_dao/02.%20Ch%C6%B0%C6%A1ng%20I%20Tu%20H%C3%A0nh.mp3",
-    "duration": "38:27"
-  },
-  {
-    "title": "03. Chương II Khổ Hạnh",
-    "url": "https://ia600501.us.archive.org/3/items/cam_nang_tu_dao/03.%20Ch%C6%B0%C6%A1ng%20II%20Kh%E1%BB%95%20H%E1%BA%A1nh.mp3",
-    "duration": "12:29"
-  },
-  {
-    "title": "04. Chương III Rõ Nghĩa",
-    "url": "https://ia800501.us.archive.org/3/items/cam_nang_tu_dao/04.%20Ch%C6%B0%C6%A1ng%20III%20R%C3%B5%20Ngh%C4%A9a.mp3",
-    "duration": "09:43"
-  },
-  {
-    "title": "05. Chương IV Pháp Môn Tịnh Độ",
-    "url": "https://ia800501.us.archive.org/3/items/cam_nang_tu_dao/05.%20Ch%C6%B0%C6%A1ng%20IV%20Ph%C3%A1p%20M%C3%B4n%20T%E1%BB%8Bnh%20%C4%90%E1%BB%99.mp3",
-    "duration": "19:29"
-  },
-  {
-    "title": "06. Chương V Việc Làm Ba La Mật",
-    "url": "https://ia600501.us.archive.org/3/items/cam_nang_tu_dao/06.%20Ch%C6%B0%C6%A1ng%20V%20Vi%E1%BB%87c%20L%C3%A0m%20Ba%20La%20M%E1%BA%ADt.mp3",
-    "duration": "13:47"
-  },
-  {
-    "title": "07. Chương VI Hạnh Xuất Gia",
-    "url": "https://ia800501.us.archive.org/3/items/cam_nang_tu_dao/07.%20Ch%C6%B0%C6%A1ng%20VI%20H%E1%BA%A1nh%20Xu%E1%BA%A5t%20Gia.mp3",
-    "duration": "52:10"
-  },
-  {
-    "title": "08. Chương VII Xuất Gia Và Tại Gia",
-    "url": "https://ia600501.us.archive.org/3/items/cam_nang_tu_dao/08.%20Ch%C6%B0%C6%A1ng%20VII%20Xu%E1%BA%A5t%20Gia%20V%C3%A0%20T%E1%BA%A1i%20Gia.mp3",
-    "duration": "15:02"
-  },
-  {
-    "title": "09. Chương VIII Cảnh Giới Chúng Sanh",
-    "url": "https://ia600501.us.archive.org/3/items/cam_nang_tu_dao/09.%20Ch%C6%B0%C6%A1ng%20VIII%20C%E1%BA%A3nh%20Gi%E1%BB%9Bi%20Ch%C3%BAng%20Sanh.mp3",
-    "duration": "07:50"
-  },
-  {
-    "title": "10. Chương IX Nhân Quả Và Sám Hối",
-    "url": "https://ia800501.us.archive.org/3/items/cam_nang_tu_dao/10.%20Ch%C6%B0%C6%A1ng%20IX%20Nh%C3%A2n%20Qu%E1%BA%A3%20V%C3%A0%20S%C3%A1m%20H%E1%BB%91i.mp3",
-    "duration": "09:17"
-  },
-  {
-    "title": "11. Chương X Lời Cuối",
-    "url": "https://ia600501.us.archive.org/3/items/cam_nang_tu_dao/11.%20Ch%C6%B0%C6%A1ng%20X%20L%E1%BB%9Di%20Cu%E1%BB%91i.mp3",
-    "duration": "13:43"
-  }
+          {
+            "title": "01. Tiểu Sử Hòa Thượng Quảng Khâm",
+            "url": "https://github.com/tinhdophapam/audio-library/releases/download/v1.0/01.Ti.u.S.Hoa.Th.ng.Qu.ng.Kham.mp3",
+            "duration": "18:35"
+          },
+          {
+            "title": "02. Chương I Tu Hành",
+            "url": "https://github.com/tinhdophapam/audio-library/releases/download/v1.0/02.Ch.ng.I.Tu.Hanh.mp3",
+            "duration": "38:27"
+          },
+          {
+            "title": "03. Chương II Khổ Hạnh",
+            "url": "https://github.com/tinhdophapam/audio-library/releases/download/v1.0/03.Ch.ng.II.Kh.H.nh.mp3",
+            "duration": "12:29"
+          },
+          {
+            "title": "04. Chương III Rõ Nghĩa",
+            "url": "https://github.com/tinhdophapam/audio-library/releases/download/v1.0/04.Ch.ng.III.Ro.Nghia.mp3",
+            "duration": "09:43"
+          },
+          {
+            "title": "05. Chương IV Pháp Môn Tịnh Độ",
+            "url": "https://github.com/tinhdophapam/audio-library/releases/download/v1.0/05.Ch.ng.IV.Phap.Mon.T.nh.D.mp3",
+            "duration": "19:29"
+          },
+          {
+            "title": "06. Chương V Việc Làm Ba La Mật",
+            "url": "https://github.com/tinhdophapam/audio-library/releases/download/v1.0/06.Ch.ng.V.Vi.c.Lam.Ba.La.M.t.mp3",
+            "duration": "13:47"
+          },
+          {
+            "title": "07. Chương VI Hạnh Xuất Gia",
+            "url": "https://github.com/tinhdophapam/audio-library/releases/download/v1.0/07.Ch.ng.VI.H.nh.Xu.t.Gia.mp3",
+            "duration": "52:10"
+          },
+          {
+            "title": "08. Chương VII Xuất Gia Và Tại Gia",
+            "url": "https://github.com/tinhdophapam/audio-library/releases/download/v1.0/08.Ch.ng.VII.Xu.t.Gia.Va.T.i.Gia.mp3",
+            "duration": "15:02"
+          },
+          {
+            "title": "09. Chương VIII Cảnh Giới Chúng Sanh",
+            "url": "https://github.com/tinhdophapam/audio-library/releases/download/v1.0/09.Ch.ng.VIII.C.nh.Gi.i.Chung.Sanh.mp3",
+            "duration": "07:50"
+          },
+          {
+            "title": "10. Chương IX Nhân Quả Và Sám Hối",
+            "url": "https://github.com/tinhdophapam/audio-library/releases/download/v1.0/10.Ch.ng.IX.Nhan.Qu.Va.Sam.H.i.mp3",
+            "duration": "09:17"
+          },
+          {
+            "title": "11. Chương X Lời Cuối",
+            "url": "https://github.com/tinhdophapam/audio-library/releases/download/v1.0/11.Ch.ng.X.L.i.Cu.i.mp3",
+            "duration": "13:43"
+          }
         ]
       },
       {
