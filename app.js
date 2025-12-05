@@ -40,6 +40,10 @@ class AudioPlayer {
         this.copyLink = document.getElementById('copyLink');
         this.totalTracks = document.getElementById('totalTracks');
         this.totalFavorites = document.getElementById('totalFavorites');
+        this.totalListenTime = document.getElementById('totalListenTime');
+        this.nowPlayingSection = document.getElementById('nowPlayingSection');
+        this.nowPlayingTitle = document.getElementById('nowPlayingTitle');
+        this.nowPlayingFolder = document.getElementById('nowPlayingFolder');
         this.menuToggle = document.getElementById('menuToggle');
         this.sidebar = document.getElementById('sidebar');
         this.sidebarOverlay = document.getElementById('sidebarOverlay');
@@ -82,6 +86,10 @@ class AudioPlayer {
         this.recentlyPlayed = JSON.parse(localStorage.getItem('recentlyPlayed')) || [];
         this.queue = [];
         this.currentFilter = 'all';
+        
+        // Listen time tracking
+        this.totalListenTimeSeconds = parseInt(localStorage.getItem('totalListenTime')) || 0;
+        this.sessionStartTime = null;
         this.usingBackupUrl = false; // Track if currently using backup URL
 
         // Initialize
@@ -728,6 +736,12 @@ class AudioPlayer {
         this.addToRecentlyPlayed(track);
         this.updateQueue();
         this.saveState();
+        
+        // Update Now Playing section
+        this.updateNowPlaying(track);
+        
+        // Start tracking listen time
+        this.sessionStartTime = Date.now();
         
         // Add playing animation to album art
         const albumArt = document.querySelector('.album-art-inner');
@@ -1928,6 +1942,7 @@ class AudioPlayer {
                 // Update media session position state periodically
                 if (this.audio.currentTime % 5 < 0.5) { // Update every ~5 seconds
                     this.updateMediaSessionPositionState();
+                    this.trackListenTime(); // Track listen time every 5 seconds
                 }
             }
         });
@@ -2488,6 +2503,42 @@ class AudioPlayer {
     updateStats() {
         this.totalTracks.textContent = this.flatPlaylist.length;
         this.totalFavorites.textContent = this.favorites.length;
+        
+        // Update listen time display
+        if (this.totalListenTime) {
+            const hours = Math.floor(this.totalListenTimeSeconds / 3600);
+            const minutes = Math.floor((this.totalListenTimeSeconds % 3600) / 60);
+            if (hours > 0) {
+                this.totalListenTime.textContent = `${hours}h${minutes > 0 ? ` ${minutes}m` : ''}`;
+            } else if (minutes > 0) {
+                this.totalListenTime.textContent = `${minutes}m`;
+            } else {
+                this.totalListenTime.textContent = '0m';
+            }
+        }
+    }
+
+    // ===== Update Now Playing =====
+    updateNowPlaying(track) {
+        if (this.nowPlayingSection && this.nowPlayingTitle && this.nowPlayingFolder) {
+            this.nowPlayingSection.style.display = 'block';
+            this.nowPlayingTitle.textContent = track.title;
+            this.nowPlayingFolder.textContent = `${track.folder} › ${track.subfolder}`;
+        }
+    }
+
+    // ===== Track Listen Time =====
+    trackListenTime() {
+        if (this.sessionStartTime && !this.audio.paused) {
+            const now = Date.now();
+            const elapsed = Math.floor((now - this.sessionStartTime) / 1000);
+            if (elapsed > 0) {
+                this.totalListenTimeSeconds += elapsed;
+                localStorage.setItem('totalListenTime', this.totalListenTimeSeconds);
+                this.updateStats();
+                this.sessionStartTime = now;
+            }
+        }
     }
 
     // ===== Enhanced Next Track with Shuffle/Repeat =====
