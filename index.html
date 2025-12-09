@@ -179,6 +179,9 @@
                 <button class="filter-tab" data-filter="favorites">
                     <i class="fas fa-list"></i> Playlist
                 </button>
+                <button class="filter-tab" data-filter="bookmarks">
+                    <i class="fas fa-bookmark"></i> Ghi chú
+                </button>
                 <button class="filter-tab" data-filter="recent">
                     <i class="fas fa-history"></i> Lịch sử
                 </button>
@@ -223,6 +226,9 @@
                         </div>
                         <button class="favorite-btn" id="favoriteBtn" title="Thêm vào playlist">
                             <i class="far fa-star"></i>
+                        </button>
+                        <button class="bookmark-btn" id="bookmarkBtn" title="Đánh dấu (Ghi chú)">
+                            <i class="far fa-bookmark"></i>
                         </button>
                     </div>
                     <div class="track-info">
@@ -287,6 +293,25 @@
                             <button data-speed="1.25">1.25x</button>
                             <button data-speed="1.5">1.5x</button>
                             <button data-speed="2">2.0x</button>
+                        </div>
+                    </div>
+
+                    <div class="sleep-timer-control">
+                        <button class="control-btn secondary" id="sleepTimerBtn" title="Hẹn giờ tắt">
+                            <i class="fas fa-moon"></i>
+                            <span class="timer-countdown" id="timerCountdown" style="display: none;"></span>
+                        </button>
+                        <div class="timer-menu" id="timerMenu">
+                            <div class="timer-header">Hẹn giờ tắt</div>
+                            <button data-time="0" class="active">Tắt</button>
+                            <button data-time="15">15 phút</button>
+                            <button data-time="30">30 phút</button>
+                            <button data-time="45">45 phút</button>
+                            <button data-time="60">60 phút</button>
+                            <div class="custom-timer">
+                                <input type="number" id="customTimerInput" placeholder="Phút" min="1" max="120">
+                                <button id="setCustomTimerBtn">Đặt</button>
+                            </div>
                         </div>
                     </div>
 
@@ -360,6 +385,19 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Bookmarks View -->
+            <div class="content-view" id="bookmarksView">
+                <div class="library-header">
+                    <h2><i class="fas fa-bookmark"></i> Ghi chú</h2>
+                    <p class="library-subtitle">Các điểm đã lưu</p>
+                </div>
+                <div class="library-content" id="bookmarksContent">
+                    <div class="loading">
+                        <p>Chưa có ghi chú nào</p>
+                    </div>
+                </div>
+            </div>
         </main>
 
         <!-- Queue Panel -->
@@ -413,8 +451,8 @@
             </div>
             <div class="mini-player-content" id="miniPlayerContent">
                 <div class="mini-player-info">
-                    <button class="mini-album-art" id="miniRepeatBtn" title="Repeat">
-                        <i class="fas fa-redo"></i>
+                    <button class="mini-album-art" id="miniMoreBtn" title="More Options">
+                        <i class="fas fa-ellipsis-v"></i>
                     </button>
                     <div class="mini-track-info">
                         <div class="mini-track-title" id="miniTrackTitle">Chọn bài giảng</div>
@@ -437,6 +475,46 @@
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
+            </div>
+        </div>
+
+        <!-- Mobile More Menu -->
+        <div class="mobile-more-menu-overlay" id="mobileMoreMenuOverlay"></div>
+        <div class="mobile-more-menu" id="mobileMoreMenu">
+            <div class="mobile-more-header">
+                <h3>Tùy chọn</h3>
+                <button class="close-mobile-more" id="closeMobileMore">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="mobile-more-content">
+                <button class="mobile-more-item" id="mobileMoreRepeat">
+                    <div class="mobile-more-icon">
+                        <i class="fas fa-redo"></i>
+                    </div>
+                    <div class="mobile-more-info">
+                        <span class="mobile-more-label">Lặp lại</span>
+                        <span class="mobile-more-value" id="mobileRepeatValue">Tắt</span>
+                    </div>
+                </button>
+                <button class="mobile-more-item" id="mobileMoreSpeed">
+                    <div class="mobile-more-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="mobile-more-info">
+                        <span class="mobile-more-label">Tốc độ</span>
+                        <span class="mobile-more-value" id="mobileSpeedValue">1.0x</span>
+                    </div>
+                </button>
+                <button class="mobile-more-item" id="mobileMoreTimer">
+                    <div class="mobile-more-icon">
+                        <i class="fas fa-stopwatch"></i>
+                    </div>
+                    <div class="mobile-more-info">
+                        <span class="mobile-more-label">Hẹn giờ tắt</span>
+                        <span class="mobile-more-value" id="mobileTimerValue">Tắt</span>
+                    </div>
+                </button>
             </div>
         </div>
 

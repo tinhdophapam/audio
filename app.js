@@ -47,15 +47,24 @@ class AudioPlayer {
         this.menuToggle = document.getElementById('menuToggle');
         this.sidebar = document.getElementById('sidebar');
         this.sidebarOverlay = document.getElementById('sidebarOverlay');
-        
+
         // Mobile Sidebar Elements
         this.mobileSidebar = document.getElementById('mobileSidebar');
         this.mobileSidebarOverlay = document.getElementById('mobileSidebarOverlay');
         this.closeMobileSidebar = document.getElementById('closeMobileSidebar');
-        
+
         // Mini Player Elements
         this.miniPlayer = document.getElementById('miniPlayer');
-        this.miniRepeatBtn = document.getElementById('miniRepeatBtn');
+        this.miniMoreBtn = document.getElementById('miniMoreBtn');
+        this.mobileMoreMenu = document.getElementById('mobileMoreMenu');
+        this.mobileMoreMenuOverlay = document.getElementById('mobileMoreMenuOverlay');
+        this.closeMobileMore = document.getElementById('closeMobileMore');
+        this.mobileMoreRepeat = document.getElementById('mobileMoreRepeat');
+        this.mobileMoreSpeed = document.getElementById('mobileMoreSpeed');
+        this.mobileMoreTimer = document.getElementById('mobileMoreTimer');
+        this.mobileRepeatValue = document.getElementById('mobileRepeatValue');
+        this.mobileSpeedValue = document.getElementById('mobileSpeedValue');
+        this.mobileTimerValue = document.getElementById('mobileTimerValue');
         this.miniPrevBtn = document.getElementById('miniPrevBtn');
         this.miniPlayBtn = document.getElementById('miniPlayBtn');
         this.miniNextBtn = document.getElementById('miniNextBtn');
@@ -67,10 +76,22 @@ class AudioPlayer {
         this.miniProgressFill = document.getElementById('miniProgressFill');
         this.miniPlayerContent = document.getElementById('miniPlayerContent');
         this.miniPlayerInfo = document.querySelector('.mini-player-info');
-        
+
         // Bottom Nav
         this.bottomNav = document.getElementById('bottomNav');
-        
+
+        // Sleep Timer Elements
+        this.sleepTimerBtn = document.getElementById('sleepTimerBtn');
+        this.timerMenu = document.getElementById('timerMenu');
+        this.timerCountdown = document.getElementById('timerCountdown');
+        this.customTimerInput = document.getElementById('customTimerInput');
+        this.setCustomTimerBtn = document.getElementById('setCustomTimerBtn');
+
+        // Sleep Timer State
+        this.sleepTimer = null;
+        this.sleepTimerEndTime = null;
+        this.sleepTimerDuration = 0;
+
         // Swipe gesture state
         this.touchStartY = 0;
         this.touchEndY = 0;
@@ -83,10 +104,15 @@ class AudioPlayer {
         this.isShuffled = false;
         this.repeatMode = 'off'; // off, one, all
         this.favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        this.bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
         this.recentlyPlayed = JSON.parse(localStorage.getItem('recentlyPlayed')) || [];
         this.queue = [];
         this.currentFilter = 'all';
-        
+
+        // Bookmark Elements
+        this.bookmarkBtn = document.getElementById('bookmarkBtn');
+        this.bookmarksContent = document.getElementById('bookmarksContent');
+
         // Listen time tracking
         this.totalListenTimeSeconds = parseInt(localStorage.getItem('totalListenTime')) || 0;
         this.sessionStartTime = null;
@@ -105,6 +131,360 @@ class AudioPlayer {
         this.initBuddhaText();
         this.initializeLibraryView();
         this.initializeDefaultView();
+        this.initializeDefaultView();
+        this.initSleepTimer();
+        this.initBookmarks();
+    }
+
+    // ===== Sleep Timer =====
+    initSleepTimer() {
+        if (!this.sleepTimerBtn) return;
+
+        // Toggle Menu
+        this.sleepTimerBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.timerMenu.classList.toggle('show');
+            this.speedMenu.classList.remove('show'); // Close speed menu
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (this.timerMenu && this.timerMenu.classList.contains('show') &&
+                !this.sleepTimerBtn.contains(e.target) &&
+                !this.timerMenu.contains(e.target)) {
+                this.timerMenu.classList.remove('show');
+            }
+        });
+
+        // Preset Buttons
+        const buttons = this.timerMenu.querySelectorAll('button[data-time]');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const minutes = parseInt(btn.dataset.time);
+                this.setSleepTimer(minutes);
+                this.timerMenu.classList.remove('show');
+            });
+        });
+
+        // Custom Timer
+        if (this.setCustomTimerBtn) {
+            this.setCustomTimerBtn.addEventListener('click', () => {
+                const minutes = parseInt(this.customTimerInput.value);
+                if (minutes > 0) {
+                    this.setSleepTimer(minutes);
+                    this.timerMenu.classList.remove('show');
+                }
+            });
+        }
+    }
+
+    // ===== Bookmarks Logic =====
+    initBookmarks() {
+        if (this.bookmarkBtn) {
+            this.bookmarkBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.saveBookmark();
+            });
+        }
+    }
+
+    saveBookmark() {
+        if (this.currentIndex === -1) return;
+
+        const track = this.flatPlaylist[this.currentIndex];
+        const currentTime = this.audio.currentTime;
+        const timestamp = Date.now();
+
+        // Create bookmark object
+        const bookmark = {
+            id: timestamp, // Unique ID
+            url: track.url,
+            title: track.title,
+            folder: track.folder,
+            subfolder: track.subfolder,
+            time: currentTime,
+            createdAt: timestamp
+        };
+
+        this.bookmarks.unshift(bookmark);
+        localStorage.setItem('bookmarks', JSON.stringify(this.bookmarks));
+
+        this.showToast(`Đã ghi chú tại ${this.formatTime(currentTime)}`, 'success');
+
+        // If currently viewing bookmarks, refresh
+        if (this.currentFilter === 'bookmarks') {
+            this.renderBookmarks();
+        }
+    }
+
+    removeBookmark(id) {
+        const index = this.bookmarks.findIndex(b => b.id === id);
+        if (index >= 0) {
+            this.bookmarks.splice(index, 1);
+            localStorage.setItem('bookmarks', JSON.stringify(this.bookmarks));
+            if (this.currentFilter === 'bookmarks') {
+                this.renderBookmarks();
+            }
+            this.showToast('Đã xóa ghi chú', 'info');
+        }
+    }
+
+    playBookmark(bookmark) {
+        // Find track in playlist
+        const index = this.flatPlaylist.findIndex(t => t.url === bookmark.url);
+
+        if (index >= 0) {
+            if (this.currentIndex !== index) {
+                this.playTrack(index);
+            }
+
+            // Wait a bit for track to load if necessary, or just seek
+            // Since playTrack is async-ish (audio.play is promise), we might need to handle seek carefully.
+            // But simple currentTime setting usually works after src is set.
+            setTimeout(() => {
+                this.audio.currentTime = bookmark.time;
+                this.updateProgress();
+            }, 100);
+        } else {
+            this.showToast('Không tìm thấy bài giảng này trong danh sách', 'error');
+        }
+    }
+
+    // ===== Render Bookmarks =====
+    renderBookmarks(searchTerm = '', container = this.playlist) {
+        if (!container) return;
+        container.innerHTML = '';
+
+        if (this.bookmarks.length === 0) {
+            container.innerHTML = `
+                <div class="empty-state">
+                    <i class="fas fa-bookmark"><\/i>
+                    <h3>Chưa có ghi chú nào<\/h3>
+                    <p>Nhấn vào biểu tượng bookmark khi nghe để lưu lại vị trí.<\/p>
+                <\/div>
+            `;
+            return;
+        }
+
+        this.bookmarks.forEach(item => {
+            if (searchTerm && !item.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+                return;
+            }
+
+            const bookmarkCard = document.createElement('div');
+            bookmarkCard.className = 'bookmark-card';
+            bookmarkCard.innerHTML = `
+                <div class="bookmark-card-icon">
+                    <i class="fas fa-bookmark"><\/i>
+                <\/div>
+                <div class="bookmark-card-content">
+                    <div class="bookmark-card-title">${item.title}<\/div>
+                    <div class="bookmark-card-time">
+                        <i class="far fa-clock"><\/i>
+                        ${this.formatTime(item.time)}
+                        <span class="bookmark-card-subtitle">${new Date(item.createdAt).toLocaleDateString('vi-VN')}<\/span>
+                    <\/div>
+                <\/div>
+                <button class="bookmark-card-remove" title="Xóa ghi chú">
+                    <i class="fas fa-trash-alt"><\/i>
+                <\/button>
+            `;
+
+            bookmarkCard.addEventListener('click', (e) => {
+                if (!e.target.closest('.bookmark-card-remove')) {
+                    this.playBookmark(item);
+                }
+            });
+
+            const removeBtn = bookmarkCard.querySelector('.bookmark-card-remove');
+            removeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (confirm('Bạn có chắc muốn xóa ghi chú này?')) {
+                    this.removeBookmark(item.id);
+                }
+            });
+
+            container.appendChild(bookmarkCard);
+        });
+    }
+
+    updateBookmarkButton() {
+        if (this.bookmarkBtn) {
+            if (this.currentIndex === -1) {
+                this.bookmarkBtn.style.opacity = '0.5';
+                this.bookmarkBtn.style.pointerEvents = 'none';
+            } else {
+                this.bookmarkBtn.style.opacity = '1';
+                this.bookmarkBtn.style.pointerEvents = 'auto';
+            }
+        }
+    }
+
+    setSleepTimer(minutes) {
+        // Clear existing timer
+        if (this.sleepTimer) {
+            clearInterval(this.sleepTimer);
+            this.sleepTimer = null;
+        }
+
+        this.sleepTimerDuration = minutes;
+        this.sleepTimerEndTime = minutes > 0 ? Date.now() + (minutes * 60 * 1000) : null;
+
+        // Update UI buttons
+        const buttons = this.timerMenu.querySelectorAll('button[data-time]');
+        buttons.forEach(btn => {
+            btn.classList.remove('active');
+            if (parseInt(btn.dataset.time) === minutes && !this.customTimerInput.value) {
+                btn.classList.add('active');
+            }
+        });
+
+        if (minutes === 0) {
+            this.timerCountdown.style.display = 'none';
+            this.sleepTimerBtn.classList.remove('active');
+            this.customTimerInput.value = '';
+
+            // Show toast
+            this.showToast('Đã tắt hẹn giờ', 'info');
+        } else {
+            this.timerCountdown.style.display = 'inline';
+            this.sleepTimerBtn.classList.add('active');
+            this.updateTimerCountdown();
+
+            // Start countdown interval
+            this.sleepTimer = setInterval(() => {
+                this.updateTimerCountdown();
+            }, 1000);
+
+            // Show toast
+            this.showToast(`Hẹn giờ tắt sau ${minutes} phút`, 'success');
+        }
+
+        // Update Mobile More Menu
+        if (this.mobileTimerValue) {
+            if (minutes === 0) {
+                this.mobileTimerValue.textContent = 'Tắt';
+                this.mobileTimerValue.classList.remove('active');
+            } else {
+                this.mobileTimerValue.textContent = `${minutes} phút`;
+                this.mobileTimerValue.classList.add('active');
+            }
+        }
+    }
+
+    updateTimerCountdown() {
+        if (!this.sleepTimerEndTime) return;
+
+        const now = Date.now();
+        const timeLeft = this.sleepTimerEndTime - now;
+
+        if (timeLeft <= 0) {
+            this.stopPlaybackWithFade();
+            this.setSleepTimer(0);
+        } else {
+            const minutesLeft = Math.floor(timeLeft / 60000);
+            const secondsLeft = Math.floor((timeLeft % 60000) / 1000);
+
+            if (minutesLeft >= 60) {
+                const hours = Math.floor(minutesLeft / 60);
+                const mins = minutesLeft % 60;
+                this.timerCountdown.textContent = `${hours}h ${mins}m`;
+            } else {
+                this.timerCountdown.textContent = `${minutesLeft}:${secondsLeft.toString().padStart(2, '0')}`;
+            }
+        }
+    }
+
+    stopPlaybackWithFade() {
+        if (this.audio.paused) return;
+
+        // Fade out volume over 2 seconds
+        const originalVolume = this.audio.volume;
+        let vol = originalVolume;
+        const fadeInterval = setInterval(() => {
+            vol -= 0.05;
+            if (vol <= 0) {
+                clearInterval(fadeInterval);
+                this.audio.pause();
+                this.audio.volume = originalVolume; // Reset volume for next play
+            } else {
+                this.audio.volume = vol;
+            }
+        }, 100);
+    }
+
+    // ===== Toast Notification Helper =====
+    showToast(message, type = 'info') {
+        // Create toast container if not exists
+        let toastContainer = document.getElementById('toastContainer');
+        if (!toastContainer) {
+            toastContainer = document.createElement('div');
+            toastContainer.id = 'toastContainer';
+            toastContainer.style.position = 'fixed';
+            toastContainer.style.top = '20px';
+            toastContainer.style.right = '20px';
+            toastContainer.style.zIndex = '2000';
+            toastContainer.style.display = 'flex';
+            toastContainer.style.flexDirection = 'column';
+            toastContainer.style.gap = '10px';
+            document.body.appendChild(toastContainer);
+        }
+
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        toast.style.padding = '12px 20px';
+        toast.style.borderRadius = '8px';
+        toast.style.color = 'white';
+        toast.style.fontSize = '0.9rem';
+        toast.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
+        toast.style.display = 'flex';
+        toast.style.alignItems = 'center';
+        toast.style.gap = '10px';
+        toast.style.minWidth = '250px';
+        toast.style.animation = 'slideInRight 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        toast.style.opacity = '0';
+        toast.style.transition = 'opacity 0.3s, transform 0.3s';
+
+        // Icon based on type
+        let iconHtml = '';
+        let bgColor = '';
+        switch (type) {
+            case 'success':
+                iconHtml = '<i class="fas fa-check-circle"></i>';
+                bgColor = 'var(--success, #4caf50)';
+                break;
+            case 'error':
+                iconHtml = '<i class="fas fa-exclamation-circle"></i>';
+                bgColor = 'var(--error, #f44336)';
+                break;
+            case 'info':
+            default:
+                iconHtml = '<i class="fas fa-info-circle"></i>';
+                bgColor = 'var(--accent, #FF9500)';
+                break;
+        }
+
+        toast.style.background = bgColor;
+        toast.innerHTML = `${iconHtml}<span>${message}</span>`;
+
+        toastContainer.appendChild(toast);
+
+        // Animate in
+        requestAnimationFrame(() => {
+            toast.style.opacity = '1';
+        });
+
+        // Remove after 3 seconds
+        setTimeout(() => {
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateY(-10px)';
+            setTimeout(() => {
+                toast.remove();
+                if (toastContainer.children.length === 0) {
+                    toastContainer.remove();
+                }
+            }, 300);
+        }, 3000);
     }
 
     // ===== Initialize Default View Based on Screen Size =====
@@ -115,7 +495,7 @@ class AudioPlayer {
                 view.classList.remove('active');
             });
             document.getElementById('libraryView').classList.add('active');
-            
+
             // Update bottom nav active state
             document.querySelectorAll('.nav-item').forEach(item => {
                 item.classList.remove('active');
@@ -124,7 +504,7 @@ class AudioPlayer {
             if (libraryNavItem) {
                 libraryNavItem.classList.add('active');
             }
-            
+
             // Render library view
             if (this.libraryView !== 'folders') {
                 this.navigateLibraryToFolders();
@@ -142,7 +522,7 @@ class AudioPlayer {
 
         const text = 'Nam Mô A Di Đà Phật';
         const words = text.split(' ').filter(w => w.length > 0);
-        
+
         // 6 màu theo thứ tự từ Flutter (giống hệt)
         const colors = [
             '#D84315', // Deep Orange 900
@@ -162,7 +542,7 @@ class AudioPlayer {
             const displayText = words.slice(0, currentWordIndex + 1).join(' ');
             buddhaNameEl.textContent = displayText;
             buddhaNameEl.style.color = colors[colorIndex];
-            
+
             // Add subtle scale animation
             buddhaNameEl.style.transform = 'scale(1.02)';
             setTimeout(() => {
@@ -195,7 +575,7 @@ class AudioPlayer {
         try {
             const response = await fetch('lectures.json');
             if (!response.ok) throw new Error('Không thể tải file lectures.json');
-            
+
             this.lectures = await response.json();
             this.buildFlatPlaylist();
             this.renderPlaylist();
@@ -243,8 +623,10 @@ class AudioPlayer {
         if (this.currentFilter === 'favorites') {
             this.renderFavorites(searchTerm);
             return;
-        } else if (this.currentFilter === 'recent') {
             this.renderRecents(searchTerm);
+            return;
+        } else if (this.currentFilter === 'bookmarks') {
+            this.renderBookmarks(searchTerm);
             return;
         }
 
@@ -274,7 +656,7 @@ class AudioPlayer {
 
             // Count subfolders and items
             const subfolderCount = folder.subfolders ? folder.subfolders.length : 0;
-            const itemCount = folder.subfolders 
+            const itemCount = folder.subfolders
                 ? folder.subfolders.reduce((sum, sub) => sum + (sub.items ? sub.items.length : 0), 0)
                 : 0;
 
@@ -339,7 +721,7 @@ class AudioPlayer {
                 const itemCount = subfolder.items ? subfolder.items.length : 0;
 
                 // Check if all items in subfolder are favorited
-                const allFavorited = subfolder.items && subfolder.items.length > 0 && 
+                const allFavorited = subfolder.items && subfolder.items.length > 0 &&
                     subfolder.items.every(item => this.favorites.some(f => f.url === item.url));
 
                 const subfolderCard = document.createElement('div');
@@ -425,6 +807,7 @@ class AudioPlayer {
 
                 const trackCard = document.createElement('div');
                 trackCard.className = `track-card ${isActive ? 'active' : ''}`;
+                trackCard.setAttribute('data-index', flatIndex); // ← Add data-index for quick scroll
                 trackCard.innerHTML = `
                     <div class="track-card-icon">
                         <i class="fas ${isActive ? 'fa-volume-up' : 'fa-music'}"></i>
@@ -513,7 +896,7 @@ class AudioPlayer {
 
         const toggleBtn = customPlaylistCard.querySelector('.custom-playlist-toggle');
         const itemsContainer = customPlaylistCard.querySelector('.custom-playlist-items');
-        
+
         const headerDiv = customPlaylistCard.querySelector('.custom-playlist-header');
         headerDiv.addEventListener('click', (e) => {
             // Don't toggle if clicking on play button
@@ -559,7 +942,7 @@ class AudioPlayer {
                 // Update count
                 const subtitle = customPlaylistCard.querySelector('.custom-playlist-subtitle');
                 subtitle.textContent = `${this.favorites.length} bài đã chọn`;
-                
+
                 // Hide play button if no items
                 if (this.favorites.length === 0 && playBtn) {
                     playBtn.remove();
@@ -670,7 +1053,7 @@ class AudioPlayer {
         if (!subfolder.items || subfolder.items.length === 0) return;
 
         // Check if all items are already favorited
-        const allFavorited = subfolder.items.every(item => 
+        const allFavorited = subfolder.items.every(item =>
             this.favorites.some(f => f.url === item.url)
         );
 
@@ -687,7 +1070,7 @@ class AudioPlayer {
             subfolder.items.forEach(item => {
                 // Check if item already exists (might be standalone without folder info)
                 const existingIndex = this.favorites.findIndex(f => f.url === item.url);
-                
+
                 if (existingIndex >= 0) {
                     // Update existing item with folder/subfolder info
                     this.favorites[existingIndex] = {
@@ -736,38 +1119,68 @@ class AudioPlayer {
         this.addToRecentlyPlayed(track);
         this.updateQueue();
         this.saveState();
-        
+        this.updateBookmarkButton();
+
         // Update Now Playing section
         this.updateNowPlaying(track);
-        
+
         // Start tracking listen time
         this.sessionStartTime = Date.now();
-        
+
         // Add playing animation to album art
         const albumArt = document.querySelector('.album-art-inner');
         if (albumArt) albumArt.classList.add('playing');
-        
+
         // Update mini player
         this.updateMiniPlayer(track);
         this.showMiniPlayer();
-        
+
         // Update Media Session API for background playback
         this.updateMediaSession(track);
     }
 
     // ===== Update Active Track Highlight =====
     updateActiveTrack() {
-        // Active state is now handled during rendering
-        // This method is kept for backward compatibility
+        // Remove active class from all potential items
+        document.querySelectorAll('.track-card.active, .custom-playlist-item.active, .history-card.active, .queue-item.active, .queue-item.playing').forEach(el => {
+            el.classList.remove('active');
+            el.classList.remove('playing');
+
+            // Reset icons
+            const icon = el.querySelector('.track-card-icon i, .custom-playlist-item-icon i, .history-card-icon i');
+            if (icon) {
+                if (el.classList.contains('history-card')) icon.className = 'fas fa-history';
+                else icon.className = 'fas fa-music';
+            }
+
+            // Remove queue item specific icon
+            if (el.className.includes('queue-item')) {
+                const queueIcon = el.querySelector('.queue-item-info + i');
+                if (queueIcon) queueIcon.remove();
+            }
+        });
+
+        if (this.currentIndex === -1) {
+            return;
+        }
+
+        // Add active class to matching items
+        const activeElements = document.querySelectorAll(`[data-index="${this.currentIndex}"]`);
+        activeElements.forEach(el => {
+            el.classList.add('active');
+            if (el.className.includes('queue-item')) el.classList.add('playing');
+
+            // Update icons
+            const icon = el.querySelector('.track-card-icon i, .custom-playlist-item-icon i, .history-card-icon i');
+            if (icon) icon.className = 'fas fa-volume-up';
+
+            // Add queue item icon if missing
+            if (el.className.includes('queue-item') && !el.querySelector('.queue-item-info + i')) {
+                el.insertAdjacentHTML('beforeend', '<i class="fas fa-volume-up"></i>');
+            }
+        });
     }
 
-    // ===== Scroll to Active Track =====
-    scrollToActiveTrack() {
-        const activeTrack = document.querySelector('.track-item.active');
-        if (activeTrack) {
-            activeTrack.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-    }
 
     // ===== Play/Pause Toggle =====
     togglePlay() {
@@ -812,7 +1225,7 @@ class AudioPlayer {
             this.progressFill.style.width = `${percent}%`;
             this.progressHandle.style.left = `${percent}%`;
             this.currentTimeEl.textContent = this.formatTime(currentTime);
-            
+
             // Update mini player progress
             if (this.miniProgressFill) {
                 this.miniProgressFill.style.width = `${percent}%`;
@@ -873,13 +1286,23 @@ class AudioPlayer {
     setSpeed(speed) {
         this.audio.playbackRate = speed;
         this.speedBtn.querySelector('.speed-text').textContent = `${speed}x`;
-        
+
         document.querySelectorAll('.speed-menu button').forEach(btn => {
             btn.classList.remove('active');
             if (parseFloat(btn.dataset.speed) === speed) {
                 btn.classList.add('active');
             }
         });
+
+        // Update Mobile More Menu
+        if (this.mobileSpeedValue) {
+            this.mobileSpeedValue.textContent = `${speed}x`;
+            if (speed !== 1) {
+                this.mobileSpeedValue.classList.add('active');
+            } else {
+                this.mobileSpeedValue.classList.remove('active');
+            }
+        }
 
         localStorage.setItem('playbackSpeed', speed);
         this.speedMenu.classList.remove('show');
@@ -891,7 +1314,7 @@ class AudioPlayer {
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
-        
+
         const iconClass = newTheme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
         const icon = this.themeToggle.querySelector('i');
         if (icon) icon.className = iconClass;
@@ -966,60 +1389,164 @@ class AudioPlayer {
         }
     }
 
-    // ===== Media Session API for Background Playback =====
+    // ===== Media Session API for Lock Screen & Background Playback =====
+    // Modern implementation with enhanced artwork and metadata
     updateMediaSession(track) {
-        if ('mediaSession' in navigator) {
-            // Set metadata for notification
+        if (!('mediaSession' in navigator)) {
+            console.warn('Media Session API not supported in this browser');
+            return;
+        }
+
+        try {
+            // Helper: Get absolute URL for assets (iOS compatible)
+            const getAbsoluteUrl = (path) => {
+                // iOS Safari prefers full absolute URLs
+                const url = new URL(path, window.location.href);
+                return url.href;
+            };
+
+            // iOS-optimized artwork
+            // iOS Safari is VERY picky about artwork:
+            // 1. Must be absolute URLs
+            // 2. Must be accessible (CORS compliant)
+            // 3. Prefers square images
+            // 4. WebP support varies - include fallback types
+            const artworkUrl = getAbsoluteUrl('Title Logo.webp');
+
+            const artwork = [
+                // iOS prefers these sizes for lock screen (high quality)
+                { src: artworkUrl, sizes: '512x512', type: 'image/webp' },
+                { src: artworkUrl, sizes: '1024x1024', type: 'image/webp' },
+                { src: artworkUrl, sizes: '384x384', type: 'image/webp' },
+                { src: artworkUrl, sizes: '256x256', type: 'image/webp' },
+                { src: artworkUrl, sizes: '192x192', type: 'image/webp' },
+                { src: artworkUrl, sizes: '128x128', type: 'image/webp' },
+                { src: artworkUrl, sizes: '96x96', type: 'image/webp' }
+            ];
+
+            console.log('🎨 Artwork URL:', artworkUrl);
+
+            // Set rich metadata for lock screen display (iOS optimized)
+            // iOS Safari requires all fields to be non-empty strings
+            const title = (track.title && track.title.trim()) || 'Bài giảng Phật Pháp';
+            const artist = (track.teacher && track.teacher.trim()) ||
+                          (track.folder && track.folder.trim()) ||
+                          'Thầy Thích Chân Hiếu';
+            const album = (track.subfolder && track.subfolder.trim()) ||
+                         (track.folder && track.folder.trim()) ||
+                         'Tịnh Độ Pháp Âm';
+
             navigator.mediaSession.metadata = new MediaMetadata({
-                title: track.title,
-                artist: track.teacher || track.folder,
-                album: track.subfolder || 'Tịnh Độ Pháp Âm',
-                artwork: [
-                    { src: 'Title Logo.webp', sizes: '512x512', type: 'image/webp' },
-                    { src: 'Title Logo.webp', sizes: '256x256', type: 'image/webp' },
-                    { src: 'Title Logo.webp', sizes: '128x128', type: 'image/webp' }
-                ]
+                title: title,
+                artist: artist,
+                album: album,
+                artwork: artwork
             });
 
-            // Set initial playback state
+            console.log('📱 Media Session Metadata:', { title, artist, album });
+
+            // Set playback state
             navigator.mediaSession.playbackState = this.audio.paused ? 'paused' : 'playing';
 
-            // Set up action handlers for media controls
-            navigator.mediaSession.setActionHandler('play', () => {
-                this.audio.play();
-            });
+            // Enhanced action handlers with better error handling
+            this.setupMediaSessionActions();
 
-            navigator.mediaSession.setActionHandler('pause', () => {
-                this.audio.pause();
-            });
+            // Update position state
+            this.schedulePositionStateUpdate();
 
-            navigator.mediaSession.setActionHandler('previoustrack', () => {
-                this.prevTrack();
-            });
+        } catch (error) {
+            console.error('Error setting up Media Session:', error);
+        }
+    }
 
-            navigator.mediaSession.setActionHandler('nexttrack', () => {
-                this.nextTrack();
-            });
+    // Setup all media session action handlers
+    // iOS-optimized: Always register handlers fresh
+    setupMediaSessionActions() {
+        if (!('mediaSession' in navigator)) return;
 
-            navigator.mediaSession.setActionHandler('seekbackward', (details) => {
-                const skipTime = details.seekOffset || 10;
-                this.audio.currentTime = Math.max(0, this.audio.currentTime - skipTime);
-            });
-
-            navigator.mediaSession.setActionHandler('seekforward', (details) => {
-                const skipTime = details.seekOffset || 10;
-                this.audio.currentTime = Math.min(this.audio.duration, this.audio.currentTime + skipTime);
-            });
-
-            navigator.mediaSession.setActionHandler('seekto', (details) => {
-                if (details.fastSeek && 'fastSeek' in this.audio) {
-                    this.audio.fastSeek(details.seekTime);
-                } else {
-                    this.audio.currentTime = details.seekTime;
+        // iOS Safari: Clear existing handlers first
+        // This ensures clean state on each update
+        try {
+            const actionsToRegister = ['play', 'pause', 'previoustrack', 'nexttrack',
+                                       'seekbackward', 'seekforward', 'seekto', 'stop'];
+            actionsToRegister.forEach(action => {
+                try {
+                    navigator.mediaSession.setActionHandler(action, null);
+                } catch (e) {
+                    // Ignore if action not supported
                 }
             });
+        } catch (error) {
+            console.debug('Could not clear action handlers:', error);
+        }
 
-            // Update position state when metadata loads
+        const actionHandlers = [
+            // Basic playback controls
+            ['play', () => {
+                this.audio.play().catch(err => console.error('Play error:', err));
+            }],
+            ['pause', () => {
+                this.audio.pause();
+            }],
+
+            // Track navigation
+            ['previoustrack', () => {
+                this.prevTrack();
+            }],
+            ['nexttrack', () => {
+                this.nextTrack();
+            }],
+
+            // Seek controls with configurable skip time (default 10s)
+            ['seekbackward', (details) => {
+                const skipTime = details.seekOffset || 10;
+                this.audio.currentTime = Math.max(0, this.audio.currentTime - skipTime);
+                this.updateMediaSessionPositionState();
+            }],
+            ['seekforward', (details) => {
+                const skipTime = details.seekOffset || 10;
+                this.audio.currentTime = Math.min(this.audio.duration, this.audio.currentTime + skipTime);
+                this.updateMediaSessionPositionState();
+            }],
+
+            // Precise seeking
+            ['seekto', (details) => {
+                if (details.seekTime !== null && details.seekTime !== undefined) {
+                    if (details.fastSeek && 'fastSeek' in this.audio) {
+                        this.audio.fastSeek(details.seekTime);
+                    } else {
+                        this.audio.currentTime = details.seekTime;
+                    }
+                    this.updateMediaSessionPositionState();
+                }
+            }],
+
+            // Stop action (if supported)
+            ['stop', () => {
+                this.audio.pause();
+                this.audio.currentTime = 0;
+                this.updateMediaSessionPositionState();
+            }]
+        ];
+
+        // Register each action handler with try-catch for compatibility
+        actionHandlers.forEach(([action, handler]) => {
+            try {
+                navigator.mediaSession.setActionHandler(action, handler);
+            } catch (error) {
+                // Some browsers may not support all actions
+                console.debug(`Media Session action "${action}" not supported:`, error.message);
+            }
+        });
+    }
+
+    // Schedule position state update when ready
+    schedulePositionStateUpdate() {
+        if (this.audio.readyState >= 1) {
+            // Audio metadata already loaded
+            this.updateMediaSessionPositionState();
+        } else {
+            // Wait for metadata to load
             this.audio.addEventListener('loadedmetadata', () => {
                 this.updateMediaSessionPositionState();
             }, { once: true });
@@ -1027,17 +1554,36 @@ class AudioPlayer {
     }
 
     // ===== Update Media Session Position State =====
+    // Enhanced with better validation and error handling
     updateMediaSessionPositionState() {
-        if ('mediaSession' in navigator && 'setPositionState' in navigator.mediaSession) {
-            try {
-                navigator.mediaSession.setPositionState({
-                    duration: this.audio.duration || 0,
-                    playbackRate: this.audio.playbackRate || 1.0,
-                    position: this.audio.currentTime || 0
-                });
-            } catch (error) {
-                console.log('Error updating position state:', error);
+        if (!('mediaSession' in navigator) || !('setPositionState' in navigator.mediaSession)) {
+            return;
+        }
+
+        try {
+            // Validate values before setting
+            const duration = this.audio.duration;
+            const position = this.audio.currentTime;
+            const playbackRate = this.audio.playbackRate;
+
+            // Check for valid values (not NaN or Infinity)
+            if (!isFinite(duration) || !isFinite(position) || !isFinite(playbackRate)) {
+                console.debug('Invalid position state values, skipping update');
+                return;
             }
+
+            // Ensure position doesn't exceed duration
+            const safePosition = Math.min(position, duration);
+
+            navigator.mediaSession.setPositionState({
+                duration: duration || 0,
+                playbackRate: playbackRate || 1.0,
+                position: safePosition || 0
+            });
+
+        } catch (error) {
+            // Position state errors are usually harmless, just log for debugging
+            console.debug('Error updating Media Session position state:', error.message);
         }
     }
 
@@ -1071,7 +1617,7 @@ class AudioPlayer {
             if (playerSection) {
                 console.log('✅ Opening full player');
                 playerSection.classList.add('fullscreen');
-                
+
                 // Add close button for fullscreen
                 if (!playerSection.querySelector('.close-fullscreen')) {
                     const closeBtn = document.createElement('button');
@@ -1080,7 +1626,7 @@ class AudioPlayer {
                     closeBtn.addEventListener('click', () => this.closeFullPlayer());
                     playerSection.insertBefore(closeBtn, playerSection.firstChild);
                 }
-                
+
                 // Hide mini player when full player is open
                 if (this.miniPlayer) {
                     console.log('🔵 Hiding mini player');
@@ -1176,7 +1722,7 @@ class AudioPlayer {
         });
 
         // Handle navigation
-        switch(nav) {
+        switch (nav) {
             case 'player':
                 // Show player view and hide mini player
                 document.getElementById('playerView').classList.add('active');
@@ -1198,6 +1744,17 @@ class AudioPlayer {
                     this.navigateLibraryToFolders();
                 } else {
                     this.renderLibraryView();
+                }
+                if (this.currentIndex >= 0) {
+                    this.showMiniPlayer();
+                }
+                break;
+            case 'bookmarks':
+                // Show bookmarks view
+                const bookmarksView = document.getElementById('bookmarksView');
+                if (bookmarksView) {
+                    bookmarksView.classList.add('active');
+                    this.renderBookmarks('', this.bookmarksContent);
                 }
                 if (this.currentIndex >= 0) {
                     this.showMiniPlayer();
@@ -1259,7 +1816,7 @@ class AudioPlayer {
     renderLibraryFolders(container) {
         this.lectures.forEach((folder, folderIndex) => {
             const subfolderCount = folder.subfolders ? folder.subfolders.length : 0;
-            const itemCount = folder.subfolders 
+            const itemCount = folder.subfolders
                 ? folder.subfolders.reduce((sum, sub) => sum + (sub.items ? sub.items.length : 0), 0)
                 : 0;
 
@@ -1317,7 +1874,7 @@ class AudioPlayer {
                 const itemCount = subfolder.items ? subfolder.items.length : 0;
 
                 // Check if all items in subfolder are favorited
-                const allFavorited = subfolder.items && subfolder.items.length > 0 && 
+                const allFavorited = subfolder.items && subfolder.items.length > 0 &&
                     subfolder.items.every(item => this.favorites.some(f => f.url === item.url));
 
                 const subfolderCard = document.createElement('div');
@@ -1396,6 +1953,7 @@ class AudioPlayer {
 
                 const trackCard = document.createElement('div');
                 trackCard.className = `track-card ${isActive ? 'active' : ''}`;
+                trackCard.setAttribute('data-index', flatIndex);
                 trackCard.innerHTML = `
                     <div class="track-card-icon">
                         <i class="fas ${isActive ? 'fa-volume-up' : 'fa-music'}"></i>
@@ -1427,6 +1985,12 @@ class AudioPlayer {
 
                 container.appendChild(trackCard);
             });
+
+            // Auto scroll to active track if in this folder
+            setTimeout(() => {
+                const activeCard = container.querySelector('.track-card.active');
+                if (activeCard) this.scrollToActiveTrack();
+            }, 100);
         }
     }
 
@@ -1556,7 +2120,7 @@ class AudioPlayer {
 
             const toggleBtn = standaloneCard.querySelector('.custom-playlist-toggle');
             const itemsContainer = standaloneCard.querySelector('.custom-playlist-items');
-            
+
             const headerDiv = standaloneCard.querySelector('.custom-playlist-header');
             headerDiv.addEventListener('click', (e) => {
                 if (!e.target.closest('.custom-playlist-play-btn')) {
@@ -1574,6 +2138,7 @@ class AudioPlayer {
 
                 const itemEl = document.createElement('div');
                 itemEl.className = `custom-playlist-item ${isActive ? 'active' : ''}`;
+                itemEl.setAttribute('data-index', flatIndex);
                 itemEl.innerHTML = `
                     <div class="custom-playlist-item-icon">
                         <i class="fas ${isActive ? 'fa-volume-up' : 'fa-music'}"></i>
@@ -1642,7 +2207,7 @@ class AudioPlayer {
 
             const toggleBtn = subfolderCard.querySelector('.custom-playlist-toggle');
             const itemsContainer = subfolderCard.querySelector('.custom-playlist-items');
-            
+
             const headerDiv = subfolderCard.querySelector('.custom-playlist-header');
             headerDiv.addEventListener('click', (e) => {
                 if (!e.target.closest('.custom-playlist-play-btn')) {
@@ -1660,6 +2225,7 @@ class AudioPlayer {
 
                 const itemEl = document.createElement('div');
                 itemEl.className = `custom-playlist-item ${isActive ? 'active' : ''}`;
+                itemEl.setAttribute('data-index', flatIndex);
                 itemEl.innerHTML = `
                     <div class="custom-playlist-item-icon">
                         <i class="fas ${isActive ? 'fa-volume-up' : 'fa-music'}"></i>
@@ -1717,6 +2283,7 @@ class AudioPlayer {
 
             const historyCard = document.createElement('div');
             historyCard.className = 'history-card';
+            historyCard.setAttribute('data-index', flatIndex);
             historyCard.innerHTML = `
                 <div class="history-card-icon">
                     <i class="fas fa-history"></i>
@@ -1875,20 +2442,20 @@ class AudioPlayer {
                     this.audio.src = track.url;
                     this.trackTitle.textContent = track.title;
                     this.trackFolder.textContent = `${track.folder} • ${track.subfolder}`;
-                    
+
                     // Restore playback position
                     this.audio.currentTime = state.currentTime || 0;
-                    
+
                     // Update UI
                     this.updateActiveTrack();
                     this.updateFavoriteButton();
-                    
+
                     // Update and show mini player on mobile
                     this.updateMiniPlayer(track);
                     if (window.innerWidth <= 968) {
                         this.showMiniPlayer();
                     }
-                    
+
                     // Update progress bar after metadata loads
                     this.audio.addEventListener('loadedmetadata', () => {
                         this.audio.currentTime = state.currentTime || 0;
@@ -1909,17 +2476,23 @@ class AudioPlayer {
             this.playBtn.querySelector('i').className = 'fas fa-pause';
             const albumArt = document.querySelector('.album-art-inner');
             if (albumArt) albumArt.classList.add('playing');
-            
+
             // Update media session playback state
             if ('mediaSession' in navigator) {
                 navigator.mediaSession.playbackState = 'playing';
+
+                // iOS Safari: Re-set metadata on play to ensure it shows
+                // This fixes iOS not showing metadata sometimes
+                if (this.currentIndex >= 0 && this.flatPlaylist[this.currentIndex]) {
+                    this.updateMediaSession(this.flatPlaylist[this.currentIndex]);
+                }
             }
         });
         this.audio.addEventListener('pause', () => {
             this.playBtn.querySelector('i').className = 'fas fa-play';
             const albumArt = document.querySelector('.album-art-inner');
             if (albumArt) albumArt.classList.remove('playing');
-            
+
             // Update media session playback state to keep notification visible
             if ('mediaSession' in navigator) {
                 navigator.mediaSession.playbackState = 'paused';
@@ -1938,7 +2511,7 @@ class AudioPlayer {
             if (!this.isDragging) {
                 this.updateProgress();
                 this.saveState();
-                
+
                 // Update media session position state periodically
                 if (this.audio.currentTime % 5 < 0.5) { // Update every ~5 seconds
                     this.updateMediaSessionPositionState();
@@ -2017,12 +2590,39 @@ class AudioPlayer {
         // }
 
         // Mini Player Controls
-        if (this.miniRepeatBtn) {
-            this.miniRepeatBtn.addEventListener('click', (e) => {
+        // Mobile More Menu
+        if (this.miniMoreBtn) {
+            this.miniMoreBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                this.toggleRepeat();
+                this.toggleMobileMoreMenu();
             });
         }
+
+        if (this.mobileMoreMenuOverlay) {
+            this.mobileMoreMenuOverlay.addEventListener('click', () => {
+                this.toggleMobileMoreMenu();
+            });
+        }
+
+        if (this.closeMobileMore) {
+            this.closeMobileMore.addEventListener('click', () => {
+                this.toggleMobileMoreMenu();
+            });
+        }
+
+        if (this.mobileMoreRepeat) {
+            this.mobileMoreRepeat.addEventListener('click', () => this.toggleRepeat());
+        }
+
+        if (this.mobileMoreSpeed) {
+            this.mobileMoreSpeed.addEventListener('click', () => this.cycleSpeed());
+        }
+
+        if (this.mobileMoreTimer) {
+            this.mobileMoreTimer.addEventListener('click', () => this.cycleTimer());
+        }
+
+        // Quick Scroll Button
         if (this.miniPrevBtn) {
             this.miniPrevBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -2054,7 +2654,7 @@ class AudioPlayer {
         if (this.miniPlayerInfo) {
             const handleMiniPlayerInfoClick = (e) => {
                 console.log('🔵 Mini player info clicked:', e.target.className);
-
+     
                 // KHÔNG mở full player khi click vào:
                 // - Controls buttons
                 // - Mini album art (repeat button)
@@ -2065,7 +2665,7 @@ class AudioPlayer {
                     console.log('❌ Clicked on controls or repeat button, not opening');
                 }
             };
-
+     
             // Use both click and touchstart for better mobile responsiveness
             this.miniPlayerInfo.addEventListener('click', handleMiniPlayerInfoClick);
             this.miniPlayerInfo.addEventListener('touchstart', (e) => {
@@ -2078,7 +2678,7 @@ class AudioPlayer {
             }, { passive: false });
         }
         */
-        
+
         // Progress bar seek (separate handler)
         if (this.miniProgressBar) {
             this.miniProgressBar.addEventListener('click', (e) => {
@@ -2108,7 +2708,7 @@ class AudioPlayer {
             const miniAlbumArt = document.querySelector('.mini-album-art');
             if (miniAlbumArt) miniAlbumArt.classList.add('playing');
         });
-        
+
         this.audio.addEventListener('pause', () => {
             if (this.miniPlayBtn) {
                 this.miniPlayBtn.querySelector('i').className = 'fas fa-play';
@@ -2150,7 +2750,7 @@ class AudioPlayer {
             // Ignore if typing in search
             if (e.target === this.searchInput) return;
 
-            switch(e.code) {
+            switch (e.code) {
                 case 'Space':
                     e.preventDefault();
                     this.togglePlay();
@@ -2215,7 +2815,7 @@ class AudioPlayer {
 
             // Show error message
             let errorMsg = 'Lỗi phát audio';
-            switch(this.audio.error.code) {
+            switch (this.audio.error.code) {
                 case 1:
                     errorMsg = 'Tải audio bị hủy';
                     break;
@@ -2242,26 +2842,26 @@ class AudioPlayer {
     // ===== Handle Responsive Layout =====
     handleResponsiveLayout() {
         const isMobile = window.innerWidth <= 968;
-        
+
         if (!isMobile) {
             // Desktop mode - ensure player view is active
             document.querySelectorAll('.content-view').forEach(view => {
                 view.classList.remove('active');
             });
             document.getElementById('playerView').classList.add('active');
-            
+
             // Close any fullscreen player
             const playerSection = document.querySelector('.player-section');
             if (playerSection) {
                 playerSection.classList.remove('fullscreen');
             }
-            
+
             // Remove close button if exists
             const closeBtn = document.querySelector('.close-fullscreen');
             if (closeBtn) {
                 closeBtn.remove();
             }
-            
+
             // Hide mini player
             if (this.miniPlayer) {
                 this.miniPlayer.classList.remove('show');
@@ -2273,7 +2873,7 @@ class AudioPlayer {
                     view.classList.remove('active');
                 });
                 document.getElementById('libraryView').classList.add('active');
-                
+
                 // Update bottom nav
                 document.querySelectorAll('.nav-item').forEach(item => {
                     item.classList.remove('active');
@@ -2283,7 +2883,7 @@ class AudioPlayer {
                     libraryNavItem.classList.add('active');
                 }
             }
-            
+
             // Show mini player if track is playing
             if (this.currentIndex >= 0) {
                 this.showMiniPlayer();
@@ -2303,23 +2903,23 @@ class AudioPlayer {
         const modes = ['off', 'all', 'one'];
         const currentIndex = modes.indexOf(this.repeatMode);
         this.repeatMode = modes[(currentIndex + 1) % modes.length];
-        
+
         // Update main repeat button
         this.repeatBtn.classList.toggle('active', this.repeatMode !== 'off');
         const icon = this.repeatBtn.querySelector('i');
-        
+
         if (this.repeatMode === 'one') {
             icon.className = 'fas fa-redo';
             this.repeatBtn.innerHTML = '<i class="fas fa-redo"></i><span style="position:absolute;font-size:0.6rem;bottom:8px;">1</span>';
         } else {
             icon.className = 'fas fa-redo';
         }
-        
+
         // Update mini player repeat button
         if (this.miniRepeatBtn) {
             this.miniRepeatBtn.classList.toggle('active', this.repeatMode !== 'off');
             const miniIcon = this.miniRepeatBtn.querySelector('i');
-            
+
             if (this.repeatMode === 'one') {
                 miniIcon.className = 'fas fa-redo';
                 this.miniRepeatBtn.innerHTML = '<i class="fas fa-redo"></i><span style="position:absolute;font-size:0.5rem;bottom:6px;">1</span>';
@@ -2332,17 +2932,38 @@ class AudioPlayer {
                 this.miniRepeatBtn.title = 'Không lặp';
             }
         }
-        
+
+        // Update Mobile More Menu
+        if (this.mobileRepeatValue) {
+            let text = 'Tắt';
+            let active = false;
+
+            if (this.repeatMode === 'one') {
+                text = '1 bài';
+                active = true;
+            } else if (this.repeatMode === 'all') {
+                text = 'Tất cả';
+                active = true;
+            }
+
+            this.mobileRepeatValue.textContent = text;
+            if (active) {
+                this.mobileRepeatValue.classList.add('active');
+            } else {
+                this.mobileRepeatValue.classList.remove('active');
+            }
+        }
+
         localStorage.setItem('repeatMode', this.repeatMode);
     }
 
     // ===== Favorites =====
     toggleFavorite() {
         if (this.currentIndex === -1) return;
-        
+
         const track = this.flatPlaylist[this.currentIndex];
         const index = this.favorites.findIndex(f => f.url === track.url);
-        
+
         if (index >= 0) {
             this.favorites.splice(index, 1);
             this.favoriteBtn.classList.remove('active');
@@ -2352,10 +2973,10 @@ class AudioPlayer {
             this.favoriteBtn.classList.add('active');
             this.favoriteBtn.querySelector('i').className = 'fas fa-star';
         }
-        
+
         localStorage.setItem('favorites', JSON.stringify(this.favorites));
         this.updateStats();
-        
+
         if (this.currentFilter === 'favorites') {
             this.renderPlaylist();
         }
@@ -2363,10 +2984,10 @@ class AudioPlayer {
 
     updateFavoriteButton() {
         if (this.currentIndex === -1) return;
-        
+
         const track = this.flatPlaylist[this.currentIndex];
         const isFavorite = this.favorites.some(f => f.url === track.url);
-        
+
         this.favoriteBtn.classList.toggle('active', isFavorite);
         this.favoriteBtn.querySelector('i').className = isFavorite ? 'fas fa-star' : 'far fa-star';
     }
@@ -2422,7 +3043,7 @@ class AudioPlayer {
     // ===== Share =====
     openShareModal() {
         if (this.currentIndex === -1) return;
-        
+
         const track = this.flatPlaylist[this.currentIndex];
         const url = window.location.href.split('?')[0] + '?track=' + encodeURIComponent(track.url);
         this.shareLink.value = url;
@@ -2436,12 +3057,12 @@ class AudioPlayer {
     copyShareLink() {
         this.shareLink.select();
         document.execCommand('copy');
-        
+
         const btn = this.copyLink;
         const originalText = btn.innerHTML;
         btn.innerHTML = '<i class="fas fa-check"></i> Đã copy!';
         btn.classList.add('copied');
-        
+
         setTimeout(() => {
             btn.innerHTML = originalText;
             btn.classList.remove('copied');
@@ -2450,13 +3071,13 @@ class AudioPlayer {
 
     shareToSocial(platform) {
         if (this.currentIndex === -1) return;
-        
+
         const track = this.flatPlaylist[this.currentIndex];
         const url = window.location.href.split('?')[0];
         const text = `Đang nghe: ${track.title} - ${track.folder}`;
-        
+
         let shareUrl = '';
-        switch(platform) {
+        switch (platform) {
             case 'facebook':
                 shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
                 break;
@@ -2467,7 +3088,7 @@ class AudioPlayer {
                 shareUrl = `https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`;
                 break;
         }
-        
+
         if (shareUrl) {
             window.open(shareUrl, '_blank', 'width=600,height=400');
         }
@@ -2476,7 +3097,7 @@ class AudioPlayer {
     // ===== Download =====
     downloadTrack() {
         if (this.currentIndex === -1) return;
-        
+
         const track = this.flatPlaylist[this.currentIndex];
         const a = document.createElement('a');
         a.href = track.url;
@@ -2503,7 +3124,7 @@ class AudioPlayer {
     updateStats() {
         this.totalTracks.textContent = this.flatPlaylist.length;
         this.totalFavorites.textContent = this.favorites.length;
-        
+
         // Update listen time display
         if (this.totalListenTime) {
             const hours = Math.floor(this.totalListenTimeSeconds / 3600);
@@ -2557,6 +3178,36 @@ class AudioPlayer {
         } else if (this.repeatMode === 'all') {
             this.playTrack(0);
         }
+    }
+    // ===== Mobile More Menu Logic =====
+    toggleMobileMoreMenu() {
+        if (this.mobileMoreMenuOverlay) this.mobileMoreMenuOverlay.classList.toggle('show');
+        if (this.mobileMoreMenu) this.mobileMoreMenu.classList.toggle('show');
+    }
+
+    cycleSpeed() {
+        const currentSpeed = this.audio.playbackRate;
+        // Speeds: 1.0 -> 1.25 -> 1.5 -> 2.0 -> 0.75 -> 1.0
+        let nextSpeed = 1.0;
+        if (currentSpeed === 1.0) nextSpeed = 1.25;
+        else if (currentSpeed === 1.25) nextSpeed = 1.5;
+        else if (currentSpeed === 1.5) nextSpeed = 2.0;
+        else if (currentSpeed === 2.0) nextSpeed = 0.75;
+        else nextSpeed = 1.0;
+
+        this.setSpeed(nextSpeed);
+    }
+
+    cycleTimer() {
+        // Timers: 0 (Off) -> 15 -> 30 -> 60 -> 0
+        const currentTimer = this.sleepTimerDuration || 0;
+        let nextTimer = 0;
+        if (currentTimer === 0) nextTimer = 15;
+        else if (currentTimer === 15) nextTimer = 30;
+        else if (currentTimer === 30) nextTimer = 60;
+        else nextTimer = 0;
+
+        this.setSleepTimer(nextTimer);
     }
 }
 
