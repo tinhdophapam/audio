@@ -108,6 +108,7 @@ class AudioPlayer {
         this.recentlyPlayed = JSON.parse(localStorage.getItem('recentlyPlayed')) || [];
         this.queue = [];
         this.currentFilter = 'all';
+        this.currentBlobUrl = null; // Track blob URLs for cleanup
 
         // Bookmark Elements
         this.bookmarkBtn = document.getElementById('bookmarkBtn');
@@ -130,7 +131,6 @@ class AudioPlayer {
         this.updateStats();
         this.initBuddhaText();
         this.initializeLibraryView();
-        this.initializeDefaultView();
         this.initializeDefaultView();
         this.initSleepTimer();
         this.initBookmarks();
@@ -623,6 +623,7 @@ class AudioPlayer {
         if (this.currentFilter === 'favorites') {
             this.renderFavorites(searchTerm);
             return;
+        } else if (this.currentFilter === 'recent') {
             this.renderRecents(searchTerm);
             return;
         } else if (this.currentFilter === 'bookmarks') {
@@ -1099,6 +1100,12 @@ class AudioPlayer {
     playTrack(index) {
         if (index < 0 || index >= this.flatPlaylist.length) return;
 
+        // Revoke previous blob URL to prevent memory leak
+        if (this.currentBlobUrl) {
+            URL.revokeObjectURL(this.currentBlobUrl);
+            this.currentBlobUrl = null;
+        }
+
         this.currentIndex = index;
         const track = this.flatPlaylist[index];
 
@@ -1181,6 +1188,17 @@ class AudioPlayer {
         });
     }
 
+    // ===== Scroll To Active Track =====
+    scrollToActiveTrack() {
+        const activeCard = this.playlist.querySelector('.track-card.active');
+        if (activeCard) {
+            activeCard.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'nearest'
+            });
+        }
+    }
 
     // ===== Play/Pause Toggle =====
     togglePlay() {
@@ -1215,6 +1233,14 @@ class AudioPlayer {
         const mins = Math.floor(seconds / 60);
         const secs = Math.floor(seconds % 60);
         return `${mins}:${secs.toString().padStart(2, '0')}`;
+    }
+
+    // ===== Sanitize HTML (XSS Protection) =====
+    sanitizeHTML(str) {
+        if (!str) return '';
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
     }
 
     // ===== Update Progress =====
@@ -1382,10 +1408,15 @@ class AudioPlayer {
     // ===== Mini Player Functions =====
     updateMiniPlayer(track) {
         if (this.miniTrackTitle) {
-            this.miniTrackTitle.textContent = track.title;
+            this.miniTrackTitle.textContent = track.title || 'Chọn bài giảng';
         }
-        if (this.miniDuration && this.audio.duration) {
-            this.miniDuration.textContent = this.formatTime(this.audio.duration);
+        // Update duration if available, otherwise it will be updated by loadedmetadata event
+        if (this.miniDuration) {
+            if (this.audio.duration && !isNaN(this.audio.duration)) {
+                this.miniDuration.textContent = this.formatTime(this.audio.duration);
+            } else {
+                this.miniDuration.textContent = '0:00';
+            }
         }
     }
 
@@ -1635,24 +1666,6 @@ class AudioPlayer {
             }
         } else {
             console.log('❌ Window width > 968, not opening full player');
-        }
-    }
-
-    closeFullPlayer() {
-        console.log('Closing full player');
-        const playerSection = document.querySelector('.player-section');
-        if (playerSection) {
-            playerSection.classList.remove('fullscreen');
-            // Remove close button
-            const closeBtn = playerSection.querySelector('.close-fullscreen');
-            if (closeBtn) {
-                closeBtn.remove();
-            }
-        }
-        // Show mini player again
-        if (this.miniPlayer) {
-            console.log('Showing mini player again');
-            this.miniPlayer.style.display = '';
         }
     }
 
@@ -2460,6 +2473,10 @@ class AudioPlayer {
                     this.audio.addEventListener('loadedmetadata', () => {
                         this.audio.currentTime = state.currentTime || 0;
                         this.updateProgress();
+                        // Ensure mini player is updated on mobile
+                        if (window.innerWidth <= 968) {
+                            this.updateMiniPlayer(track);
+                        }
                     }, { once: true });
                 }
             } catch (e) {
@@ -2486,6 +2503,12 @@ class AudioPlayer {
                 if (this.currentIndex >= 0 && this.flatPlaylist[this.currentIndex]) {
                     this.updateMediaSession(this.flatPlaylist[this.currentIndex]);
                 }
+            }
+
+            // Update mini player title on play (mobile fix)
+            if (this.miniTrackTitle && this.currentIndex >= 0 && this.currentIndex < this.flatPlaylist.length) {
+                const track = this.flatPlaylist[this.currentIndex];
+                this.miniTrackTitle.textContent = track.title || 'Chọn bài giảng';
             }
         });
         this.audio.addEventListener('pause', () => {
@@ -2523,6 +2546,11 @@ class AudioPlayer {
             this.durationEl.textContent = this.formatTime(this.audio.duration);
             if (this.miniDuration) {
                 this.miniDuration.textContent = this.formatTime(this.audio.duration);
+            }
+            // Update mini player title when metadata is loaded (mobile fix)
+            if (this.miniTrackTitle && this.currentIndex >= 0 && this.currentIndex < this.flatPlaylist.length) {
+                const track = this.flatPlaylist[this.currentIndex];
+                this.miniTrackTitle.textContent = track.title;
             }
         });
 
