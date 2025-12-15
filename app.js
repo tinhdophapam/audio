@@ -134,6 +134,9 @@ class AudioPlayer {
         this.initializeDefaultView();
         this.initSleepTimer();
         this.initBookmarks();
+        
+        // Hide Now Playing section initially if no track is playing
+        this.hideNowPlayingIfNeeded();
     }
 
     // ===== Sleep Timer =====
@@ -306,6 +309,11 @@ class AudioPlayer {
 
             container.appendChild(bookmarkCard);
         });
+
+        // Update active track highlighting (only if using main playlist container)
+        if (container === this.playlist) {
+            this.updateActiveTrack();
+        }
     }
 
     updateBookmarkButton() {
@@ -682,6 +690,9 @@ class AudioPlayer {
 
             this.playlist.appendChild(folderCard);
         });
+
+        // Update active folder highlighting
+        this.updateActiveTrack();
     }
 
     // ===== Render Subfolders =====
@@ -764,6 +775,9 @@ class AudioPlayer {
                 this.playlist.appendChild(subfolderCard);
             });
         }
+
+        // Update active subfolder highlighting
+        this.updateActiveTrack();
     }
 
     // ===== Render Lectures =====
@@ -840,7 +854,16 @@ class AudioPlayer {
 
                 this.playlist.appendChild(trackCard);
             });
+
+            // Auto scroll to active track if in this folder
+            setTimeout(() => {
+                const activeCard = this.playlist.querySelector('.track-card.active');
+                if (activeCard) this.scrollToActiveTrack();
+            }, 100);
         }
+
+        // Update active track highlighting
+        this.updateActiveTrack();
     }
 
     // ===== Render Favorites (Playlist) =====
@@ -954,6 +977,9 @@ class AudioPlayer {
         });
 
         this.playlist.appendChild(customPlaylistCard);
+
+        // Update active track highlighting
+        this.updateActiveTrack();
     }
 
     // ===== Render Recents (History) =====
@@ -1015,6 +1041,9 @@ class AudioPlayer {
 
             this.playlist.appendChild(historyCard);
         });
+
+        // Update active track highlighting
+        this.updateActiveTrack();
     }
 
     // ===== Navigation Methods =====
@@ -1112,10 +1141,17 @@ class AudioPlayer {
         // Reset backup URL flag when playing a new track
         this.usingBackupUrl = false;
 
-        this.audio.src = track.url;
+        // Update UI immediately for better UX
         this.trackTitle.textContent = track.title;
         this.trackFolder.textContent = `${track.folder} • ${track.subfolder}`;
+        
+        // Update Now Playing section immediately
+        this.updateNowPlaying(track);
+        
+        // Update mini player immediately
+        this.updateMiniPlayer(track);
 
+        this.audio.src = track.url;
         this.audio.play().catch(error => {
             this.showError('Không thể phát audio: ' + error.message);
         });
@@ -1128,9 +1164,6 @@ class AudioPlayer {
         this.saveState();
         this.updateBookmarkButton();
 
-        // Update Now Playing section
-        this.updateNowPlaying(track);
-
         // Start tracking listen time
         this.sessionStartTime = Date.now();
 
@@ -1138,8 +1171,6 @@ class AudioPlayer {
         const albumArt = document.querySelector('.album-art-inner');
         if (albumArt) albumArt.classList.add('playing');
 
-        // Update mini player
-        this.updateMiniPlayer(track);
         this.showMiniPlayer();
 
         // Update Media Session API for background playback
@@ -1149,14 +1180,23 @@ class AudioPlayer {
     // ===== Update Active Track Highlight =====
     updateActiveTrack() {
         // Remove active class from all potential items
-        document.querySelectorAll('.track-card.active, .custom-playlist-item.active, .history-card.active, .queue-item.active, .queue-item.playing').forEach(el => {
+        document.querySelectorAll('.track-card.active, .custom-playlist-item.active, .history-card.active, .queue-item.active, .queue-item.playing, .folder-card.active-folder').forEach(el => {
             el.classList.remove('active');
             el.classList.remove('playing');
+            el.classList.remove('active-folder');
 
             // Reset icons
-            const icon = el.querySelector('.track-card-icon i, .custom-playlist-item-icon i, .history-card-icon i');
+            const icon = el.querySelector('.track-card-icon i, .custom-playlist-item-icon i, .history-card-icon i, .folder-card-icon i');
             if (icon) {
                 if (el.classList.contains('history-card')) icon.className = 'fas fa-history';
+                else if (el.classList.contains('folder-card')) {
+                    // Reset folder icons based on context
+                    if (this.currentView === 'folders') {
+                        icon.className = 'fas fa-folder-open';
+                    } else {
+                        icon.className = 'fas fa-folder';
+                    }
+                }
                 else icon.className = 'fas fa-music';
             }
 
@@ -1170,6 +1210,10 @@ class AudioPlayer {
         if (this.currentIndex === -1) {
             return;
         }
+
+        // Get current track info
+        const currentTrack = this.flatPlaylist[this.currentIndex];
+        if (!currentTrack) return;
 
         // Add active class to matching items
         const activeElements = document.querySelectorAll(`[data-index="${this.currentIndex}"]`);
@@ -1186,6 +1230,84 @@ class AudioPlayer {
                 el.insertAdjacentHTML('beforeend', '<i class="fas fa-volume-up"></i>');
             }
         });
+
+        // Mark active folder and subfolder
+        this.markActiveFolders(currentTrack);
+    }
+
+    // ===== Mark Active Folders =====
+    markActiveFolders(currentTrack) {
+        if (!currentTrack) return;
+
+        // Mark active folder in folders view (sidebar)
+        if (this.currentView === 'folders') {
+            const folderCards = document.querySelectorAll('#playlist .folder-card');
+            folderCards.forEach((card, index) => {
+                const folderData = this.lectures[index];
+                if (folderData && folderData.folder === currentTrack.folder) {
+                    card.classList.add('active-folder');
+                    const icon = card.querySelector('.folder-card-icon i');
+                    if (icon) icon.className = 'fas fa-volume-up';
+                }
+            });
+        }
+
+        // Mark active subfolder in subfolders view (sidebar)
+        if (this.currentView === 'subfolders' && this.currentFolderIndex >= 0) {
+            const folder = this.lectures[this.currentFolderIndex];
+            if (folder && folder.subfolders) {
+                const subfolderCards = document.querySelectorAll('#playlist .folder-card');
+                // Skip back button and folder title, start from index 0 for subfolders
+                let subfolderIndex = 0;
+                subfolderCards.forEach(card => {
+                    // Skip back button and folder title elements
+                    if (card.classList.contains('folder-card') && !card.classList.contains('back-button')) {
+                        const subfolderData = folder.subfolders[subfolderIndex];
+                        if (subfolderData && subfolderData.name === currentTrack.subfolder) {
+                            card.classList.add('active-folder');
+                            const icon = card.querySelector('.folder-card-icon i');
+                            if (icon) icon.className = 'fas fa-volume-up';
+                        }
+                        subfolderIndex++;
+                    }
+                });
+            }
+        }
+
+        // Mark active folder in library view (mobile)
+        if (this.libraryView === 'folders') {
+            const libraryFolderCards = document.querySelectorAll('#libraryContent .folder-card');
+            libraryFolderCards.forEach((card, index) => {
+                const folderData = this.lectures[index];
+                if (folderData && folderData.folder === currentTrack.folder) {
+                    card.classList.add('active-folder');
+                    const icon = card.querySelector('.folder-card-icon i');
+                    if (icon) icon.className = 'fas fa-volume-up';
+                }
+            });
+        }
+
+        // Mark active subfolder in library subfolders view (mobile)
+        if (this.libraryView === 'subfolders' && this.libraryFolderIndex >= 0) {
+            const folder = this.lectures[this.libraryFolderIndex];
+            if (folder && folder.subfolders) {
+                const librarySubfolderCards = document.querySelectorAll('#libraryContent .folder-card');
+                // Skip back button and folder title, start from index 0 for subfolders
+                let subfolderIndex = 0;
+                librarySubfolderCards.forEach(card => {
+                    // Skip back button and folder title elements
+                    if (card.classList.contains('folder-card') && !card.classList.contains('back-button')) {
+                        const subfolderData = folder.subfolders[subfolderIndex];
+                        if (subfolderData && subfolderData.name === currentTrack.subfolder) {
+                            card.classList.add('active-folder');
+                            const icon = card.querySelector('.folder-card-icon i');
+                            if (icon) icon.className = 'fas fa-volume-up';
+                        }
+                        subfolderIndex++;
+                    }
+                });
+            }
+        }
     }
 
     // ===== Scroll To Active Track =====
@@ -1408,7 +1530,7 @@ class AudioPlayer {
     // ===== Mini Player Functions =====
     updateMiniPlayer(track) {
         if (this.miniTrackTitle) {
-            this.miniTrackTitle.textContent = track.title || 'Chọn bài giảng';
+            this.updateMiniPlayerTitle(track.title || 'Chọn bài giảng');
         }
         // Update duration if available, otherwise it will be updated by loadedmetadata event
         if (this.miniDuration) {
@@ -1418,6 +1540,52 @@ class AudioPlayer {
                 this.miniDuration.textContent = '0:00';
             }
         }
+    }
+
+    // ===== Update Mini Player Title with Scrolling Effect =====
+    updateMiniPlayerTitle(title) {
+        if (!this.miniTrackTitle) return;
+
+        // Reset previous state
+        this.miniTrackTitle.classList.remove('scrolling');
+        this.miniTrackTitle.innerHTML = '';
+        this.miniTrackTitle.style.removeProperty('--scroll-distance');
+        
+        // Set initial text to measure
+        this.miniTrackTitle.textContent = title;
+
+        // Use requestAnimationFrame to ensure DOM is updated
+        requestAnimationFrame(() => {
+            // Create a temporary element to measure text width
+            const tempSpan = document.createElement('span');
+            tempSpan.style.visibility = 'hidden';
+            tempSpan.style.position = 'absolute';
+            tempSpan.style.fontSize = window.getComputedStyle(this.miniTrackTitle).fontSize;
+            tempSpan.style.fontWeight = window.getComputedStyle(this.miniTrackTitle).fontWeight;
+            tempSpan.style.fontFamily = window.getComputedStyle(this.miniTrackTitle).fontFamily;
+            tempSpan.style.whiteSpace = 'nowrap';
+            tempSpan.textContent = title;
+            document.body.appendChild(tempSpan);
+
+            const textWidth = tempSpan.offsetWidth;
+            document.body.removeChild(tempSpan);
+
+            // Get container width (mini player info area)
+            const containerWidth = this.miniTrackTitle.offsetWidth;
+
+            // If text is longer than container (with some margin), apply scrolling effect
+            if (textWidth > (containerWidth - 10) && containerWidth > 0) {
+                // Calculate how much we need to scroll to show the hidden part
+                const scrollDistance = -(textWidth - containerWidth + 20); // +20 for some padding
+                
+                // Set CSS custom property for scroll distance
+                this.miniTrackTitle.style.setProperty('--scroll-distance', `${scrollDistance}px`);
+                
+                this.miniTrackTitle.classList.add('scrolling');
+                this.miniTrackTitle.innerHTML = `<span class="title-text">${title}</span>`;
+            }
+            // If text fits, keep the normal display (already set above)
+        });
     }
 
     // ===== Media Session API for Lock Screen & Background Playback =====
@@ -1637,7 +1805,7 @@ class AudioPlayer {
         this.trackTitle.textContent = 'Chọn bài giảng để phát';
         this.trackFolder.textContent = '---';
         if (this.miniTrackTitle) {
-            this.miniTrackTitle.textContent = 'Chọn bài giảng';
+            this.updateMiniPlayerTitle('Chọn bài giảng');
         }
     }
 
@@ -1854,6 +2022,9 @@ class AudioPlayer {
 
             container.appendChild(folderCard);
         });
+
+        // Update active folder highlighting for library view
+        this.updateActiveTrack();
     }
 
     // ===== Render Library Subfolders =====
@@ -1929,6 +2100,9 @@ class AudioPlayer {
                 container.appendChild(subfolderCard);
             });
         }
+
+        // Update active subfolder highlighting for library view
+        this.updateActiveTrack();
     }
 
     // ===== Render Library Lectures =====
@@ -2005,6 +2179,9 @@ class AudioPlayer {
                 if (activeCard) this.scrollToActiveTrack();
             }, 100);
         }
+
+        // Update active track highlighting for library view
+        this.updateActiveTrack();
     }
 
     // ===== Library Navigation Methods =====
@@ -2508,7 +2685,7 @@ class AudioPlayer {
             // Update mini player title on play (mobile fix)
             if (this.miniTrackTitle && this.currentIndex >= 0 && this.currentIndex < this.flatPlaylist.length) {
                 const track = this.flatPlaylist[this.currentIndex];
-                this.miniTrackTitle.textContent = track.title || 'Chọn bài giảng';
+                this.updateMiniPlayerTitle(track.title || 'Chọn bài giảng');
             }
         });
         this.audio.addEventListener('pause', () => {
@@ -2550,7 +2727,7 @@ class AudioPlayer {
             // Update mini player title when metadata is loaded (mobile fix)
             if (this.miniTrackTitle && this.currentIndex >= 0 && this.currentIndex < this.flatPlaylist.length) {
                 const track = this.flatPlaylist[this.currentIndex];
-                this.miniTrackTitle.textContent = track.title;
+                this.updateMiniPlayerTitle(track.title);
             }
         });
 
@@ -2864,6 +3041,15 @@ class AudioPlayer {
         // Window resize handler - switch between mobile and desktop views
         window.addEventListener('resize', () => {
             this.handleResponsiveLayout();
+            // Recalculate mini player title scrolling on resize
+            if (this.miniTrackTitle && this.currentIndex >= 0) {
+                const track = this.flatPlaylist[this.currentIndex];
+                if (track) {
+                    setTimeout(() => {
+                        this.updateMiniPlayerTitle(track.title);
+                    }, 100); // Small delay to ensure layout is updated
+                }
+            }
         });
     }
 
@@ -2910,6 +3096,9 @@ class AudioPlayer {
                 if (libraryNavItem) {
                     libraryNavItem.classList.add('active');
                 }
+
+                // Render library view to ensure proper highlighting
+                this.renderLibraryView();
             }
 
             // Show mini player if track is playing
@@ -3170,9 +3359,22 @@ class AudioPlayer {
     // ===== Update Now Playing =====
     updateNowPlaying(track) {
         if (this.nowPlayingSection && this.nowPlayingTitle && this.nowPlayingFolder) {
+            // Show section immediately
             this.nowPlayingSection.style.display = 'block';
+            
+            // Update content immediately
             this.nowPlayingTitle.textContent = track.title;
             this.nowPlayingFolder.textContent = `${track.folder} › ${track.subfolder}`;
+            
+            // Force reflow to ensure immediate display
+            this.nowPlayingSection.offsetHeight;
+        }
+    }
+
+    // ===== Hide Now Playing If No Track =====
+    hideNowPlayingIfNeeded() {
+        if (this.nowPlayingSection && this.currentIndex === -1) {
+            this.nowPlayingSection.style.display = 'none';
         }
     }
 
